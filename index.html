@@ -180,6 +180,18 @@
       a foreground service in order to detect shaking. Accelerometer readings are processed
       <strong>transiently on the device</strong> to decide whether to toggle the flashlight; they
       are <strong>not recorded, stored, profiled, or transmitted</strong>.</p>
+      <p>If you switch on the option to <strong>stop the torch during phone calls</strong>, the App
+      asks for the Android <strong>phone state</strong> permission
+      (<code>android.permission.READ_PHONE_STATE</code>) and then observes <strong>whether a call is
+      ringing, in progress, or finished</strong> — and nothing else. It does not read your phone
+      number, your call history, your contacts, or who is calling. The state is read
+      <strong>transiently on the device</strong>, for the sole purpose of not leaving a torch
+      burning during a call, and is <strong>never recorded, stored, profiled, or
+      transmitted</strong>.</p>
+      <p>This permission is requested <strong>at the moment you enable that option</strong>, not at
+      install time, and the feature is entirely optional: refuse it, or leave the option off, and
+      the rest of the App is unaffected. You can withdraw it at any time in
+      <em>Settings → Apps → Shake to Enable Torch → Permissions</em>.</p>
 
       <h3>3(b) — Advertising data, collected and shared by Google (AdMob)</h3>
       <p>The App offers <strong>one</strong> optional, opt-in advertisement: a
@@ -253,10 +265,21 @@
             <td>Advertising data via Google (3(b))</td>
             <td>In the <strong>EEA, UK, and Switzerland: your consent</strong> (Art. 6(1)(a) GDPR; and ePrivacy consent to storing/reading identifiers on your device), collected via the Google UMP consent form <strong>before any ad is requested</strong>. Outside those regions, Google processes this data under the legal bases set out in <strong>Google’s own policies</strong>.</td>
           </tr>
+          <tr>
+            <td><strong>Stop the torch during a phone call</strong>, where you have switched that option on</td>
+            <td>Whether a call is ringing, in progress or finished, read transiently on the device (Section&nbsp;3(a))</td>
+            <td><strong>Your consent</strong> to the Android runtime permission (Art.&nbsp;6(1)(a) GDPR), given when you enable the option and withdrawable in Android’s own permission settings. Nothing is stored or transmitted.</td>
+          </tr>
+          <tr>
+            <td><strong>Check whether advertising is switched on at all</strong></td>
+            <td>The IP address the request comes from, seen by the file host (Section&nbsp;3(c))</td>
+            <td><strong>Legitimate interest</strong> (Art.&nbsp;6(1)(f) GDPR) in being able to switch advertising off without shipping a release. No identifier is sent, and we receive nothing.</td>
+          </tr>
         </tbody>
       </table>
-      <p>We rely on <strong>legitimate interest</strong> only for the first two purposes, which
-      are confined to your device and involve no transmission, sharing, sale, or profiling; you
+      <p>We rely on <strong>legitimate interest</strong> for the first two purposes, which
+      are confined to your device and involve no transmission, sharing, sale, or profiling, and for
+      the advertising kill-switch check, which transmits nothing about you; you
       can object (see Section&nbsp;9) and exercise full control through Android’s app-storage
       controls and by uninstalling. For advertising in the EEA/UK/Switzerland we rely on
       <strong>consent</strong>, not legitimate interest: <strong>no ad identifiers are accessed
@@ -500,6 +523,18 @@
       dell’accelerometro sono elaborate <strong>in modo transitorio sul dispositivo</strong> al
       solo fine di decidere se attivare/disattivare la torcia; <strong>non vengono registrate,
       memorizzate, profilate o trasmesse</strong>.</p>
+      <p>Se attivi l’opzione per <strong>interrompere la torcia durante le telefonate</strong>,
+      l’App richiede l’autorizzazione Android allo <strong>stato del telefono</strong>
+      (<code>android.permission.READ_PHONE_STATE</code>) e osserva quindi <strong>se una chiamata
+      sta squillando, è in corso o è terminata</strong> — e nient’altro. Non legge il tuo numero di
+      telefono, il registro delle chiamate, i tuoi contatti né chi ti sta chiamando. Lo stato è
+      letto <strong>in modo transitorio sul dispositivo</strong>, al solo fine di non lasciare una
+      torcia accesa durante una chiamata, e <strong>non viene mai registrato, memorizzato,
+      profilato o trasmesso</strong>.</p>
+      <p>L’autorizzazione viene richiesta <strong>nel momento in cui attivi quell’opzione</strong>,
+      non al momento dell’installazione, e la funzione è del tutto facoltativa: rifiutala, o lascia
+      l’opzione disattivata, e il resto dell’App non ne risente. Puoi revocarla in qualsiasi momento
+      in <em>Impostazioni → App → Shake to Enable Torch → Autorizzazioni</em>.</p>
       <h3>3(b) — Dati pubblicitari, raccolti e condivisi da Google (AdMob)</h3>
       <p>L’App propone <strong>un solo</strong> annuncio facoltativo e con consenso (opt-in): un
       <strong>annuncio video con premio (rewarded)</strong>. Compare in <strong>un unico
@@ -578,11 +613,22 @@
             <td>Dati pubblicitari tramite Google (3(b))</td>
             <td>Nello <strong>SEE, nel Regno Unito e in Svizzera: il tuo consenso</strong> (art. 6, par. 1, lett. a) GDPR; nonché il consenso ePrivacy alla memorizzazione/lettura di identificativi sul tuo dispositivo), raccolto tramite il modulo Google UMP <strong>prima che venga richiesto qualsiasi annuncio</strong>. Al di fuori di tali aree, Google tratta questi dati sulla base delle proprie informative.</td>
           </tr>
+          <tr>
+            <td><strong>Interrompere la torcia durante una telefonata</strong>, se hai attivato tale opzione</td>
+            <td>Se una chiamata sta squillando, è in corso o è terminata, letto in modo transitorio sul dispositivo (Sezione&nbsp;3(a))</td>
+            <td><strong>Il tuo consenso</strong> all’autorizzazione runtime di Android (art.&nbsp;6, par.&nbsp;1, lett.&nbsp;a) GDPR), prestato quando attivi l’opzione e revocabile nelle impostazioni delle autorizzazioni di Android. Nulla viene memorizzato o trasmesso.</td>
+          </tr>
+          <tr>
+            <td><strong>Verificare se la pubblicità è attiva</strong></td>
+            <td>L’indirizzo IP da cui proviene la richiesta, visto dal soggetto che ospita il file (Sezione&nbsp;3(c))</td>
+            <td><strong>Legittimo interesse</strong> (art.&nbsp;6, par.&nbsp;1, lett.&nbsp;f) GDPR) a poter disattivare la pubblicità senza pubblicare una nuova versione. Non viene inviato alcun identificativo e noi non riceviamo nulla.</td>
+          </tr>
         </tbody>
       </table>
-      <p>Ci basiamo sul <strong>legittimo interesse</strong> solo per le prime due finalità, che
+      <p>Ci basiamo sul <strong>legittimo interesse</strong> per le prime due finalità, che
       restano confinate al tuo dispositivo e non comportano alcuna trasmissione, condivisione,
-      vendita o profilazione; puoi opporti (vedi Sezione&nbsp;9) ed esercitare il pieno controllo
+      vendita o profilazione, e per la verifica del kill-switch pubblicitario, che non trasmette
+      nulla che ti riguardi; puoi opporti (vedi Sezione&nbsp;9) ed esercitare il pieno controllo
       tramite i controlli di archiviazione delle app di Android e disinstallando. Per la pubblicità
       nello SEE/Regno Unito/Svizzera ci basiamo sul <strong>consenso</strong>, non sul legittimo
       interesse: <strong>nessun identificativo pubblicitario viene letto e nessun annuncio viene
