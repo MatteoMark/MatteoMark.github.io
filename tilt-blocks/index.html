@@ -180,10 +180,18 @@
         Android <strong>Settings → Apps → Tilt Blocks → Storage</strong>, deletes it.</li>
       </ul>
 
-      <p>The App requests <strong>no</strong> permission that reveals anything about you. It asks for
-      vibration (to make blocks feel like objects in your hand) and internet access (used
-      <strong>only</strong> by the advertising component described next). It has no access to your
-      camera, microphone, location, contacts, files, or phone state.</p>
+      <p>The App declares <strong>three</strong> permissions and no others:</p>
+      <ul>
+        <li><strong>Vibration</strong>, to make blocks feel like objects in your hand;</li>
+        <li><strong>Internet access</strong>, used by the advertising and consent components
+        described in 3(b), by the single request described in 3(c), and by nothing else;</li>
+        <li><strong>Advertising ID</strong> (<code>com.google.android.gms.permission.AD_ID</code>),
+        which is what allows Google to read the resettable advertising identifier described in 3(b).
+        It is declared explicitly rather than inherited silently, so that what the App can reach is
+        written down rather than guessed at.</li>
+      </ul>
+      <p>It has <strong>no</strong> access to your camera, microphone, location, contacts, files, or
+      phone state, and no permission that identifies you personally.</p>
 
       <h3>3(b). Advertising data — collected and shared by Google (AdMob)</h3>
       <p>The App offers <strong>one</strong> optional, opt-in advertisement: a <strong>rewarded video
@@ -320,7 +328,10 @@
       we have nothing to sell — see Section 9.</p>
 
       <h2 id="en-6">6. International data transfers</h2>
-      <p>The Developer transfers nothing, because the Developer receives nothing.</p>
+      <p>The Developer neither receives nor stores any of this data, and so transfers none of it.
+      That is not the same as saying nothing leaves your device: the App is designed to cause
+      requests to the recipients named in Section 5, and those recipients may process what they
+      receive outside the EEA and the UK.</p>
       <p>The static file described in Section 3(c) is served by GitHub, Inc., a company based in the
       <strong>United States</strong>, so the IP address that request is made from is received
       there.</p>
