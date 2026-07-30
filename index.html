@@ -85,7 +85,7 @@
       <h1>Privacy Policy <span aria-hidden="true">·</span> Informativa sulla privacy</h1>
       <p class="meta">Shake to Enable Torch — Android (<code>com.luxebyte.shaketoenabletorch</code>)</p>
       <p class="meta">Publisher / Editore: <strong>Luxebyte Labs</strong> · <a href="mailto:luxebytecomp@gmail.com">luxebytecomp@gmail.com</a></p>
-      <p class="meta">Effective / In vigore dal: <time datetime="2026-06-17">17 June 2026</time> · Last updated / Ultimo aggiornamento: <time datetime="2026-06-17">17 June 2026</time> · Version / Versione 2.0</p>
+      <p class="meta">Effective / In vigore dal: <time datetime="2026-07-30">30 July 2026</time> · Last updated / Ultimo aggiornamento: <time datetime="2026-07-30">30 July 2026</time> · Version / Versione 2.1</p>
       <nav class="langnav" aria-label="Language / Lingua">
         <a id="tab-en" href="#en" aria-current="true">English</a>
         <a id="tab-it" href="#it" aria-current="false">Italiano</a>
@@ -122,13 +122,15 @@
       <strong>“us”</strong>). For the limited processing described in this policy, the data
       controller is:</p>
       <ul>
-        <li><strong>Controller:</strong> Luxebyte Labs</li>
+        <li><strong>Controller:</strong> <strong>Matteo Lamarque</strong>, trading as <strong>Luxebyte Labs</strong></li>
         <li><strong>Contact for privacy matters:</strong> <a href="mailto:luxebytecomp@gmail.com">luxebytecomp@gmail.com</a></li>
       </ul>
-      <p>We are a small independent publisher. We deliberately do not publish further identity
-      details here; the brand name above together with the contact email is the controller
-      identity for the purposes of this policy. For any privacy question or to exercise your
-      rights, write to <a href="mailto:luxebytecomp@gmail.com">luxebytecomp@gmail.com</a>.</p>
+      <p>“Luxebyte Labs” is a trading name of <strong>Matteo Lamarque</strong>, an independent
+      developer based in Italy. This is a one-person publisher, and the email address above is the
+      contact point for every privacy matter — it reaches the person who can actually act on it.
+      If you need a postal address in order to exercise a right, write to
+      <a href="mailto:luxebytecomp@gmail.com">luxebytecomp@gmail.com</a> and it will be given to
+      you.</p>
       <p><strong>Important to understand up front:</strong> the Developer operates
       <strong>no servers</strong> and runs <strong>no backend</strong> of its own. We do
       <strong>not</strong> receive, store, or have access to the advertising data described in
@@ -205,6 +207,27 @@
       <p>If you do <strong>not</strong> consent (where consent is required — see Section&nbsp;7)
       or you opt out, the App still works fully; you simply will not be served personalized ads,
       and in regions where consent is required no ad identifiers are used without your consent.</p>
+      <p>So that Google can read the advertising identifier listed above, the App declares the
+      Android <strong>Advertising ID</strong> permission
+      (<code>com.google.android.gms.permission.AD_ID</code>). It is declared explicitly rather than
+      inherited silently, so that what the App can reach is written down rather than guessed at. It
+      grants access to that identifier and to nothing else.</p>
+
+      <h3>3(c) — One request to a static file, so ads can be switched off without an update</h3>
+      <p>When the App starts it fetches a single small text file from a fixed address:</p>
+      <div class="callout">
+        <p><strong>https://matteomark.github.io/ads-flag.txt</strong></p>
+      </div>
+      <p>The lines in that file say whether advertising is switched on. It exists so that ads can be
+      turned off without publishing a new version of the App.</p>
+      <p>The App <strong>sends nothing</strong> with this request: no identifier, no advertising ID,
+      nothing about you or about how you use the App. But as with any request to any web server, the
+      server that answers it necessarily sees the <strong>IP address the request came from</strong>,
+      together with ordinary connection information such as the time, the file requested and the
+      type of client. That server is <strong>GitHub Pages</strong>, operated by
+      <strong>GitHub,&nbsp;Inc.</strong>, which hosts the file as a plain static document. We run no
+      server, and we never see a log of these requests.</p>
+
       <p>The App does <strong>not</strong> collect or use location data, contacts, photos,
       microphone, camera content (the torch uses the flash hardware, not camera imagery), account
       information, or any special-category (sensitive) personal data.</p>
@@ -243,11 +266,13 @@
       <strong>receives none of the advertising data</strong>.</p>
 
       <h2 id="en-5">5. Who receives data (third parties / recipients)</h2>
-      <p>Because we run no servers, the only third party that receives data through the App is our
-      advertising provider and its ecosystem:</p>
+      <p>Because we run no servers, the parties that receive data through the App are our
+      advertising provider and its ecosystem, and the host of the single file described in
+      Section&nbsp;3(c):</p>
       <ul>
         <li><strong>Google</strong> — specifically <strong>Google Ireland Limited</strong> (for users in the EEA/UK/Switzerland) and <strong>Google LLC</strong> (United States), operating Google Mobile Ads / AdMob; and</li>
-        <li><strong>Google’s advertising partners</strong> (third-party ad networks, demand partners, and measurement providers involved in serving and measuring the rewarded ad).</li>
+        <li><strong>Google’s advertising partners</strong> (third-party ad networks, demand partners, and measurement providers involved in serving and measuring the rewarded ad); and</li>
+        <li><strong>GitHub,&nbsp;Inc.</strong> — only as the host of the one static text file described in Section&nbsp;3(c). It receives the IP address that request is made from, and nothing else. GitHub privacy statement — <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement</a></li>
       </ul>
       <p>References describing how Google processes this data and who its partners are:</p>
       <ul>
@@ -261,6 +286,9 @@
       <h2 id="en-6">6. International data transfers</h2>
       <p>The on-device data in Section&nbsp;3(a) is <strong>not transferred anywhere</strong> — it
       stays on your device.</p>
+      <p>The static file described in Section&nbsp;3(c) is served by <strong>GitHub,&nbsp;Inc.</strong>,
+      a company based in the <strong>United States</strong>, so the IP address that request is made
+      from is received there.</p>
       <p>The advertising data in Section&nbsp;3(b) is handled by Google’s global infrastructure and
       <strong>may be transferred to and processed in countries outside the EU/EEA, the UK, and
       Switzerland, including the United States.</strong> Where such transfers occur, they are
@@ -411,14 +439,15 @@
       Per i trattamenti limitati descritti nella presente informativa, il titolare del trattamento
       è:</p>
       <ul>
-        <li><strong>Titolare:</strong> Luxebyte Labs</li>
+        <li><strong>Titolare:</strong> <strong>Matteo Lamarque</strong>, operante con il nome commerciale <strong>Luxebyte Labs</strong></li>
         <li><strong>Contatto per le questioni privacy:</strong> <a href="mailto:luxebytecomp@gmail.com">luxebytecomp@gmail.com</a></li>
       </ul>
-      <p>Siamo un piccolo editore indipendente. Scegliamo deliberatamente di non pubblicare qui
-      ulteriori dettagli identificativi; il nome del marchio sopra indicato, unitamente
-      all’indirizzo e-mail di contatto, costituisce l’identità del titolare ai fini della presente
-      informativa. Per qualsiasi domanda sulla privacy o per esercitare i tuoi diritti, scrivi a
-      <a href="mailto:luxebytecomp@gmail.com">luxebytecomp@gmail.com</a>.</p>
+      <p>“Luxebyte Labs” è il nome commerciale di <strong>Matteo Lamarque</strong>, sviluppatore
+      indipendente con sede in Italia. Si tratta di un editore composto da una sola persona, e
+      l’indirizzo e-mail sopra indicato è il punto di contatto per ogni questione di privacy: scrive
+      alla persona che può effettivamente intervenire. Se ti serve un indirizzo postale per
+      esercitare un tuo diritto, scrivi a
+      <a href="mailto:luxebytecomp@gmail.com">luxebytecomp@gmail.com</a> e ti verrà fornito.</p>
       <p><strong>Importante da chiarire subito:</strong> lo Sviluppatore non gestisce
       <strong>alcun server</strong> e non utilizza <strong>alcun backend</strong> proprio. Noi
       <strong>non</strong> riceviamo, non conserviamo e non abbiamo accesso ai dati pubblicitari
@@ -500,6 +529,28 @@
       effettui l’opt-out, l’App continua a funzionare pienamente; semplicemente non ti verranno
       mostrati annunci personalizzati e, nelle aree in cui il consenso è richiesto, non viene
       utilizzato alcun identificativo pubblicitario senza il tuo consenso.</p>
+      <p>Affinché Google possa leggere l’identificativo pubblicitario sopra indicato, l’App dichiara
+      l’autorizzazione Android <strong>Advertising ID</strong>
+      (<code>com.google.android.gms.permission.AD_ID</code>). È dichiarata esplicitamente anziché
+      ereditata in silenzio, così che ciò a cui l’App può accedere sia messo per iscritto anziché
+      lasciato a supposizioni. Dà accesso a quell’identificativo e a nient’altro.</p>
+
+      <h3>3(c) — Una richiesta a un file statico, per poter disattivare gli annunci senza un aggiornamento</h3>
+      <p>All’avvio, l’App scarica un unico piccolo file di testo da un indirizzo fisso:</p>
+      <div class="callout">
+        <p><strong>https://matteomark.github.io/ads-flag.txt</strong></p>
+      </div>
+      <p>Le righe di quel file indicano se la pubblicità è attiva. Esiste per poter disattivare gli
+      annunci senza pubblicare una nuova versione dell’App.</p>
+      <p>Con questa richiesta l’App <strong>non invia nulla</strong>: nessun identificativo, nessun
+      ID pubblicitario, nulla che riguardi te o il modo in cui usi l’App. Ma come per qualsiasi
+      richiesta a qualsiasi server web, il server che risponde vede necessariamente
+      l’<strong>indirizzo IP da cui proviene la richiesta</strong>, insieme alle normali
+      informazioni di connessione quali l’orario, il file richiesto e il tipo di client. Quel server
+      è <strong>GitHub Pages</strong>, gestito da <strong>GitHub,&nbsp;Inc.</strong>, che ospita il
+      file come semplice documento statico. Noi non gestiamo alcun server e non vediamo mai un log
+      di queste richieste.</p>
+
       <p>L’App <strong>non</strong> raccoglie né utilizza dati di geolocalizzazione, contatti, foto,
       microfono, contenuti della fotocamera (la torcia usa l’hardware del flash, non le immagini
       della fotocamera), informazioni di account o categorie particolari (dati sensibili) di dati
@@ -541,11 +592,13 @@
       alcun dato pubblicitario</strong>.</p>
 
       <h2 id="it-5">5. Chi riceve i dati (terze parti / destinatari)</h2>
-      <p>Poiché non gestiamo server, l’unica terza parte che riceve dati tramite l’App è il nostro
-      fornitore pubblicitario e il suo ecosistema:</p>
+      <p>Poiché non gestiamo server, le parti che ricevono dati tramite l’App sono il nostro
+      fornitore pubblicitario con il suo ecosistema e il soggetto che ospita l’unico file descritto
+      nella Sezione&nbsp;3(c):</p>
       <ul>
         <li><strong>Google</strong> — in particolare <strong>Google Ireland Limited</strong> (per gli utenti nello SEE/Regno Unito/Svizzera) e <strong>Google LLC</strong> (Stati Uniti), che gestiscono Google Mobile Ads / AdMob; e</li>
-        <li>i <strong>partner pubblicitari di Google</strong> (reti pubblicitarie di terzi, demand partner e fornitori di misurazione coinvolti nell’erogazione e nella misurazione dell’annuncio rewarded).</li>
+        <li>i <strong>partner pubblicitari di Google</strong> (reti pubblicitarie di terzi, demand partner e fornitori di misurazione coinvolti nell’erogazione e nella misurazione dell’annuncio rewarded); e</li>
+        <li><strong>GitHub,&nbsp;Inc.</strong> — unicamente in quanto soggetto che ospita l’unico file di testo statico descritto nella Sezione&nbsp;3(c). Riceve l’indirizzo IP da cui proviene la richiesta, e nient’altro. Informativa privacy di GitHub — <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement</a></li>
       </ul>
       <p>Riferimenti che descrivono come Google tratta questi dati e chi sono i suoi partner:</p>
       <ul>
@@ -559,6 +612,9 @@
       <h2 id="it-6">6. Trasferimenti internazionali di dati</h2>
       <p>I dati on-device della Sezione&nbsp;3(a) <strong>non vengono trasferiti da nessuna
       parte</strong>: restano sul tuo dispositivo.</p>
+      <p>Il file statico descritto nella Sezione&nbsp;3(c) è servito da
+      <strong>GitHub,&nbsp;Inc.</strong>, società con sede negli <strong>Stati Uniti</strong>: di
+      conseguenza l’indirizzo IP da cui proviene la richiesta viene ricevuto lì.</p>
       <p>I dati pubblicitari della Sezione&nbsp;3(b) sono gestiti dall’infrastruttura globale di
       Google e <strong>possono essere trasferiti e trattati in Paesi al di fuori dell’UE/SEE, del
       Regno Unito e della Svizzera, inclusi gli Stati Uniti.</strong> Ove tali trasferimenti
