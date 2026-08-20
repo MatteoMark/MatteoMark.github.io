@@ -48,6 +48,7 @@
       padding-top: .4rem; border-top: 1px solid var(--hairline);
     }
     h3 { font-size: 1.08rem; margin: 1.6rem 0 .4rem; }
+    h4 { font-size: 1rem; margin: 1.3rem 0 .3rem; color: var(--ink); }
     p, li { color: var(--ink); }
     a { color: var(--accent); }
     a:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
@@ -85,7 +86,30 @@
       <h1>Privacy Policy <span aria-hidden="true">·</span> Informativa sulla privacy</h1>
       <p class="meta">Shake to Enable Torch — Android (<code>com.luxebyte.shaketoenabletorch</code>)</p>
       <p class="meta">Publisher / Editore: <strong>Luxebyte Labs</strong> · <a href="mailto:luxebytecomp@gmail.com">luxebytecomp@gmail.com</a></p>
-      <p class="meta">Effective / In vigore dal: <time datetime="2026-07-30">30 July 2026</time> · Last updated / Ultimo aggiornamento: <time datetime="2026-07-30">30 July 2026</time> · Version / Versione 2.1</p>
+      <p class="meta">Effective / In vigore dal: <time datetime="2026-08-20">20 August 2026</time> · Last updated / Ultimo aggiornamento: <time datetime="2026-08-20">20 August 2026</time> · Version / Versione 2.5</p>
+      <p class="meta">v2.5 — what has changed since the version you last saw. The previously
+      published policy was version&nbsp;2.1 of 30&nbsp;July&nbsp;2026, so these changes are described
+      against that one. This version discloses <strong>Android’s own Auto Backup</strong>, which
+      copies the on-device data in Section&nbsp;3(a) into your own Google Drive and which no earlier
+      version mentioned; states plainly that adverts are <strong>requested in advance</strong>, before
+      you accept any offer and even if you are never shown one; documents two further places where the
+      App can offer you a rewarded video — the dark theme switch and the block mini-game — alongside
+      the achievements gallery, which was the only one described before; describes the device-local
+      “keep-alive” account and the additional motion sensors the App reads on some devices; and
+      corrects the stated minimum age from 13 to <strong>16</strong>, matching the App’s Google Play
+      declaration.
+      <span lang="it">/ Che cosa è cambiato rispetto alla versione che hai visto finora. L’ultima
+      versione pubblicata è stata la 2.1 del 30&nbsp;luglio&nbsp;2026: le modifiche seguenti sono
+      descritte rispetto a quella. La presente versione dichiara il <strong>backup automatico (Auto
+      Backup) di Android</strong>, che copia i dati on-device della Sezione&nbsp;3(a) sul tuo Google
+      Drive e di cui nessuna versione precedente faceva menzione; afferma esplicitamente che gli
+      annunci vengono <strong>richiesti in anticipo</strong>, prima che tu accetti qualsiasi proposta
+      e anche se non te ne viene mai mostrato alcuno; documenta due ulteriori punti in cui l’App può
+      proporti un video con premio — l’interruttore del tema scuro e il mini-gioco a blocchi —
+      accanto alla galleria degli obiettivi, che era l’unico punto descritto in precedenza; descrive
+      l’account locale “keep-alive” e gli ulteriori sensori di movimento che l’App legge su alcuni
+      dispositivi; e corregge l’età minima dichiarata da 13 a <strong>16&nbsp;anni</strong>, in linea
+      con la dichiarazione dell’App su Google Play.</span></p>
       <nav class="langnav" aria-label="Language / Lingua">
         <a id="tab-en" href="#en" aria-current="true">English</a>
         <a id="tab-it" href="#it" aria-current="false">Italiano</a>
@@ -158,10 +182,13 @@
       you do not agree, you can stop using the App and uninstall it.</p>
 
       <h2 id="en-3">3. What data is processed</h2>
-      <p>The App processes two clearly separate categories of data. We keep them separate on
-      purpose, because they behave very differently.</p>
+      <p>The App processes three clearly separate categories of data. We keep them separate on
+      purpose, because they behave very differently: one stays on your device, apart from
+      Android’s own backup into your own Google Drive; one is collected by Google and never reaches
+      us; and one is a single request that carries nothing about you but cannot help revealing where
+      it came from.</p>
 
-      <h3>3(a) — Data kept ONLY on your device, never transmitted to us or anyone</h3>
+      <h3>3(a) — Data kept on your device, never transmitted to us</h3>
       <p>To make the App work and to power its features, the App stores a small amount of
       information <strong>locally on your device only</strong>, using Android’s standard
       <code>SharedPreferences</code> storage. This includes:</p>
@@ -169,38 +196,118 @@
         <li>your <strong>shake counts</strong> (how many times the App has detected a shake);</li>
         <li>your <strong>daily streak</strong> (consecutive-day usage counter);</li>
         <li>your <strong>achievements</strong> (in-app milestones you have unlocked);</li>
+        <li>your <strong>block mini-game progress</strong>, where that feature is switched on for your device (see Section&nbsp;3(c)) — your best score, and how many rounds you have finished;</li>
         <li>your <strong>settings and preferences</strong>, such as shake <strong>sensitivity</strong> and the <strong>theme</strong> (light/dark) you have chosen.</li>
       </ul>
-      <p>This on-device data <strong>never leaves your device</strong>, is
-      <strong>never transmitted to the Developer</strong> (who has no servers to receive it), and
-      is <strong>never sold or shared</strong> with anyone. It is fully under your control:
-      uninstalling the App, or clearing the App’s storage/data in
+      <p>This on-device data is <strong>never sent anywhere by the App</strong> — the App contains
+      no code that transmits it — is <strong>never transmitted to the Developer</strong> (who has no
+      servers to receive it), and is <strong>never sold or shared</strong> with anyone. It is fully
+      under your control: uninstalling the App, or clearing the App’s storage/data in
       <em>Settings → Apps → Shake to Enable Torch → Storage</em>, deletes it.</p>
+      <div class="callout">
+        <p><strong>One exception, stated here rather than left to be assumed: Android’s own
+        backup.</strong> The App leaves Android’s standard <strong>Auto Backup</strong> switched on,
+        which is the platform default. If you have device backup turned on in your Android settings,
+        then <strong>Android — not the App</strong> — copies the App’s stored preferences to
+        <strong>your own Google Drive</strong>, and includes them when you transfer to a new phone.
+        That copy is not limited to the list above: it takes <strong>every preference the App has on
+        the device</strong>, which also includes the cached copy of the file described in
+        Section&nbsp;3(c) and the preferences written by Google’s advertising and consent components
+        — among them the record of the advertising-consent choice you made in the consent form
+        described in Section&nbsp;7.
+        That copy leaves your device and is held by <strong>Google</strong> under
+        <strong>your</strong> Google account, so it is the one way the data in this Section&nbsp;3(a)
+        is transmitted at all. <strong>We cannot see it, reach it, or ask for it</strong> — app
+        backups are not accessible to app developers, we operate no servers, and we receive nothing
+        from it. You control it entirely: turn backup off, or delete this App’s backup, in
+        <em>Settings → Google → Backup</em>.</p>
+      </div>
       <p>The App also reads your device’s <strong>accelerometer</strong> (motion sensor) through
-      a foreground service in order to detect shaking. Accelerometer readings are processed
-      <strong>transiently on the device</strong> to decide whether to toggle the flashlight; they
-      are <strong>not recorded, stored, profiled, or transmitted</strong>.</p>
+      a foreground service in order to detect shaking. Where the device provides them, it
+      additionally registers the <strong>proximity, tilt, wake-gesture and pick-up-gesture
+      sensors</strong> (or a manufacturer’s equivalent of them). Those are not used to observe you:
+      they are used only as a signal that the device has been picked up or moved, so that shake
+      detection can be started again after Android has suspended it. The App does not use the
+      proximity sensor to work out where the device is or what is near it.</p>
+      <p>All of these readings are processed <strong>transiently on the device</strong> to decide
+      whether to toggle the flashlight; they are <strong>not recorded, stored, profiled, or
+      transmitted</strong>. No sample, no trace and no magnitude of any of them leaves your device in
+      any form. The only figures derived from them that leave your device at all are the
+      <strong>shake counts and streak</strong> listed above, and only by the Android backup route
+      described immediately above — into your own Google Drive, never to us. Nothing that leaves
+      your device could reconstruct your movement.</p>
       <p>If you switch on the option to <strong>stop the torch during phone calls</strong>, the App
       asks for the Android <strong>phone state</strong> permission
       (<code>android.permission.READ_PHONE_STATE</code>) and then observes <strong>whether a call is
       ringing, in progress, or finished</strong> — and nothing else. It does not read your phone
       number, your call history, your contacts, or who is calling. The state is read
       <strong>transiently on the device</strong>, for the sole purpose of not leaving a torch
-      burning during a call, and is <strong>never recorded, stored, profiled, or
-      transmitted</strong>.</p>
+      burning during a call, and is <strong>never profiled and never transmitted to us</strong>.</p>
+      <p>One detail rather than a round claim: so that it can put the torch back as it found it, the
+      App stores on the device <strong>the time at which a call-related pause began</strong>. That
+      timestamp is stored in the same preferences described above, and is therefore included in the
+      Android backup described above. It records <strong>nothing about the call itself</strong> — no
+      number, no direction, no duration, no identity — and it is never sent to us.</p>
       <p>This permission is requested <strong>at the moment you enable that option</strong>, not at
       install time, and the feature is entirely optional: refuse it, or leave the option off, and
       the rest of the App is unaffected. You can withdraw it at any time in
       <em>Settings → Apps → Shake to Enable Torch → Permissions</em>.</p>
+      <p>So that shake detection keeps working on devices whose manufacturer shuts background apps
+      down, the App registers a <strong>device-local account</strong> named
+      <strong>“Shake to Torch (keep-alive)”</strong>, which you can see in
+      <em>Settings → Accounts</em>. It holds <strong>no credentials and no data</strong>, it is
+      <strong>not linked to any online account</strong>, and <strong>nothing is ever synchronised
+      through it</strong>: Android’s sync scheduler is used purely as a periodic nudge that tells
+      the App to check whether its own flashlight service is still running. Uninstalling the App
+      removes it.</p>
 
       <h3>3(b) — Advertising data, collected and shared by Google (AdMob)</h3>
-      <p>The App offers <strong>one</strong> optional, opt-in advertisement: a
-      <strong>rewarded video ad</strong>. It appears in a <strong>single place</strong> — when
-      you tap to view your achievements, you may <em>choose</em> to watch a short rewarded video.
-      The ad is <strong>opt-in</strong> (you decide whether to watch it),
-      <strong>never auto-played</strong>, shown <strong>nowhere else</strong> in the App, and
-      <strong>fully declinable</strong> — you can always say no and keep using the App.</p>
-      <p>To serve this ad we use the <strong>Google Mobile Ads SDK (Google AdMob)</strong>. When
+      <p>The App shows advertising supplied by the <strong>Google Mobile Ads SDK (Google
+      AdMob)</strong>. There is <strong>one advertising format and only one: a rewarded video that
+      you choose to watch.</strong> Nothing is shown to you that you did not ask for.</p>
+
+      <h4>Rewarded video ads — opt-in, you choose to watch them</h4>
+      <p>A rewarded ad is never played on its own. You tap something, the App tells you that an ad
+      is involved, and you confirm — or refuse. There are <strong>up to three</strong> such places,
+      depending on which of the App’s optional parts are switched on for your device (see
+      Section&nbsp;3(c)):</p>
+      <ul>
+        <li><strong>the achievements gallery</strong> — tapping to view your achievements may first offer you a short video;</li>
+        <li><strong>the dark theme</strong> — switching the dark theme <em>on</em> may first offer you a short video (switching it <em>off</em> is always free);</li>
+        <li><strong>the block mini-game’s “continue”</strong>, where the mini-game is switched on — when a round ends, you may be offered one short video in exchange for one extra life.</li>
+      </ul>
+      <p>These ads are <strong>never auto-played</strong> and are <strong>always declinable</strong>;
+      declining leaves the App fully usable. On the two torch surfaces, declining simply means you
+      do not open that screen or change that setting at that moment — and if you did agree but the
+      ad cannot actually be shown, the App gives you what you asked for anyway rather than leaving
+      you stuck.</p>
+
+      <h4>There is no second format — no advertising is imposed on you</h4>
+      <p>The rewarded video described above is the <strong>only</strong> advertising format the
+      App contains. The App shows <strong>no banner ad</strong>, <strong>no full-screen
+      interstitial</strong>, <strong>no app-open ad</strong> and <strong>no native ad</strong> — on
+      any screen, including inside the block mini-game.</p>
+
+      <p>So every advert in the App is one you started: nothing plays by itself, nothing occupies
+      part of the screen while you use the App, and declining every offer leaves the App fully
+      usable.</p>
+
+      <div class="callout">
+        <p><strong>What “you choose to watch it” does not mean.</strong> So that an ad is ready at
+        the moment you ask for one, the App asks Google’s SDK to <strong>fetch one in
+        advance</strong>, in the background, while a screen that can offer one is open. That fetch
+        <strong>is</strong> an ad request, and it is what sends the advertising data listed below. It
+        therefore happens whether or not you go on to accept the offer, and even if you are never
+        shown an ad at all. What your choice controls is whether an advert is ever
+        <strong>displayed</strong> to you and whether you receive the reward — not whether an advert
+        was requested for you.</p>
+      </div>
+
+      <p><strong>No ad is requested, and no advertising identifier is read,</strong> until the
+      consent step described in Section&nbsp;7 has been resolved and the remote advertising switch
+      described in Section&nbsp;3(c) has been read.</p>
+
+      <p>To serve these ads we use the <strong>Google Mobile Ads SDK (Google AdMob)</strong>. When
       an ad is requested and shown, Google and its advertising partners collect and process the
       following categories of data for the purposes of <strong>serving ads, measuring ad
       performance, and preventing fraud and abuse</strong>:</p>
@@ -226,12 +333,17 @@
       grants access to that identifier and to nothing else.</p>
 
       <h3>3(c) — One request to a static file, so ads can be switched off without an update</h3>
-      <p>When the App starts it fetches a single small text file from a fixed address:</p>
+      <p>The App fetches a single small text file from a fixed address:</p>
       <div class="callout">
         <p><strong>https://matteomark.github.io/ads-flag.txt</strong></p>
       </div>
-      <p>The lines in that file say whether advertising is switched on. It exists so that ads can be
-      turned off without publishing a new version of the App.</p>
+      <p>It does so <strong>at most once a day</strong>. The App keeps its own copy of the file and
+      re-uses that copy for a day before asking for a fresh one, so opening the App repeatedly does
+      not repeat the request.</p>
+      <p>The lines in that file say whether advertising is switched on at all, and which of the
+      App’s optional parts are switched on individually — the dark-theme rewarded ad, the block
+      mini-game, and the promotion of our other app. It exists so that any of them can be turned off
+      without publishing a new version of the App.</p>
       <p>The App <strong>sends nothing</strong> with this request: no identifier, no advertising ID,
       nothing about you or about how you use the App. But as with any request to any web server, the
       server that answers it necessarily sees the <strong>IP address the request came from</strong>,
@@ -240,9 +352,13 @@
       <strong>GitHub,&nbsp;Inc.</strong>, which hosts the file as a plain static document. We run no
       server, and we never see a log of these requests.</p>
 
-      <p>The App does <strong>not</strong> collect or use location data, contacts, photos,
-      microphone, camera content (the torch uses the flash hardware, not camera imagery), account
-      information, or any special-category (sensitive) personal data.</p>
+      <p>The App does <strong>not</strong> collect or use contacts, photos, microphone, camera
+      content (the torch uses the flash hardware, not camera imagery), account information, or any
+      special-category (sensitive) personal data. It collects <strong>no usage or analytics
+      statistics of any kind</strong>: the App contains no analytics SDK, sends no usage events, and
+      has no telemetry to switch off. It uses <strong>no location API and no GPS</strong>: the only
+      location involved anywhere is the approximate, country/region level location that Google
+      derives from an IP address, for the advertising described in Section&nbsp;3(b).</p>
 
       <h2 id="en-4">4. Why we process data, and the legal basis for each purpose (GDPR)</h2>
       <p>Under the EU GDPR, the UK GDPR, and the Italian <em>Codice Privacy</em> (D.lgs.
@@ -253,25 +369,25 @@
           <tr>
             <td><strong>Provide the core flashlight function</strong> (detect a shake and toggle the torch)</td>
             <td>Transient accelerometer readings (on-device only)</td>
-            <td><strong>Performance of the service you requested</strong> and our <strong>legitimate interest</strong> (Art. 6(1)(b)/(f) GDPR) in making the App work. No data leaves your device.</td>
+            <td><strong>Performance of the service you requested</strong> and our <strong>legitimate interest</strong> (Art. 6(1)(b)/(f) GDPR) in making the App work. The readings themselves <strong>never leave your device</strong> and are never stored; the only figures derived from them that leave it are the shake counts and streak, and only through the Android backup described in Section&nbsp;3(a).</td>
           </tr>
           <tr>
-            <td><strong>Remember your settings, counts, streak, achievements</strong></td>
+            <td><strong>Remember your settings, counts, streak, achievements, and mini-game progress</strong></td>
             <td>On-device <code>SharedPreferences</code> data (3(a))</td>
             <td><strong>Legitimate interest</strong> (Art. 6(1)(f) GDPR) in providing the features you use; processing occurs only on your device and is not accessible to us.</td>
           </tr>
           <tr>
-            <td><strong>Serve and measure the opt-in rewarded ad</strong> (incl. fraud/abuse prevention)</td>
+            <td><strong>Serve and measure the advertising described in Section&nbsp;3(b)</strong> — the opt-in rewarded ads, including the requests made in advance so that an ad is ready when you ask for one (incl. fraud/abuse prevention)</td>
             <td>Advertising data via Google (3(b))</td>
             <td>In the <strong>EEA, UK, and Switzerland: your consent</strong> (Art. 6(1)(a) GDPR; and ePrivacy consent to storing/reading identifiers on your device), collected via the Google UMP consent form <strong>before any ad is requested</strong>. Outside those regions, Google processes this data under the legal bases set out in <strong>Google’s own policies</strong>.</td>
           </tr>
           <tr>
             <td><strong>Stop the torch during a phone call</strong>, where you have switched that option on</td>
             <td>Whether a call is ringing, in progress or finished, read transiently on the device (Section&nbsp;3(a))</td>
-            <td><strong>Your consent</strong> to the Android runtime permission (Art.&nbsp;6(1)(a) GDPR), given when you enable the option and withdrawable in Android’s own permission settings. Nothing is stored or transmitted.</td>
+            <td><strong>Your consent</strong> to the Android runtime permission (Art.&nbsp;6(1)(a) GDPR), given when you enable the option and withdrawable in Android’s own permission settings. Nothing about the call is transmitted to us; the only thing stored is the time a call-related pause began (Section&nbsp;3(a)).</td>
           </tr>
           <tr>
-            <td><strong>Check whether advertising is switched on at all</strong></td>
+            <td><strong>Check whether advertising, and the App’s other optional parts, are switched on</strong></td>
             <td>The IP address the request comes from, seen by the file host (Section&nbsp;3(c))</td>
             <td><strong>Legitimate interest</strong> (Art.&nbsp;6(1)(f) GDPR) in being able to switch advertising off without shipping a release. No identifier is sent, and we receive nothing.</td>
           </tr>
@@ -279,7 +395,7 @@
       </table>
       <p>We rely on <strong>legitimate interest</strong> for the first two purposes, which
       are confined to your device and involve no transmission, sharing, sale, or profiling, and for
-      the advertising kill-switch check, which transmits nothing about you; you
+      the advertising and feature kill-switch check, which transmits nothing about you; you
       can object (see Section&nbsp;9) and exercise full control through Android’s app-storage
       controls and by uninstalling. For advertising in the EEA/UK/Switzerland we rely on
       <strong>consent</strong>, not legitimate interest: <strong>no ad identifiers are accessed
@@ -287,6 +403,12 @@
       consent at any time (Section&nbsp;7), as easily as you gave it and without affecting the
       lawfulness of processing already carried out. The Developer
       <strong>receives none of the advertising data</strong>.</p>
+      <p><strong>Every advert is user-initiated</strong>, which strengthens rather than replaces the
+      basis above. <strong>Consent</strong> is still what makes the processing lawful in the
+      EEA/UK/Switzerland, and it is still taken <strong>before</strong> any ad request, because the
+      App fetches ads in advance of your tap (Section&nbsp;3(b)). What changed is that no advert is
+      displayed to anyone who did not ask for one, so the App relies on no “imposed format” anywhere
+      in this analysis.</p>
 
       <h2 id="en-5">5. Who receives data (third parties / recipients)</h2>
       <p>Because we run no servers, the parties that receive data through the App are our
@@ -294,7 +416,8 @@
       Section&nbsp;3(c):</p>
       <ul>
         <li><strong>Google</strong> — specifically <strong>Google Ireland Limited</strong> (for users in the EEA/UK/Switzerland) and <strong>Google LLC</strong> (United States), operating Google Mobile Ads / AdMob; and</li>
-        <li><strong>Google’s advertising partners</strong> (third-party ad networks, demand partners, and measurement providers involved in serving and measuring the rewarded ad); and</li>
+        <li><strong>Google’s advertising partners</strong> (third-party ad networks, demand partners, and measurement providers involved in serving and measuring the ads described in Section&nbsp;3(b)); and</li>
+        <li><strong>Google</strong> once more, in a third and quite different role — as the operator of <strong>Android Auto Backup / Google Drive</strong>, which holds the backup copy of the on-device data described in Section&nbsp;3(a) if you have device backup switched on. That copy is held in <strong>your own</strong> Google account, not ours, and we have no access to it; and</li>
         <li><strong>GitHub,&nbsp;Inc.</strong> — only as the host of the one static text file described in Section&nbsp;3(c). It receives the IP address that request is made from, and nothing else. GitHub privacy statement — <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement</a></li>
       </ul>
       <p>References describing how Google processes this data and who its partners are:</p>
@@ -303,19 +426,26 @@
         <li>How Google uses information from sites/apps that use its services — <a href="https://policies.google.com/technologies/partner-sites">https://policies.google.com/technologies/partner-sites</a></li>
         <li>Google advertising technologies / partners — <a href="https://policies.google.com/technologies/ads">https://policies.google.com/technologies/ads</a> and AdMob partners list <a href="https://support.google.com/admob/answer/9012903">https://support.google.com/admob/answer/9012903</a></li>
       </ul>
-      <p>We do not share the on-device data in Section&nbsp;3(a) with anyone, because it never
-      leaves your device and we never receive it.</p>
+      <p>We do not share the on-device data in Section&nbsp;3(a) with anyone, and we never receive
+      it. The one route by which it leaves your device is Android’s own backup into
+      <strong>your</strong> Google Drive, described in Section&nbsp;3(a) — a copy held under your
+      account, which we cannot reach.</p>
 
       <h2 id="en-6">6. International data transfers</h2>
-      <p>The on-device data in Section&nbsp;3(a) is <strong>not transferred anywhere</strong> — it
-      stays on your device.</p>
+      <p>The on-device data in Section&nbsp;3(a) is <strong>not transferred anywhere by the
+      App</strong> — it stays on your device. If you have Android’s device backup switched on,
+      Android copies it to <strong>your own Google Drive</strong> (Section&nbsp;3(a)), where it is
+      stored on Google’s infrastructure and may therefore rest outside your country. That is a
+      transfer made by the Android platform into your own Google account, on Google’s terms and
+      under your control; the Developer is not a party to it and receives nothing from it.</p>
       <p>The static file described in Section&nbsp;3(c) is served by <strong>GitHub,&nbsp;Inc.</strong>,
       a company based in the <strong>United States</strong>, so the IP address that request is made
       from is received there.</p>
       <p>The advertising data in Section&nbsp;3(b) is handled by Google’s global infrastructure and
       <strong>may be transferred to and processed in countries outside the EU/EEA, the UK, and
-      Switzerland, including the United States.</strong> Where such transfers occur, they are
-      protected by the safeguards Google relies upon, which include:</p>
+      Switzerland, including the United States.</strong></p>
+      <p>Where such transfers occur, they are protected by the safeguards Google relies upon, which
+      include:</p>
       <ul>
         <li>the <strong>European Commission’s adequacy decision</strong> for the United States and Google’s certification under the <strong>EU–U.S. Data Privacy Framework</strong> (and the UK Extension and the Swiss–U.S. framework), where applicable; and/or</li>
         <li>the <strong>Standard Contractual Clauses (SCCs)</strong> approved by the European Commission (and the UK International Data Transfer Addendum) under Art.&nbsp;46 GDPR, with supplementary measures where required.</li>
@@ -334,8 +464,13 @@
       personalized advertising. <strong>No ad is requested and no advertising identifier is read
       until you have made your choice.</strong></p>
       <p>You can <strong>change or withdraw your choice at any time</strong>, from inside the App,
-      via the <strong>“Ad &amp; privacy settings”</strong> option. Withdrawing consent is as easy
-      as giving it.</p>
+      via the <strong>“Ad &amp; privacy settings”</strong> option — the App’s existing privacy
+      settings row, which reopens exactly the same form. Withdrawing consent is as easy as giving
+      it.</p>
+      <h3>Outside the EEA, the UK, and Switzerland</h3>
+      <p>Where no consent form is shown, advertising is governed by Google’s own policies and by the
+      Android Advertising ID controls below. The App still displays no advert you did not ask for,
+      in any region.</p>
       <h3>Everywhere — controlling your Advertising ID at the Android level</h3>
       <p>Independently of the in-app controls, you can manage the advertising identifier on your
       device via <em>Settings → Privacy → Ads</em> (the exact path varies by device/Android
@@ -346,7 +481,7 @@
 
       <h2 id="en-8">8. Data retention — how long data is kept</h2>
       <ul>
-        <li><strong>On-device data (3(a)):</strong> kept on your device until you delete it by clearing the App’s storage/data or uninstalling. We never receive it, hold no copy, and apply no server-side retention to it.</li>
+        <li><strong>On-device data (3(a)):</strong> kept on your device until you delete it by clearing the App’s storage/data or uninstalling. We never receive it, hold no copy, and apply no server-side retention to it. Where Android’s backup has copied it to your Google Drive (Section&nbsp;3(a)), that copy is retained by <strong>Google</strong> under <strong>your</strong> account and its retention rules, and you delete it in <em>Settings → Google → Backup</em>.</li>
         <li><strong>Advertising data (3(b)):</strong> retained by <strong>Google</strong> per <strong>Google’s own data-retention policies</strong>, not by us. We store none of it. See the Google Privacy Policy (<a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a>) and use the Android Advertising ID controls (Section&nbsp;7) to reset or delete the identifier.</li>
       </ul>
 
@@ -356,7 +491,8 @@
       <strong>rectification</strong>, <strong>erasure</strong>, <strong>restriction</strong>,
       <strong>objection</strong> to legitimate-interest processing, <strong>data
       portability</strong>, to <strong>withdraw consent</strong> at any time (for advertising —
-      Section&nbsp;7), and to <strong>lodge a complaint</strong> with a supervisory authority. In
+      Section&nbsp;7), and to
+      <strong>lodge a complaint</strong> with a supervisory authority. In
       Italy this is the <strong>Garante per la protezione dei dati personali</strong>
       (<a href="https://www.garante.it">www.garante.it</a>); you may also complain to the authority
       in your country of residence or workplace. In the UK this is the
@@ -393,11 +529,29 @@
       <p>The App is a <strong>general-audience</strong> utility. On Google Play it is declared as
       <strong>not targeted to, and not primarily appealing to, children</strong>, and it is
       <strong>not</strong> part of the Google Play “Designed for Families” / Teacher Approved
-      programme. The App is intended for users <strong>aged 13 and over</strong>.</p>
-      <p>We do <strong>not knowingly collect personal data from children under 13</strong> (or under
-      the higher age of digital consent that may apply in your country — e.g. under 16 in some EU
-      Member States; Italy sets this age at <strong>14</strong>). The App contains no features
-      directed at children and serves only the single opt-in rewarded ad described above.</p>
+      programme. Its <strong>declared target audience on Google Play is users aged 16 and
+      over.</strong></p>
+      <p>That number is chosen for a reason. Under Art.&nbsp;8 GDPR each EU Member State sets its
+      own age of digital consent, anywhere between 13 and 16 (Italy sets it at <strong>14</strong>;
+      some Member States set it at <strong>16</strong>). <strong>16 is the highest figure any Member
+      State sets</strong>, so every user inside the App’s declared audience is at or above the age at
+      which they can consent for themselves in their own country — including the advertising consent
+      asked for in Section&nbsp;7.</p>
+      <p>That is a statement about <strong>who the App is declared for</strong>, not a claim that
+      nobody younger ever installs it. We cannot verify anyone’s age and we do not try to. What we
+      do is: we do <strong>not knowingly collect personal data from children</strong>, we ask for no
+      age, name, email address, contacts or account, and we collect nothing that identifies a person
+      to us — we operate no servers and receive none of the data described in
+      Section&nbsp;3(b).</p>
+      <p>The App contains no features directed at children. It does contain a <strong>block puzzle
+      mini-game</strong>, which is offered as an ordinary general-audience feature of the App and
+      not as content for children. <strong>No advertising is imposed inside it, or anywhere else in
+      the App.</strong> There is no banner, no full-screen interstitial and no app-open ad; the only
+      advert the mini-game can show is the rewarded video a player asks for in exchange for an extra
+      life, and the only adverts elsewhere are the two rewarded videos described in
+      Section&nbsp;3(b). Every ad the App requests is requested with a <strong>maximum content
+      rating of “PG” (parental guidance)</strong>, so creatives rated for teen or mature audiences
+      are not requested.</p>
       <p>If you believe a child has used the App and that advertising data was collected without
       appropriate consent, contact us at
       <a href="mailto:luxebytecomp@gmail.com">luxebytecomp@gmail.com</a>. Because such data is held
@@ -500,9 +654,12 @@
       d’accordo, puoi smettere di usare l’App e disinstallarla.</p>
 
       <h2 id="it-3">3. Quali dati vengono trattati</h2>
-      <p>L’App tratta due categorie di dati nettamente distinte. Le manteniamo separate di
-      proposito, perché si comportano in modo molto diverso.</p>
-      <h3>3(a) — Dati conservati SOLO sul tuo dispositivo, mai trasmessi a noi né ad altri</h3>
+      <p>L’App tratta tre categorie di dati nettamente distinte. Le manteniamo separate di
+      proposito, perché si comportano in modo molto diverso: una resta sul tuo dispositivo, salvo il
+      backup di Android sul tuo Google Drive; una è raccolta da Google e non arriva mai a noi; e una
+      è un’unica richiesta che non trasporta nulla su di te ma non può evitare di rivelare da dove
+      proviene.</p>
+      <h3>3(a) — Dati conservati sul tuo dispositivo, mai trasmessi a noi</h3>
       <p>Per far funzionare l’App e alimentarne le funzionalità, l’App memorizza una piccola
       quantità di informazioni <strong>solo localmente sul tuo dispositivo</strong>, utilizzando
       l’archiviazione standard di Android <code>SharedPreferences</code>. Ciò comprende:</p>
@@ -510,40 +667,126 @@
         <li>i tuoi <strong>conteggi di scuotimenti</strong> (quante volte l’App ha rilevato uno scuotimento);</li>
         <li>la tua <strong>serie giornaliera</strong> (contatore di utilizzo in giorni consecutivi);</li>
         <li>i tuoi <strong>obiettivi/traguardi</strong> (achievement sbloccati nell’App);</li>
+        <li>i tuoi <strong>progressi nel mini-gioco a blocchi</strong>, dove tale funzione è attiva per il tuo dispositivo (vedi Sezione&nbsp;3(c)) — il tuo punteggio migliore e quante partite hai completato;</li>
         <li>le tue <strong>impostazioni e preferenze</strong>, come la <strong>sensibilità</strong> allo scuotimento e il <strong>tema</strong> (chiaro/scuro) scelto.</li>
       </ul>
-      <p>Questi dati on-device <strong>non lasciano mai il tuo dispositivo</strong>,
-      <strong>non sono mai trasmessi allo Sviluppatore</strong> (che non dispone di server per
-      riceverli) e <strong>non sono mai venduti né condivisi</strong> con alcuno. Sono pienamente
-      sotto il tuo controllo: disinstallando l’App, oppure cancellando l’archiviazione/i dati
-      dell’App in <em>Impostazioni → App → Shake to Enable Torch → Spazio di archiviazione</em>,
-      vengono eliminati.</p>
+      <p>Questi dati on-device <strong>non vengono inviati in alcun luogo dall’App</strong> —
+      l’App non contiene alcun codice che li trasmetta — <strong>non sono mai trasmessi allo
+      Sviluppatore</strong> (che non dispone di server per riceverli) e <strong>non sono mai venduti
+      né condivisi</strong> con alcuno. Sono pienamente sotto il tuo controllo: disinstallando
+      l’App, oppure cancellando l’archiviazione/i dati dell’App in <em>Impostazioni → App → Shake to
+      Enable Torch → Spazio di archiviazione</em>, vengono eliminati.</p>
+      <div class="callout">
+        <p><strong>Un’unica eccezione, dichiarata qui e non lasciata a supposizioni: il backup di
+        Android.</strong> L’App lascia attivo il <strong>backup automatico (Auto Backup)</strong>
+        standard di Android, che è l’impostazione predefinita della piattaforma. Se hai attivato il
+        backup del dispositivo nelle impostazioni di Android, allora <strong>Android — non
+        l’App</strong> — copia le preferenze memorizzate dall’App sul <strong>tuo Google
+        Drive</strong>, e le include quando trasferisci i dati su un nuovo telefono. Quella copia non
+        si limita all’elenco sopra riportato: comprende <strong>tutte le preferenze che l’App ha sul
+        dispositivo</strong>, quindi anche la copia in cache del file descritto nella
+        Sezione&nbsp;3(c) e le preferenze scritte dai componenti pubblicitari e di consenso di Google
+        — tra cui la registrazione della scelta sul consenso pubblicitario che hai espresso nel
+        modulo descritto nella Sezione&nbsp;7. Quella copia
+        lascia il tuo dispositivo ed è detenuta da <strong>Google</strong> sotto il <strong>tuo</strong>
+        account Google: è l’unico modo in cui i dati della presente Sezione&nbsp;3(a) vengono
+        trasmessi. <strong>Noi non possiamo vederla, raggiungerla né richiederla</strong> — i backup
+        delle app non sono accessibili agli sviluppatori, non gestiamo server e da essa non riceviamo
+        nulla. Il controllo è interamente tuo: puoi disattivare il backup, o eliminare il backup di
+        questa App, in <em>Impostazioni → Google → Backup</em>.</p>
+      </div>
       <p>L’App legge inoltre l’<strong>accelerometro</strong> (sensore di movimento) del
-      dispositivo tramite un servizio in primo piano per rilevare lo scuotimento. Le letture
-      dell’accelerometro sono elaborate <strong>in modo transitorio sul dispositivo</strong> al
+      dispositivo tramite un servizio in primo piano per rilevare lo scuotimento. Dove il dispositivo
+      li mette a disposizione, registra anche i <strong>sensori di prossimità, di inclinazione
+      (tilt), di gesto di risveglio (wake gesture) e di sollevamento (pick-up gesture)</strong>, o
+      gli equivalenti del produttore. Non servono a osservarti: sono usati unicamente come segnale
+      che il dispositivo è stato sollevato o mosso, così che il rilevamento dello scuotimento possa
+      essere riavviato dopo che Android lo ha sospeso. L’App non usa il sensore di prossimità per
+      stabilire dove si trovi il dispositivo o che cosa gli sia vicino.</p>
+      <p>Tutte queste letture sono elaborate <strong>in modo transitorio sul dispositivo</strong> al
       solo fine di decidere se attivare/disattivare la torcia; <strong>non vengono registrate,
-      memorizzate, profilate o trasmesse</strong>.</p>
+      memorizzate, profilate o trasmesse</strong>. Nessun campione, nessuna traccia e nessuna
+      intensità di alcuna di esse lascia il tuo dispositivo, in alcuna forma. Gli unici dati da esse
+      derivati che lasciano il tuo dispositivo sono i <strong>conteggi di scuotimenti e la serie
+      giornaliera</strong> elencati sopra, e soltanto attraverso il backup di Android descritto qui
+      sopra — verso il tuo Google Drive, mai verso di noi. Nulla di ciò che lascia il tuo
+      dispositivo potrebbe ricostruire i tuoi movimenti.</p>
       <p>Se attivi l’opzione per <strong>interrompere la torcia durante le telefonate</strong>,
       l’App richiede l’autorizzazione Android allo <strong>stato del telefono</strong>
       (<code>android.permission.READ_PHONE_STATE</code>) e osserva quindi <strong>se una chiamata
       sta squillando, è in corso o è terminata</strong> — e nient’altro. Non legge il tuo numero di
       telefono, il registro delle chiamate, i tuoi contatti né chi ti sta chiamando. Lo stato è
       letto <strong>in modo transitorio sul dispositivo</strong>, al solo fine di non lasciare una
-      torcia accesa durante una chiamata, e <strong>non viene mai registrato, memorizzato,
-      profilato o trasmesso</strong>.</p>
+      torcia accesa durante una chiamata, e <strong>non viene mai profilato né mai trasmesso a
+      noi</strong>.</p>
+      <p>Un dettaglio, anziché un’affermazione assoluta: per poter riportare la torcia com’era,
+      l’App memorizza sul dispositivo <strong>l’ora in cui è iniziata una pausa dovuta a una
+      chiamata</strong>. Tale marcatura temporale è conservata nelle stesse preferenze descritte
+      sopra ed è quindi inclusa nel backup di Android descritto sopra. Non registra <strong>nulla
+      della chiamata in sé</strong> — né numero, né direzione, né durata, né identità — e non ci
+      viene mai inviata.</p>
       <p>L’autorizzazione viene richiesta <strong>nel momento in cui attivi quell’opzione</strong>,
       non al momento dell’installazione, e la funzione è del tutto facoltativa: rifiutala, o lascia
       l’opzione disattivata, e il resto dell’App non ne risente. Puoi revocarla in qualsiasi momento
       in <em>Impostazioni → App → Shake to Enable Torch → Autorizzazioni</em>.</p>
+      <p>Affinché il rilevamento dello scuotimento continui a funzionare sui dispositivi il cui
+      produttore chiude le app in background, l’App registra un <strong>account locale del
+      dispositivo</strong> denominato <strong>“Shake to Torch (keep-alive)”</strong>, visibile
+      in <em>Impostazioni → Account</em> di Android. Non contiene <strong>alcuna credenziale e
+      alcun dato</strong>, <strong>non è collegato ad alcun account online</strong> e
+      <strong>attraverso di esso non viene mai sincronizzato nulla</strong>: lo scheduler di
+      sincronizzazione di Android è usato unicamente come promemoria periodico che dice all’App di
+      verificare se il proprio servizio torcia è ancora in esecuzione. Disinstallando l’App, viene
+      rimosso.</p>
       <h3>3(b) — Dati pubblicitari, raccolti e condivisi da Google (AdMob)</h3>
-      <p>L’App propone <strong>un solo</strong> annuncio facoltativo e con consenso (opt-in): un
-      <strong>annuncio video con premio (rewarded)</strong>. Compare in <strong>un unico
-      punto</strong>: quando tocchi per visualizzare i tuoi obiettivi, puoi <em>scegliere</em> di
-      guardare un breve video con premio. L’annuncio è <strong>opt-in</strong> (decidi tu se
-      guardarlo), <strong>mai riprodotto automaticamente</strong>, mostrato <strong>in nessun altro
-      punto</strong> dell’App e <strong>del tutto rifiutabile</strong> — puoi sempre dire di no e
-      continuare a usare l’App.</p>
-      <p>Per mostrare questo annuncio utilizziamo il <strong>Google Mobile Ads SDK (Google
+      <p>L’App mostra pubblicità fornita dal <strong>Google Mobile Ads SDK (Google AdMob)</strong>.
+      Il formato pubblicitario è <strong>uno soltanto: un video con premio (rewarded) che sei tu a
+      scegliere di guardare.</strong> Non ti viene mostrato nulla che tu non abbia chiesto.</p>
+
+      <h4>Annunci video con premio (rewarded) — opt-in, sei tu a scegliere di guardarli</h4>
+      <p>Un annuncio rewarded non parte mai da solo. Tocchi qualcosa, l’App ti avvisa che è
+      previsto un annuncio, e tu confermi — oppure rifiuti. I punti in cui ciò accade sono
+      <strong>al massimo tre</strong>, a seconda di quali parti facoltative dell’App siano attive
+      per il tuo dispositivo (vedi Sezione&nbsp;3(c)):</p>
+      <ul>
+        <li><strong>la galleria degli obiettivi</strong> — toccando per visualizzare i tuoi obiettivi può esserti prima proposto un breve video;</li>
+        <li><strong>il tema scuro</strong> — attivando il tema scuro può esserti prima proposto un breve video (disattivarlo è sempre gratuito);</li>
+        <li><strong>il “continua” del mini-gioco a blocchi</strong>, dove il mini-gioco è attivo — quando una partita finisce, può esserti proposto un breve video in cambio di una vita in più.</li>
+      </ul>
+      <p>Questi annunci <strong>non vengono mai riprodotti automaticamente</strong> e sono
+      <strong>sempre rifiutabili</strong>; rifiutandoli, l’App resta pienamente utilizzabile. Nei due
+      punti dell’app torcia, rifiutare significa semplicemente che in quel momento non apri quella
+      schermata o non modifichi quell’impostazione — e se hai acconsentito ma l’annuncio non può
+      essere mostrato, l’App ti concede comunque ciò che avevi chiesto anziché lasciarti
+      bloccato.</p>
+
+      <h4>Non esiste un secondo formato — nessuna pubblicità ti viene imposta</h4>
+      <p>Il video con premio descritto sopra è l’<strong>unico</strong> formato pubblicitario
+      presente nell’App. L’App non mostra <strong>alcun annuncio banner</strong>, <strong>alcun
+      interstitial a schermo intero</strong>, <strong>alcun annuncio all’apertura dell’app
+      (app-open)</strong> e <strong>alcun annuncio nativo</strong> — in nessuna schermata,
+      mini-gioco a blocchi compreso.</p>
+
+      <p>Ogni annuncio dell’App è quindi un annuncio che sei tu ad avviare: nulla parte da solo,
+      nulla occupa una parte dello schermo mentre usi l’App, e rifiutando ogni proposta l’App resta
+      pienamente utilizzabile.</p>
+
+      <div class="callout">
+        <p><strong>Che cosa NON significa “sei tu a scegliere di guardarlo”.</strong> Affinché un
+        annuncio sia pronto nel momento in cui lo chiedi, l’App chiede all’SDK di Google di
+        <strong>scaricarne uno in anticipo</strong>, in background, mentre è aperta una schermata che
+        può proportelo. Quel download <strong>è</strong> una richiesta di annuncio, ed è ciò che
+        invia i dati pubblicitari elencati di seguito. Avviene quindi indipendentemente dal fatto che
+        tu accetti la proposta, e anche se non ti viene mai mostrato alcun annuncio. Ciò che la tua
+        scelta controlla è se un annuncio ti venga mai <strong>mostrato</strong> e se tu riceva il
+        premio — non se un annuncio sia stato richiesto per te.</p>
+      </div>
+
+      <p><strong>Nessun annuncio viene richiesto e nessun identificativo pubblicitario viene
+      letto</strong> finché non si è conclusa la fase di consenso descritta nella Sezione&nbsp;7 e
+      non è stato letto l’interruttore pubblicitario remoto descritto nella Sezione&nbsp;3(c).</p>
+
+      <p>Per mostrare questi annunci utilizziamo il <strong>Google Mobile Ads SDK (Google
       AdMob)</strong>. Quando un annuncio viene richiesto e mostrato, Google e i suoi partner
       pubblicitari raccolgono e trattano le seguenti categorie di dati per le finalità di
       <strong>erogazione degli annunci, misurazione delle prestazioni pubblicitarie e prevenzione
@@ -571,12 +814,17 @@
       lasciato a supposizioni. Dà accesso a quell’identificativo e a nient’altro.</p>
 
       <h3>3(c) — Una richiesta a un file statico, per poter disattivare gli annunci senza un aggiornamento</h3>
-      <p>All’avvio, l’App scarica un unico piccolo file di testo da un indirizzo fisso:</p>
+      <p>L’App scarica un unico piccolo file di testo da un indirizzo fisso:</p>
       <div class="callout">
         <p><strong>https://matteomark.github.io/ads-flag.txt</strong></p>
       </div>
-      <p>Le righe di quel file indicano se la pubblicità è attiva. Esiste per poter disattivare gli
-      annunci senza pubblicare una nuova versione dell’App.</p>
+      <p>Lo fa <strong>al massimo una volta al giorno</strong>. L’App conserva una propria copia del
+      file e la riutilizza per un giorno prima di richiederne una nuova, per cui aprire l’App
+      ripetutamente non ripete la richiesta.</p>
+      <p>Le righe di quel file indicano se la pubblicità è attiva e quali parti facoltative
+      dell’App sono attive singolarmente — l’annuncio rewarded del tema scuro, il mini-gioco a
+      blocchi e la promozione della nostra altra app. Esiste per poter disattivare ciascuna di esse
+      senza pubblicare una nuova versione dell’App.</p>
       <p>Con questa richiesta l’App <strong>non invia nulla</strong>: nessun identificativo, nessun
       ID pubblicitario, nulla che riguardi te o il modo in cui usi l’App. Ma come per qualsiasi
       richiesta a qualsiasi server web, il server che risponde vede necessariamente
@@ -586,10 +834,14 @@
       file come semplice documento statico. Noi non gestiamo alcun server e non vediamo mai un log
       di queste richieste.</p>
 
-      <p>L’App <strong>non</strong> raccoglie né utilizza dati di geolocalizzazione, contatti, foto,
-      microfono, contenuti della fotocamera (la torcia usa l’hardware del flash, non le immagini
-      della fotocamera), informazioni di account o categorie particolari (dati sensibili) di dati
-      personali.</p>
+      <p>L’App <strong>non</strong> raccoglie né utilizza contatti, foto, microfono, contenuti della
+      fotocamera (la torcia usa l’hardware del flash, non le immagini della fotocamera),
+      informazioni di account o categorie particolari (dati sensibili) di dati personali. Non
+      raccoglie <strong>alcuna statistica di utilizzo o di analytics</strong>: l’App non contiene
+      alcun SDK di analytics, non invia alcun evento di utilizzo e non ha alcuna telemetria da
+      disattivare. Non utilizza <strong>alcuna API di geolocalizzazione e alcun GPS</strong>:
+      l’unica posizione coinvolta è la posizione approssimativa, a livello di Paese/regione, che
+      Google ricava da un indirizzo IP, per la pubblicità descritta nella Sezione&nbsp;3(b).</p>
 
       <h2 id="it-4">4. Perché trattiamo i dati e la base giuridica di ciascuna finalità (GDPR)</h2>
       <p>Ai sensi del GDPR UE, del GDPR del Regno Unito e del <em>Codice Privacy</em> italiano
@@ -601,25 +853,25 @@
           <tr>
             <td><strong>Fornire la funzione torcia di base</strong> (rilevare uno scuotimento e attivare/disattivare la torcia)</td>
             <td>Letture transitorie dell’accelerometro (solo on-device)</td>
-            <td><strong>Esecuzione del servizio richiesto</strong> e nostro <strong>legittimo interesse</strong> (art. 6, par. 1, lett. b)/f) GDPR) a far funzionare l’App. Nessun dato lascia il dispositivo.</td>
+            <td><strong>Esecuzione del servizio richiesto</strong> e nostro <strong>legittimo interesse</strong> (art. 6, par. 1, lett. b)/f) GDPR) a far funzionare l’App. Le letture in sé <strong>non lasciano mai il tuo dispositivo</strong> e non vengono mai memorizzate; gli unici dati da esse derivati che ne escono sono i conteggi di scuotimenti e la serie giornaliera, e soltanto tramite il backup di Android descritto nella Sezione&nbsp;3(a).</td>
           </tr>
           <tr>
-            <td><strong>Memorizzare impostazioni, conteggi, serie e obiettivi</strong></td>
+            <td><strong>Memorizzare impostazioni, conteggi, serie, obiettivi e progressi nel mini-gioco</strong></td>
             <td>Dati on-device in <code>SharedPreferences</code> (3(a))</td>
             <td><strong>Legittimo interesse</strong> (art. 6, par. 1, lett. f) GDPR) a fornire le funzionalità che utilizzi; il trattamento avviene solo sul tuo dispositivo e non è a noi accessibile.</td>
           </tr>
           <tr>
-            <td><strong>Erogare e misurare l’annuncio rewarded opt-in</strong> (inclusa la prevenzione di frodi/abusi)</td>
+            <td><strong>Erogare e misurare la pubblicità descritta nella Sezione&nbsp;3(b)</strong> — gli annunci rewarded opt-in, comprese le richieste effettuate in anticipo affinché un annuncio sia pronto quando lo chiedi (inclusa la prevenzione di frodi/abusi)</td>
             <td>Dati pubblicitari tramite Google (3(b))</td>
             <td>Nello <strong>SEE, nel Regno Unito e in Svizzera: il tuo consenso</strong> (art. 6, par. 1, lett. a) GDPR; nonché il consenso ePrivacy alla memorizzazione/lettura di identificativi sul tuo dispositivo), raccolto tramite il modulo Google UMP <strong>prima che venga richiesto qualsiasi annuncio</strong>. Al di fuori di tali aree, Google tratta questi dati sulla base delle proprie informative.</td>
           </tr>
           <tr>
             <td><strong>Interrompere la torcia durante una telefonata</strong>, se hai attivato tale opzione</td>
             <td>Se una chiamata sta squillando, è in corso o è terminata, letto in modo transitorio sul dispositivo (Sezione&nbsp;3(a))</td>
-            <td><strong>Il tuo consenso</strong> all’autorizzazione runtime di Android (art.&nbsp;6, par.&nbsp;1, lett.&nbsp;a) GDPR), prestato quando attivi l’opzione e revocabile nelle impostazioni delle autorizzazioni di Android. Nulla viene memorizzato o trasmesso.</td>
+            <td><strong>Il tuo consenso</strong> all’autorizzazione runtime di Android (art.&nbsp;6, par.&nbsp;1, lett.&nbsp;a) GDPR), prestato quando attivi l’opzione e revocabile nelle impostazioni delle autorizzazioni di Android. Nulla della chiamata ci viene trasmesso; l’unico dato memorizzato è l’ora in cui è iniziata una pausa dovuta a una chiamata (Sezione&nbsp;3(a)).</td>
           </tr>
           <tr>
-            <td><strong>Verificare se la pubblicità è attiva</strong></td>
+            <td><strong>Verificare se la pubblicità, e le altre parti facoltative dell’App, sono attive</strong></td>
             <td>L’indirizzo IP da cui proviene la richiesta, visto dal soggetto che ospita il file (Sezione&nbsp;3(c))</td>
             <td><strong>Legittimo interesse</strong> (art.&nbsp;6, par.&nbsp;1, lett.&nbsp;f) GDPR) a poter disattivare la pubblicità senza pubblicare una nuova versione. Non viene inviato alcun identificativo e noi non riceviamo nulla.</td>
           </tr>
@@ -627,7 +879,7 @@
       </table>
       <p>Ci basiamo sul <strong>legittimo interesse</strong> per le prime due finalità, che
       restano confinate al tuo dispositivo e non comportano alcuna trasmissione, condivisione,
-      vendita o profilazione, e per la verifica del kill-switch pubblicitario, che non trasmette
+      vendita o profilazione, e per la verifica del kill-switch di pubblicità e funzionalità, che non trasmette
       nulla che ti riguardi; puoi opporti (vedi Sezione&nbsp;9) ed esercitare il pieno controllo
       tramite i controlli di archiviazione delle app di Android e disinstallando. Per la pubblicità
       nello SEE/Regno Unito/Svizzera ci basiamo sul <strong>consenso</strong>, non sul legittimo
@@ -636,6 +888,13 @@
       qualsiasi momento (Sezione&nbsp;7), con la stessa facilità con cui lo hai concesso e senza
       pregiudicare la liceità del trattamento già effettuato. Lo Sviluppatore <strong>non riceve
       alcun dato pubblicitario</strong>.</p>
+      <p><strong>Ogni annuncio è avviato dall’utente</strong>, il che rafforza la base giuridica
+      sopra indicata anziché sostituirla. Ciò che rende lecito il trattamento nello SEE/Regno
+      Unito/Svizzera resta il <strong>consenso</strong>, ed esso viene raccolto <strong>prima</strong>
+      di qualsiasi richiesta di annuncio, poiché l’App scarica gli annunci in anticipo rispetto al
+      tuo tocco (Sezione&nbsp;3(b)). Ciò che è cambiato è che nessun annuncio viene mostrato a chi
+      non lo ha chiesto: l’App non si basa quindi su alcun “formato imposto” in alcun punto della
+      presente analisi.</p>
 
       <h2 id="it-5">5. Chi riceve i dati (terze parti / destinatari)</h2>
       <p>Poiché non gestiamo server, le parti che ricevono dati tramite l’App sono il nostro
@@ -643,7 +902,8 @@
       nella Sezione&nbsp;3(c):</p>
       <ul>
         <li><strong>Google</strong> — in particolare <strong>Google Ireland Limited</strong> (per gli utenti nello SEE/Regno Unito/Svizzera) e <strong>Google LLC</strong> (Stati Uniti), che gestiscono Google Mobile Ads / AdMob; e</li>
-        <li>i <strong>partner pubblicitari di Google</strong> (reti pubblicitarie di terzi, demand partner e fornitori di misurazione coinvolti nell’erogazione e nella misurazione dell’annuncio rewarded); e</li>
+        <li>i <strong>partner pubblicitari di Google</strong> (reti pubblicitarie di terzi, demand partner e fornitori di misurazione coinvolti nell’erogazione e nella misurazione degli annunci descritti nella Sezione&nbsp;3(b)); e</li>
+        <li><strong>Google</strong> ancora una volta, in un terzo ruolo del tutto diverso — quale gestore del <strong>backup automatico di Android / Google Drive</strong>, che detiene la copia di backup dei dati on-device descritti nella Sezione&nbsp;3(a) se hai attivato il backup del dispositivo. Tale copia è detenuta nel <strong>tuo</strong> account Google, non nel nostro, e noi non vi abbiamo accesso; e</li>
         <li><strong>GitHub,&nbsp;Inc.</strong> — unicamente in quanto soggetto che ospita l’unico file di testo statico descritto nella Sezione&nbsp;3(c). Riceve l’indirizzo IP da cui proviene la richiesta, e nient’altro. Informativa privacy di GitHub — <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement</a></li>
       </ul>
       <p>Riferimenti che descrivono come Google tratta questi dati e chi sono i suoi partner:</p>
@@ -652,19 +912,27 @@
         <li>Come Google utilizza le informazioni provenienti da siti/app che usano i suoi servizi — <a href="https://policies.google.com/technologies/partner-sites">https://policies.google.com/technologies/partner-sites</a></li>
         <li>Tecnologie pubblicitarie / partner di Google — <a href="https://policies.google.com/technologies/ads">https://policies.google.com/technologies/ads</a> ed elenco partner AdMob <a href="https://support.google.com/admob/answer/9012903">https://support.google.com/admob/answer/9012903</a></li>
       </ul>
-      <p>Non condividiamo con alcuno i dati on-device della Sezione&nbsp;3(a), poiché non lasciano
-      mai il tuo dispositivo e non li riceviamo mai.</p>
+      <p>Non condividiamo con alcuno i dati on-device della Sezione&nbsp;3(a) e non li riceviamo
+      mai. L’unica via per cui lasciano il tuo dispositivo è il backup di Android sul
+      <strong>tuo</strong> Google Drive, descritto nella Sezione&nbsp;3(a): una copia detenuta sotto
+      il tuo account, che noi non possiamo raggiungere.</p>
 
       <h2 id="it-6">6. Trasferimenti internazionali di dati</h2>
-      <p>I dati on-device della Sezione&nbsp;3(a) <strong>non vengono trasferiti da nessuna
-      parte</strong>: restano sul tuo dispositivo.</p>
+      <p>I dati on-device della Sezione&nbsp;3(a) <strong>non vengono trasferiti in alcun luogo
+      dall’App</strong>: restano sul tuo dispositivo. Se hai attivato il backup del dispositivo di
+      Android, Android ne effettua una copia sul <strong>tuo Google Drive</strong>
+      (Sezione&nbsp;3(a)), dove è conservata sull’infrastruttura di Google e può quindi trovarsi al
+      di fuori del tuo Paese. Si tratta di un trasferimento effettuato dalla piattaforma Android
+      verso il tuo account Google, alle condizioni di Google e sotto il tuo controllo: lo
+      Sviluppatore non ne è parte e da esso non riceve nulla.</p>
       <p>Il file statico descritto nella Sezione&nbsp;3(c) è servito da
       <strong>GitHub,&nbsp;Inc.</strong>, società con sede negli <strong>Stati Uniti</strong>: di
       conseguenza l’indirizzo IP da cui proviene la richiesta viene ricevuto lì.</p>
       <p>I dati pubblicitari della Sezione&nbsp;3(b) sono gestiti dall’infrastruttura globale di
       Google e <strong>possono essere trasferiti e trattati in Paesi al di fuori dell’UE/SEE, del
-      Regno Unito e della Svizzera, inclusi gli Stati Uniti.</strong> Ove tali trasferimenti
-      avvengano, sono protetti dalle garanzie su cui Google fa affidamento, che comprendono:</p>
+      Regno Unito e della Svizzera, inclusi gli Stati Uniti.</strong></p>
+      <p>Ove tali trasferimenti avvengano, sono protetti dalle garanzie su cui Google fa
+      affidamento, che comprendono:</p>
       <ul>
         <li>la <strong>decisione di adeguatezza della Commissione europea</strong> per gli Stati Uniti e la certificazione di Google nell’ambito del <strong>Data Privacy Framework UE–USA</strong> (e dell’estensione per il Regno Unito e del quadro Svizzera–USA), ove applicabile; e/o</li>
         <li>le <strong>Clausole Contrattuali Standard (SCC)</strong> approvate dalla Commissione europea (e l’International Data Transfer Addendum del Regno Unito) ai sensi dell’art.&nbsp;46 GDPR, con misure supplementari ove necessarie.</li>
@@ -684,8 +952,13 @@
       personalizzata. <strong>Nessun annuncio viene richiesto e nessun identificativo pubblicitario
       viene letto finché non hai effettuato la tua scelta.</strong></p>
       <p>Puoi <strong>modificare o revocare la tua scelta in qualsiasi momento</strong>,
-      dall’interno dell’App, tramite l’opzione <strong>“Impostazioni annunci e privacy”</strong>.
-      Revocare il consenso è facile quanto concederlo.</p>
+      dall’interno dell’App, tramite l’opzione <strong>“Annunci e privacy”</strong> —
+      la voce di impostazioni privacy già presente nell’App, che riapre esattamente lo stesso
+      modulo. Revocare il consenso è facile quanto concederlo.</p>
+      <h3>Al di fuori dello SEE, del Regno Unito e della Svizzera</h3>
+      <p>Dove non viene mostrato alcun modulo di consenso, la pubblicità è disciplinata dalle
+      informative di Google e dai controlli dell’ID pubblicità di Android indicati di seguito. Anche
+      lì l’App non ti mostra alcun annuncio che tu non abbia chiesto.</p>
       <h3>Ovunque — gestire l’ID pubblicità a livello di Android</h3>
       <p>Indipendentemente dai controlli in-app, puoi gestire l’identificativo pubblicitario sul
       tuo dispositivo tramite <em>Impostazioni → Privacy → Annunci</em> (il percorso esatto varia
@@ -697,7 +970,7 @@
 
       <h2 id="it-8">8. Conservazione dei dati — per quanto tempo sono conservati</h2>
       <ul>
-        <li><strong>Dati on-device (3(a)):</strong> conservati sul tuo dispositivo finché non li elimini, cancellando l’archiviazione/i dati dell’App o disinstallando l’App. Non li riceviamo mai, non ne deteniamo copia e non applichiamo ad essi alcuna conservazione lato server.</li>
+        <li><strong>Dati on-device (3(a)):</strong> conservati sul tuo dispositivo finché non li elimini, cancellando l’archiviazione/i dati dell’App o disinstallando l’App. Non li riceviamo mai, non ne deteniamo copia e non applichiamo ad essi alcuna conservazione lato server. Ove il backup di Android ne abbia effettuato una copia sul tuo Google Drive (Sezione&nbsp;3(a)), tale copia è conservata da <strong>Google</strong> sotto il <strong>tuo</strong> account e secondo le relative regole di conservazione, e la elimini tu in <em>Impostazioni → Google → Backup</em>.</li>
         <li><strong>Dati pubblicitari (3(b)):</strong> conservati da <strong>Google</strong> secondo le <strong>proprie politiche di conservazione</strong>, non da noi. Noi non ne conserviamo alcuno. Vedi l’informativa privacy di Google (<a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a>) e usa i controlli dell’ID pubblicità di Android (Sezione&nbsp;7) per reimpostare o eliminare l’identificativo.</li>
       </ul>
 
@@ -707,7 +980,8 @@
       <strong>accesso</strong>, <strong>rettifica</strong>, <strong>cancellazione</strong>,
       <strong>limitazione</strong>, <strong>opposizione</strong> al trattamento basato sul legittimo
       interesse, <strong>portabilità</strong>, di <strong>revocare il consenso</strong> in qualsiasi
-      momento (per la pubblicità — Sezione&nbsp;7) e di <strong>proporre reclamo</strong> a
+      momento (per la pubblicità — Sezione&nbsp;7) e di
+      <strong>proporre reclamo</strong> a
       un’autorità di controllo. In Italia è il <strong>Garante per la protezione dei dati
       personali</strong> (<a href="https://www.garante.it">www.garante.it</a>); puoi inoltre
       rivolgerti all’autorità del tuo Paese di residenza o di lavoro. Nel Regno Unito è
@@ -735,7 +1009,7 @@
       seconda delle tue impostazioni e della tua area, l’uso di identificativi pubblicitari per la
       pubblicità personalizzata può essere una “vendita” o “condivisione” ai sensi della legge
       californiana. Esercita l’opt-out <strong>rifiutando il consenso / modificando la tua
-      scelta</strong> nelle <strong>“Impostazioni annunci e privacy”</strong> in-app e tramite i
+      scelta</strong> nelle <strong>“Annunci e privacy”</strong> in-app e tramite i
       controlli dell’<strong>ID pubblicità di Android</strong> (Sezione&nbsp;7). Puoi anche
       contattarci a <a href="mailto:luxebytecomp@gmail.com">luxebytecomp@gmail.com</a>. Poiché non
       gestiamo server e non riceviamo alcuno di questi dati, l’opt-out e la cancellazione per i dati
@@ -745,12 +1019,31 @@
       <p>L’App è un’utilità per il <strong>pubblico generale</strong>. Su Google Play è dichiarata
       come <strong>non destinata né principalmente attraente per i minori</strong> e
       <strong>non</strong> fa parte del programma “Designed for Families” / Teacher Approved di
-      Google Play. L’App è destinata a utenti di <strong>età pari o superiore a 13 anni</strong>.</p>
-      <p>Non raccogliamo <strong>consapevolmente dati personali da minori di 13 anni</strong> (o al
-      di sotto dell’età più elevata per il consenso digitale eventualmente applicabile nel tuo Paese
-      — ad esempio sotto i 16 anni in alcuni Stati membri dell’UE; l’Italia fissa tale età a
-      <strong>14 anni</strong>). L’App non contiene funzionalità destinate ai minori e propone
-      soltanto l’unico annuncio rewarded opt-in sopra descritto.</p>
+      Google Play. Il suo <strong>pubblico di destinazione dichiarato su Google Play è costituito da
+      utenti di età pari o superiore a 16 anni.</strong></p>
+      <p>Quel numero è scelto per una ragione precisa. Ai sensi dell’art.&nbsp;8 GDPR ciascuno Stato
+      membro dell’UE fissa la propria età per il consenso digitale, tra i 13 e i 16 anni (l’Italia
+      la fissa a <strong>14 anni</strong>; alcuni Stati membri la fissano a <strong>16
+      anni</strong>). <strong>16 è la soglia più elevata fissata da qualsiasi Stato membro</strong>:
+      di conseguenza ogni utente compreso nel pubblico dichiarato dell’App ha un’età pari o
+      superiore a quella in cui può prestare da sé il consenso nel proprio Paese — compreso il
+      consenso pubblicitario richiesto nella Sezione&nbsp;7.</p>
+      <p>Questa è un’affermazione su <strong>a chi l’App è dichiaratamente destinata</strong>, non
+      la pretesa che nessuno più giovane la installi mai. Non possiamo verificare l’età di nessuno e
+      non tentiamo di farlo. Ciò che facciamo è: non raccogliamo <strong>consapevolmente dati
+      personali dai minori</strong>, non chiediamo età, nome, indirizzo e-mail, contatti o account,
+      e non raccogliamo nulla che identifichi una persona per noi — non gestiamo server e non
+      riceviamo alcuno dei dati descritti nella Sezione&nbsp;3(b).</p>
+      <p>L’App non contiene funzionalità destinate ai minori. Contiene però un <strong>mini-gioco
+      rompicapo a blocchi</strong>, proposto come normale funzionalità dell’App per il pubblico
+      generale e non come contenuto per minori. <strong>Al suo interno, come in ogni altra parte
+      dell’App, non viene imposta alcuna pubblicità.</strong> Non vi è alcun banner, alcun
+      interstitial a schermo intero e alcun annuncio all’apertura dell’app; l’unico annuncio che il
+      mini-gioco può mostrare è il video rewarded che il giocatore chiede in cambio di una vita in
+      più, e gli unici annunci altrove sono i due video rewarded descritti nella
+      Sezione&nbsp;3(b). Ogni annuncio richiesto dall’App è richiesto con una
+      <strong>classificazione massima dei contenuti “PG” (parental guidance)</strong>, quindi non
+      vengono richiesti creativi classificati per un pubblico adolescente o adulto.</p>
       <p>Se ritieni che un minore abbia usato l’App e che siano stati raccolti dati pubblicitari
       senza un consenso adeguato, contattaci a
       <a href="mailto:luxebytecomp@gmail.com">luxebytecomp@gmail.com</a>. Poiché tali dati sono
