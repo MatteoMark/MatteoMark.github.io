@@ -2,4 +2,3 @@ ads=true
 ads.dark_theme=true
 ads.tiltblocks=true
 torch.minigame=true
-ads.minigame_banner=true
