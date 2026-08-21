@@ -106,16 +106,15 @@
       included; and corrects the stated minimum age from 13 to <strong>16</strong>, matching the
       App’s Google Play declaration.
       <span lang="it">/ Che cosa è cambiato rispetto alla versione che hai visto finora. L’ultima
-      versione pubblicata è stata la 2.1 del 30&nbsp;luglio&nbsp;2026: le modifiche seguenti sono
+      versione pubblicata è stata la 2.5 del 20&nbsp;agosto&nbsp;2026: le modifiche seguenti sono
       descritte rispetto a quella. Le versioni dalla 2.2 alla 2.4 sono state redatte ma mai
-      pubblicate; la versione 2.5 è stata pubblicata il 20&nbsp;agosto&nbsp;2026 ed è quella che la
-      presente sostituisce; la presente versione ne raccoglie tutte le correzioni e aggiunge una cosa che
+      pubblicate; la presente versione ne raccoglie tutte le correzioni e aggiunge una cosa che
       nessuna di esse aveva. La presente versione aggiunge la <strong>Sezione&nbsp;3(d)</strong>, che
       descrive le statistiche di utilizzo e affidabilità che l’App può inviare tramite <strong>Google
       Analytics per Firebase</strong> — ogni campo, ciò che non viene deliberatamente raccolto e i modi
-      per disattivarle, statistiche <strong>attive a partire dal prossimo aggiornamento dell’App</strong> al di fuori
-      dello SEE, del Regno Unito e della Svizzera e <strong>non vengono raccolte affatto</strong> al
-      loro interno; dichiara il
+      per disattivarle, statistiche <strong>attive a partire dal prossimo aggiornamento
+      dell’App</strong> al di fuori dello SEE, del Regno Unito e della Svizzera e <strong>non
+      vengono raccolte affatto</strong> al loro interno; dichiara il
       <strong>backup automatico (Auto
       Backup) di Android</strong>, che copia i dati on-device della Sezione&nbsp;3(a) sul tuo Google
       Drive e di cui nessuna versione precedente faceva menzione; afferma esplicitamente che gli
@@ -405,24 +404,31 @@
       set, not an anonymised set — nothing. The consent form described in Section&nbsp;7 is presented
       by a Google component that, in the version this release ships, carries no analytics purpose at
       all, so the App can never receive consent for this purpose in those regions and treats it as
-      never given. This is a property of the App as built, not a setting. Should it ever change, that
-      form becomes the control, this Section will say so, and this policy will be updated
-      <strong>before</strong> any collection begins there.</p>
+      never given. That much is a property of the App as built. It rests on one thing that is not:
+      whether a consent form is required for you at all is decided by <strong>Google’s consent
+      system</strong>, from the consent message we publish for those regions — the same mechanism
+      that already decides whether the advertising described in Section&nbsp;3(b) is personalised
+      there. The App does not work out your location itself, and does not try to. Should either of
+      those change, that form becomes the control, this Section will say so, and this policy will be
+      updated <strong>before</strong> any collection begins there.</p>
       <p><strong>Everywhere else, these statistics become active with the next App update.</strong>
       The App version published today sends nothing at all, in any region, because it is not built
       with the credentials described below. This Section is published ahead of that update so that
       it is disclosed before any collection begins, and nothing here describes anything the App on
       your phone right now is doing. From that update onwards, the following applies. The App
-      carries the Google Analytics for Firebase SDK and this version is built <strong>with</strong>
+      carries the Google Analytics for Firebase SDK and that update is built <strong>with</strong>
       the Google project credentials it needs, so what is described below is a collection and not
       merely a capability. It is <strong>on unless you turn it off</strong>: the in-app
       <strong>“share usage statistics”</strong> switch starts in the on position and turning it off
-      stops the collection immediately and completely. Section&nbsp;4 sets out the legal basis, which
-      outside those regions is our legitimate interest in diagnosing a fault we otherwise cannot see,
-      with that opt-out always available.</p>
-      <p>An earlier draft of this Section said that nothing was being sent from any device. That was
-      true of the version it described and is <strong>not</strong> true of this one, which is why
-      this Section now leads with where the line falls.</p>
+      stops the collection immediately and completely, and also
+      <strong>discards the identifier</strong> described further down, so that switching it back on
+      later starts a new one rather than resuming the old. Section&nbsp;4 sets out the legal basis,
+      which outside those regions is our legitimate interest in diagnosing a fault we otherwise
+      cannot see, with that opt-out always available.</p>
+      <p>An earlier draft of this Section said that nothing was being sent from any device and that
+      nothing could be. The first half is still true of the App you have today. The second stops
+      being true with the update described above, which is why this Section now leads with where the
+      line falls, and from when.</p>
 
       <h4>What is collected, where it is active — every field, in plain words</h4>
       <p><strong>Reliability of the background service</strong></p>
@@ -462,14 +468,14 @@
       </ul>
       <p><strong>Collected automatically by Google</strong></p>
       <ul>
-        <li>Google’s own SDK also records <strong>app opens, app updates, operating-system updates and a rough measure of session length</strong>, and derives an <strong>approximate location (country/region level) from the IP address</strong> the data is received from.</li>
+        <li>Google’s own SDK also records <strong>app opens, app updates, operating-system updates and a rough measure of session length</strong>, and derives an <strong>approximate location (country/region level) from the IP address</strong> the data is received from. It may also record <strong>that an advert was shown</strong>. These are the SDK’s own events, not ours: we do not choose their contents, and the fixed lists described above do not govern them. Two of them we do switch off — no advertising identifier is collected for this purpose, and no screen-view tracking is enabled.</li>
       </ul>
 
       <h4>What is deliberately NOT collected</h4>
       <p>This list is the point of the design, not a footnote:</p>
       <ul>
         <li><strong>No raw accelerometer readings, traces or magnitudes ever leave your device.</strong> Only the coarse band comparisons described above do.</li>
-        <li><strong>No advertising ID is used for this purpose.</strong> The App instructs the SDK not to collect it. The only identifier here is the <strong>random, app-scoped, resettable identifier</strong> that Google’s SDK generates for the installation.</li>
+        <li><strong>No advertising ID is used for this purpose.</strong> The App instructs the SDK not to collect it. The only identifier here is the <strong>random, app-scoped, resettable identifier</strong> that Google’s SDK generates for the installation. It is reset when you turn the <strong>“share usage statistics”</strong> switch off, so a switch turned off and later turned back on starts a new identifier rather than resuming the old one.</li>
         <li><strong>No free text of any kind</strong> — nothing you type, no strings composed by your device, no error messages, and no manufacturer-supplied text. Android’s own written description of why a process died is mapped to a <strong>fixed short list of values</strong> before anything is sent, and so is the manufacturer’s own name for a motion sensor. Every value listed above comes from a fixed list the App defines in advance.</li>
         <li><strong>No mini-game scores.</strong> They stay on your device (Section&nbsp;3(a)).</li>
         <li><strong>No information from the phone-state / call-state check.</strong> That feature stays entirely on your device (Section&nbsp;3(a)).</li>
@@ -653,7 +659,7 @@
       <ul>
         <li><strong>On-device data (3(a)):</strong> kept on your device until you delete it by clearing the App’s storage/data or uninstalling. We never receive it, hold no copy, and apply no server-side retention to it. Where Android’s backup has copied it to your Google Drive (Section&nbsp;3(a)), that copy is retained by <strong>Google</strong> under <strong>your</strong> account and its retention rules, and you delete it in <em>Settings → Google → Backup</em>.</li>
         <li><strong>Advertising data (3(b)):</strong> retained by <strong>Google</strong> per <strong>Google’s own data-retention policies</strong>, not by us. We store none of it. See the Google Privacy Policy (<a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a>) and use the Android Advertising ID controls (Section&nbsp;7) to reset or delete the identifier.</li>
-        <li><strong>Usage and reliability statistics (3(d)):</strong> held by <strong>Google</strong> in Google Analytics for Firebase. Google offers a choice of event-level retention periods, and we have set ours to <strong>the shortest one available: 2 months</strong>. That is a setting in the Google Analytics console, applied to the whole property, so it applies to every event described in Section&nbsp;3(d). After that period the event-level records are deleted by Google; aggregated reporting totals that cannot be traced back to an installation may persist longer under Google’s own policies. We store none of it ourselves, because we operate no servers.</li>
+        <li><strong>Usage and reliability statistics (3(d)):</strong> held by <strong>Google</strong> in Google Analytics for Firebase. Google offers a choice of event-level retention periods, and ours is <strong>2 months</strong> — the shortest Google offers, and the value a new property carries by default. It is a setting in the Google Analytics console, applied to the whole property, so it applies to every event described in Section&nbsp;3(d), and if we ever lengthen it this policy will say so before we do. After that period the event-level records are deleted by Google; aggregated reporting totals that cannot be traced back to an installation may persist longer under Google’s own policies. We store none of it ourselves, because we operate no servers.</li>
       </ul>
 
       <h2 id="en-9">9. Your privacy rights</h2>
@@ -1054,9 +1060,13 @@
       insieme ridotto, non un insieme anonimizzato: nulla. Il modulo di consenso descritto nella
       Sezione&nbsp;7 è presentato da un componente Google che, nella versione distribuita con questa
       release, non include alcuna finalità analitica: l’App non può quindi ricevere il consenso per
-      questa finalità in tali aree e lo considera come mai prestato. È una proprietà dell’App così
-      come è compilata, non un’impostazione. Se ciò dovesse mai cambiare, quel modulo diventerà il
-      controllo, questa Sezione lo dirà e la presente informativa verrà aggiornata
+      questa finalità in tali aree e lo considera come mai prestato. Questo è una proprietà dell’App
+      così come è compilata. Poggia però su una cosa che non lo è: se per te sia richiesto un modulo
+      di consenso lo decide il <strong>sistema di consenso di Google</strong>, in base al messaggio
+      di consenso che pubblichiamo per tali aree — lo stesso meccanismo che già decide se la
+      pubblicità descritta nella Sezione&nbsp;3(b) sia personalizzata. L’App non determina da sé la
+      tua posizione e non tenta di farlo. Se una delle due cose dovesse cambiare, quel modulo
+      diventerà il controllo, questa Sezione lo dirà e la presente informativa verrà aggiornata
       <strong>prima</strong> che qualsiasi raccolta abbia inizio.</p>
       <p><strong>Ovunque altrove, queste statistiche diventano attive con il prossimo aggiornamento
       dell’App.</strong> La versione dell’App pubblicata oggi non invia nulla, in nessuna regione,
@@ -1064,17 +1074,19 @@
       pubblicata in anticipo rispetto a quell’aggiornamento, affinché la divulgazione preceda
       qualsiasi raccolta: nulla di quanto qui descritto corrisponde a ciò che l’App sul tuo telefono
       sta facendo in questo momento. A partire da quell’aggiornamento vale quanto segue. L’App
-      contiene l’SDK di Google Analytics per Firebase e questa versione è compilata
+      contiene l’SDK di Google Analytics per Firebase e quell’aggiornamento è compilato
       <strong>con</strong> le credenziali del progetto Google necessarie: quanto descritto di seguito
       è quindi una raccolta e non soltanto una capacità. È <strong>attiva salvo tua
       disattivazione</strong>: l’interruttore in-app <strong>“Condividi statistiche d’uso”</strong>
-      parte in posizione attiva e disattivarlo ferma la raccolta immediatamente e del tutto. La
-      Sezione&nbsp;4 indica la base giuridica, che al di fuori di tali aree è il nostro legittimo
-      interesse a diagnosticare un guasto che altrimenti non possiamo vedere, con quell’opt-out
-      sempre disponibile.</p>
+      parte in posizione attiva e disattivarlo ferma la raccolta immediatamente e del tutto, e
+      <strong>cancella anche l’identificativo</strong> descritto più avanti, così che riattivandolo
+      in seguito ne inizi uno nuovo invece di riprendere il precedente. La Sezione&nbsp;4 indica la
+      base giuridica, che al di fuori di tali aree è il nostro legittimo interesse a diagnosticare un
+      guasto che altrimenti non possiamo vedere, con quell’opt-out sempre disponibile.</p>
       <p>Una precedente bozza di questa Sezione diceva che non veniva inviato nulla da alcun
-      dispositivo. Era vero per la versione che descriveva e <strong>non</strong> lo è per questa:
-      per questo la Sezione ora si apre indicando dove passa la linea.</p>
+      dispositivo e che nulla poteva esserlo. La prima metà è ancora vera per l’App che hai oggi. La
+      seconda smette di esserlo con l’aggiornamento descritto sopra: per questo la Sezione ora si
+      apre indicando dove passa la linea, e da quando.</p>
 
       <h4>Che cosa viene raccolto, dove è attivo — ogni campo, in parole semplici</h4>
       <p><strong>Affidabilità del servizio in background</strong></p>
@@ -1115,14 +1127,14 @@
       </ul>
       <p><strong>Raccolti automaticamente da Google</strong></p>
       <ul>
-        <li>L’SDK di Google registra inoltre <strong>le aperture dell’app, gli aggiornamenti dell’app, gli aggiornamenti del sistema operativo e una misura approssimativa della durata della sessione</strong>, e ricava una <strong>posizione approssimativa (a livello di Paese/regione) dall’indirizzo IP</strong> da cui i dati vengono ricevuti.</li>
+        <li>L’SDK di Google registra inoltre <strong>le aperture dell’app, gli aggiornamenti dell’app, gli aggiornamenti del sistema operativo e una misura approssimativa della durata della sessione</strong>, e ricava una <strong>posizione approssimativa (a livello di Paese/regione) dall’indirizzo IP</strong> da cui i dati vengono ricevuti. Può inoltre registrare <strong>che è stato mostrato un annuncio</strong>. Sono eventi propri dell’SDK, non nostri: non ne scegliamo il contenuto e gli elenchi fissi descritti sopra non li governano. Due cose le disattiviamo noi: nessun identificativo pubblicitario viene raccolto per questa finalità e nessun tracciamento delle schermate è attivo.</li>
       </ul>
 
       <h4>Che cosa NON viene deliberatamente raccolto</h4>
       <p>Questo elenco è il senso stesso del progetto, non una nota a piè di pagina:</p>
       <ul>
         <li><strong>Nessuna lettura grezza dell’accelerometro, nessuna traccia e nessuna intensità lascia mai il tuo dispositivo.</strong> Lo fanno soltanto i confronti a fasce approssimative descritti sopra.</li>
-        <li><strong>Nessun ID pubblicitario viene utilizzato per questa finalità.</strong> L’App istruisce l’SDK a non raccoglierlo. L’unico identificativo qui presente è l’<strong>identificativo casuale, riferito alla sola App e reimpostabile</strong> che l’SDK di Google genera per l’installazione.</li>
+        <li><strong>Nessun ID pubblicitario viene utilizzato per questa finalità.</strong> L’App istruisce l’SDK a non raccoglierlo. L’unico identificativo qui presente è l’<strong>identificativo casuale, riferito alla sola App e reimpostabile</strong> che l’SDK di Google genera per l’installazione. Viene reimpostato quando disattivi l’interruttore <strong>“Condividi statistiche d’uso”</strong>: se in seguito lo riattivi, ne inizia uno nuovo invece di riprendere il precedente.</li>
         <li><strong>Nessun testo libero di alcun tipo</strong> — nulla che tu scriva, nessuna stringa composta dal tuo dispositivo, nessun messaggio di errore e nessun testo fornito dal produttore. La descrizione testuale che Android stesso fornisce sul perché un processo è terminato viene mappata su un <strong>elenco fisso e breve di valori</strong> prima di qualsiasi invio, e lo stesso vale per il nome che il produttore dà a un sensore di movimento. Ogni valore elencato sopra proviene da un elenco fisso definito in anticipo dall’App.</li>
         <li><strong>Nessun punteggio del mini-gioco.</strong> Resta sul tuo dispositivo (Sezione&nbsp;3(a)).</li>
         <li><strong>Nessuna informazione proveniente dal controllo sullo stato del telefono / delle chiamate.</strong> Quella funzione resta interamente sul tuo dispositivo (Sezione&nbsp;3(a)).</li>
@@ -1317,7 +1329,7 @@
       <ul>
         <li><strong>Dati on-device (3(a)):</strong> conservati sul tuo dispositivo finché non li elimini, cancellando l’archiviazione/i dati dell’App o disinstallando l’App. Non li riceviamo mai, non ne deteniamo copia e non applichiamo ad essi alcuna conservazione lato server. Ove il backup di Android ne abbia effettuato una copia sul tuo Google Drive (Sezione&nbsp;3(a)), tale copia è conservata da <strong>Google</strong> sotto il <strong>tuo</strong> account e secondo le relative regole di conservazione, e la elimini tu in <em>Impostazioni → Google → Backup</em>.</li>
         <li><strong>Dati pubblicitari (3(b)):</strong> conservati da <strong>Google</strong> secondo le <strong>proprie politiche di conservazione</strong>, non da noi. Noi non ne conserviamo alcuno. Vedi l’informativa privacy di Google (<a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a>) e usa i controlli dell’ID pubblicità di Android (Sezione&nbsp;7) per reimpostare o eliminare l’identificativo.</li>
-        <li><strong>Statistiche di utilizzo e affidabilità (3(d)):</strong> detenute da <strong>Google</strong> in Google Analytics per Firebase. Google offre una scelta fra diversi periodi di conservazione a livello di singolo evento, e noi abbiamo impostato <strong>il più breve disponibile: 2 mesi</strong>. È un’impostazione della console di Google Analytics, applicata all’intera proprietà, e vale quindi per ogni evento descritto nella Sezione&nbsp;3(d). Trascorso tale periodo i record a livello di evento vengono eliminati da Google; i totali aggregati dei report, non riconducibili a una singola installazione, possono persistere più a lungo secondo le politiche di Google. Noi non ne conserviamo nulla, poiché non gestiamo server.</li>
+        <li><strong>Statistiche di utilizzo e affidabilità (3(d)):</strong> detenute da <strong>Google</strong> in Google Analytics per Firebase. Google offre una scelta fra diversi periodi di conservazione a livello di singolo evento, e il nostro è di <strong>2 mesi</strong>: il più breve che Google offra, nonché il valore predefinito di una nuova proprietà. È un’impostazione della console di Google Analytics, applicata all’intera proprietà, e vale quindi per ogni evento descritto nella Sezione&nbsp;3(d); se mai dovessimo allungarlo, la presente informativa lo dirà prima che accada. Trascorso tale periodo i record a livello di evento vengono eliminati da Google; i totali aggregati dei report, non riconducibili a una singola installazione, possono persistere più a lungo secondo le politiche di Google. Noi non ne conserviamo nulla, poiché non gestiamo server.</li>
       </ul>
 
       <h2 id="it-9">9. I tuoi diritti in materia di privacy</h2>
