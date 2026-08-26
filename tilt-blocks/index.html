@@ -48,6 +48,7 @@
       padding-top: .4rem; border-top: 1px solid var(--hairline);
     }
     h3 { font-size: 1.08rem; margin: 1.6rem 0 .4rem; }
+    h4 { font-size: 1rem; margin: 1.3rem 0 .35rem; }
     p, li { color: var(--ink); }
     a { color: var(--accent); }
     a:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
@@ -79,11 +80,33 @@
       <h1>Privacy Policy</h1>
       <p class="meta">Tilt Blocks — Android (<code>com.luxebyte.tiltblocks</code>)</p>
       <p class="meta">Publisher: <strong>Matteo Lamarque</strong>, trading as <strong>Luxebyte Labs</strong> · <a href="mailto:luxebytecomp@gmail.com">luxebytecomp@gmail.com</a></p>
-      <p class="meta">Effective: <time datetime="2026-07-30">30 July 2026</time> · Last updated: <time datetime="2026-07-30">30 July 2026</time> · Version 1.0 (first version; covers in-app advertising from launch)</p>
+      <p class="meta">Effective: <time datetime="2026-07-30">30 July 2026</time> · Last updated: <time datetime="2026-08-26">26 August 2026</time> · Version 1.1 (adds the usage statistics sent through Google Analytics for Firebase)</p>
     </header>
 
     <main id="main">
     <section id="en" lang="en" aria-label="Privacy Policy (English)">
+
+      <div class="callout">
+        <p><strong>What changed in version 1.1</strong>, published on
+        <time datetime="2026-08-26">26 August 2026</time>. This version:</p>
+        <ul>
+          <li>adds <strong>Section 3(d)</strong>, which describes the usage statistics the App can
+          send through <strong>Google Analytics for Firebase</strong> — every fact, in plain words,
+          with the list of what is deliberately not collected and how to switch it off. These
+          statistics are <strong>active from version 0.9.0 of the App onwards</strong> outside the
+          EEA, the UK and Switzerland, and are <strong>not collected at all</strong> inside them;
+          Section 3(d) says exactly which is which;</li>
+          <li>moves the former Section 3(d), “What the App does NOT do”, to <strong>Section
+          3(e)</strong> and removes from it the sentence that the App contains no analytics SDK,
+          which stops being true with version 0.9.0;</li>
+          <li>adds the corresponding row to the legal-basis table in Section 4, names Google’s
+          separate role in Section 5, records the transfer in Section 6, and states the retention
+          period in Section 8;</li>
+          <li>records in Sections 3(c) and 7 that the Google consent check now runs at every start,
+          even when advertising is switched off remotely, and that it shows no message outside the
+          regions where one is required.</li>
+        </ul>
+      </div>
 
       <nav class="toc" aria-label="Contents">
         <strong>Contents</strong>
@@ -150,10 +173,11 @@
       using the App and uninstall it.</p>
 
       <h2 id="en-3">3. What data is processed</h2>
-      <p>The App processes three clearly separate categories of data. We keep them separate on
+      <p>The App processes four clearly separate categories of data. We keep them separate on
       purpose, because they behave very differently: one never leaves your device, one is collected
-      by Google and never reaches us, and one is a single request that carries nothing about you but
-      cannot help revealing where it came from.</p>
+      by Google and never reaches us, one is a single request that carries nothing about you but
+      cannot help revealing where it came from, and one is a small, fixed set of usage statistics
+      that you can switch off.</p>
 
       <h3>3(a). Data kept ONLY on your device — never transmitted to us or anyone</h3>
       <p>To make the App work, the App stores a small amount of information <strong>locally on your
@@ -184,7 +208,8 @@
       <ul>
         <li><strong>Vibration</strong>, to make blocks feel like objects in your hand;</li>
         <li><strong>Internet access</strong>, used by the advertising and consent components
-        described in 3(b), by the single request described in 3(c), and by nothing else;</li>
+        described in 3(b), by the single request described in 3(c), by the usage statistics
+        described in 3(d), and by nothing else;</li>
         <li><strong>Advertising ID</strong> (<code>com.google.android.gms.permission.AD_ID</code>),
         which is what allows Google to read the resettable advertising identifier described in 3(b).
         It is declared explicitly rather than inherited silently, so that what the App can reach is
@@ -248,12 +273,137 @@
       server, and we never see a log of these requests.</p>
       <p>A successful response is stored on your device for 24 hours, so a returning player usually
       makes no request at all.</p>
+      <p>Separately from this file, the App also asks Google’s consent component at every start
+      whether a consent message is required for you (Section 7). It did so already whenever
+      advertising was switched on; from version 0.9.0 it does so even when advertising is switched
+      off, because the answer also governs the usage statistics in Section 3(d). Outside the EEA,
+      the UK and Switzerland that check shows nothing and asks you nothing.</p>
 
-      <h3>3(d). What the App does NOT do</h3>
-      <p>For the avoidance of doubt, the App contains <strong>no</strong> analytics SDK,
-      <strong>no</strong> crash reporting, <strong>no</strong> attribution or install-tracking SDK,
-      <strong>no</strong> social login and <strong>no</strong> in-app purchases. Apart from the
-      Google advertising and consent components named above, and the single static-file request
+      <h3>3(d). Usage statistics (Google Analytics for Firebase)</h3>
+      <p><strong>Why this exists, plainly.</strong> Tilt Blocks is made by one person, and until now
+      the only thing that person could see was a star rating. This Section describes the small,
+      fixed set of facts the App can send so that we can learn whether people find the tutorial, how
+      far their games get, whether the two optional video offers are understood, and which board
+      colours are used. Nothing here changes the game: the pieces you are dealt, the difficulty ramp
+      and the offers you see are decided by rules that cannot read any of this data, and that
+      separation is enforced by automated tests in the App’s source.</p>
+
+      <p>We describe this data as <strong>pseudonymous</strong>, and deliberately not as
+      “anonymous”. Each installation is identified by a random identifier generated by Google’s
+      SDK, and Google sees the IP address the data arrives from. That is enough for the data to
+      count as personal data, so it is treated as personal data throughout this policy.</p>
+
+      <h4>Where this is active, and where nothing is sent at all</h4>
+      <p><strong>In the EEA, the UK and Switzerland, nothing is sent at all.</strong> Not a reduced
+      set — nothing. The consent message described in Section 7 is presented by a Google component
+      that, in the version this App ships, carries no analytics purpose, so the App can never
+      receive consent for this purpose in those regions and treats it as never given. That is a
+      property of the App as built. It rests on one thing that is not: whether a consent message is
+      required for you at all is decided by <strong>Google’s consent system</strong>, from the
+      message we publish for those regions — the same mechanism that already decides whether the
+      advertising in Section 3(b) is personalised there. The App does not work out your location
+      itself, and does not try to. Should either of those change, this Section will say so and this
+      policy will be updated <strong>before</strong> any collection begins there.</p>
+
+      <p><strong>Everywhere else, it is on unless you turn it off.</strong> The switch at
+      <strong>Main menu → Settings → Share usage statistics</strong> starts in the on position.
+      Turning it off stops the collection immediately and completely, and also <strong>discards the
+      identifier</strong> described above, so that switching it back on later starts a new one
+      rather than resuming the old. Section 4 sets out the legal basis, which outside those regions
+      is our legitimate interest in understanding how the game is played, with that opt-out always
+      available.</p>
+
+      <h4>What is collected, where it is active — every fact, in plain words</h4>
+      <p>Every item below is one of a fixed list of words chosen in advance by the App, or a band.
+      Nothing is free text, nothing is a precise time, nothing is recorded per move, and <strong>your
+      score is never sent</strong>.</p>
+
+      <p><strong>Your games</strong></p>
+      <ul>
+        <li><strong>that a game started</strong>, and through which of three doors: the main menu,
+        the “Play again” button after a game, or the end of the tutorial;</li>
+        <li><strong>that a game ended</strong>, with: roughly how many turns it lasted, as one of six
+        bands (under 20, 20–49, 50–99, 100–199, 200–399, 400 or more); the <strong>rank
+        band</strong> the game showed you at that moment (one of twelve fixed values such as
+        “top 30%” — an estimate from simulated games, not your score); which of the App’s named
+        difficulty rungs you had reached; how many extra lives you had taken in that game (0, 1 or
+        2); and whether the game had given you its one “second chance”;</li>
+        <li><strong>that a second chance was used</strong>, and roughly how many turns into the game,
+        in the same bands;</li>
+        <li><strong>that you reached a new difficulty rung</strong>, and which one — once per rung
+        per game;</li>
+        <li><strong>that you set a new personal best</strong>, with the rank band at that moment —
+        once per game, and <strong>never the score itself</strong>.</li>
+      </ul>
+
+      <p><strong>The tutorial and the rules</strong></p>
+      <ul>
+        <li>that the “New here?” offer was <strong>shown</strong>, and how it was answered: play,
+        skip, or closed;</li>
+        <li>that the tutorial was <strong>opened</strong>, and from where: that offer, “How to
+        play” on the main menu, or “How to play” inside a game;</li>
+        <li>that the tutorial <strong>ended</strong>, and how: finished, skipped, or by returning to
+        the menu;</li>
+        <li>that <strong>“How to play” was opened</strong>, from the menu or from inside a
+        game.</li>
+      </ul>
+
+      <p><strong>The two optional video offers</strong></p>
+      <ul>
+        <li>that an offer was <strong>put on the screen</strong> — the extra life after a game, or a
+        board colour unlock;</li>
+        <li>that you <strong>accepted</strong> an offer by pressing the button that names the
+        video;</li>
+        <li>that the feature was <strong>handed over</strong>, and why: the video played through; the
+        video could not be shown and the feature was given anyway; or no video was available and the
+        feature was given anyway. For a board colour unlock, which of the five colours it was;</li>
+        <li>that you were offered an extra life and <strong>chose “Play again” instead</strong>,
+        and how many extra lives you had already taken in that game.</li>
+      </ul>
+
+      <p><strong>Your settings</strong></p>
+      <ul>
+        <li>that you <strong>changed a setting</strong>, which of three it was, and the new value:
+        sound on or off; light or dark theme; or the language you chose from the App’s own list (or
+        “follow the phone”);</li>
+        <li>which <strong>board colour</strong> you selected from the gallery — one of six
+        names.</li>
+      </ul>
+
+      <p>Two facts about the current state of your installation are kept alongside these events
+      rather than sent with each one: the board colour in use, and whether the theme is light or
+      dark.</p>
+
+      <p><strong>Collected automatically by Google.</strong> Once the switch above is on, Google’s
+      SDK also records, on its own: the first opening after installation; each opening; the start of
+      a session and roughly how long it lasted; an App update; an operating-system update; a screen
+      view each time the App’s single screen comes to the front; where Google Play tells the SDK
+      that your installation came from a campaign link, that campaign’s name, source and medium;
+      that an advert was shown, where Google’s advertising SDK reports that to the same system; and
+      an approximate country or region derived by Google from the IP address. Google also records
+      the device model, operating-system version, App version and language with each event.</p>
+
+      <p><strong>What is deliberately not collected.</strong> No advertising identifier is used for
+      this purpose — the App switches that off explicitly, and the advertising identifier described
+      in Section 3(b) is used by the advertising SDK alone. No free text of any kind. No precise
+      timestamps as data fields. No record of individual moves, placements or tilts. No score, no
+      saved game, no best score. No setting other than the four named above. No contacts, no
+      location from the device, no account.</p>
+
+      <p><strong>The identifier.</strong> Google’s app-instance identifier is random, scoped to this
+      App on this device, and resettable: turning the switch off discards it, and clearing the App’s
+      data or uninstalling removes it. It is not the Android advertising ID and is not linked to
+      it.</p>
+
+      <p><strong>The provider.</strong> Google Analytics for Firebase (GA4), supplied by Google. The
+      data is encrypted in transit by Google’s own TLS. Retention is described in Section 8, and the
+      countries it may reach in Section 6.</p>
+
+      <h3>3(e). What the App does NOT do</h3>
+      <p>For the avoidance of doubt, the App contains <strong>no</strong> crash-reporting SDK,
+      <strong>no</strong> attribution or install-tracking SDK, <strong>no</strong> social login and
+      <strong>no</strong> in-app purchases. Apart from the Google advertising and consent components
+      named in 3(b), the analytics component named in 3(d), and the single static-file request
       described in 3(c), the App makes no network requests of any kind.</p>
 
       <h2 id="en-4">4. Why we process data, and the legal basis for each purpose (GDPR)</h2>
@@ -301,6 +451,18 @@
             <td><strong>Legitimate interests</strong> (Art. 6(1)(f)) of Google and advertisers in
             preventing invalid traffic.</td>
           </tr>
+          <tr>
+            <td>Usage statistics (Section 3(d))</td>
+            <td>The pseudonymous events listed in Section 3(d), the app-instance identifier and the
+            IP address Google sees</td>
+            <td><strong>In the EEA, the UK and Switzerland: not collected at all.</strong> Were that
+            to change, the basis would be your <strong>consent</strong> (Art. 6(1)(a) GDPR, and
+            Art. 5(3) of the ePrivacy Directive for the identifier stored on your device), taken
+            through the same consent message described in Section 7. <strong>Everywhere
+            else:</strong> our <strong>legitimate interest</strong> (Art. 6(1)(f)) in understanding
+            how the game is played, with the in-app opt-out available at any time and effective the
+            moment it is used.</td>
+          </tr>
         </tbody>
       </table>
       </div>
@@ -316,6 +478,10 @@
         <a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a>. How
         Google uses data from apps that use its services:
         <a href="https://policies.google.com/technologies/partner-sites">https://policies.google.com/technologies/partner-sites</a>.</li>
+        <li><strong>Google Ireland Limited / Google LLC</strong> — separately, as the provider of
+        <strong>Google Analytics for Firebase</strong> (Section 3(d)), acting for us as a processor.
+        This is a different purpose from advertising and we keep it that way deliberately: no
+        advertising identifier is used for it, and the two are not linked in Google’s systems.</li>
         <li><strong>Google’s advertising partners</strong>, where you consent to personalized ads.
         The current list of partners is presented to you inside the consent message and can be
         reviewed there at any time.</li>
@@ -335,6 +501,11 @@
       <p>The static file described in Section 3(c) is served by GitHub, Inc., a company based in the
       <strong>United States</strong>, so the IP address that request is made from is received
       there.</p>
+      <p>The usage statistics described in Section 3(d) are sent to Google Analytics for Firebase,
+      and Google may process and store them outside the EEA and the UK, including in the
+      <strong>United States</strong>, under the same safeguards Google states below. In the EEA, the
+      UK and Switzerland nothing is sent for that purpose at all, so there is nothing to
+      transfer.</p>
       <p>Google, as an independent controller for advertising data, may transfer that data outside
       the EEA/UK, including to the <strong>United States</strong>. Google states that it relies on
       the <strong>European Commission’s Standard Contractual Clauses</strong> and, for transfers to
@@ -354,6 +525,13 @@
       <p>That row appears in the App only where a standing consent entry point is required, which is
       exactly the region where you have the right to withdraw. Opening it reloads the same consent
       message so you can change any choice, including withdrawing consent entirely.</p>
+      <p>The same consent message governs the usage statistics in Section 3(d), and in the version
+      this App ships it carries no analytics purpose — which is why nothing in Section 3(d) is
+      collected in these regions. Outside them, the control is the switch at <strong>Main menu →
+      Settings → Share usage statistics</strong>, which appears only where no consent message is
+      required. The App asks Google’s consent component whether a message is required at every
+      start, including when advertising is switched off remotely (Section 3(c)); outside these
+      regions that check shows nothing.</p>
 
       <h3>Everywhere — controlling your Advertising ID at the Android level</h3>
       <p>Independently of the App, Android lets you control the advertising identifier:</p>
@@ -375,6 +553,12 @@
         according to Google’s own retention schedules, which are described in Google’s privacy
         documentation. The Developer holds none of it and cannot delete it on your behalf; requests
         concerning it should be directed to Google, and we will help where we can.</li>
+        <li><strong>Usage statistics (Section 3(d)):</strong> event-level data is kept by
+        <strong>Google</strong> for <strong>2 months</strong> — the shortest period Google offers,
+        and the value a new property carries by default. It is a setting in the Google Analytics
+        console, applied to the whole property, and if we ever lengthen it this policy will say so
+        before we do. The random app-instance identifier is discarded when you turn the switch off,
+        when you clear the App’s data, or when you uninstall.</li>
         <li><strong>The static-file request (Section 3(c)):</strong> whatever server log GitHub
         keeps is subject to GitHub's own retention schedule. We receive no such log and hold nothing
         from it.</li>
@@ -453,7 +637,7 @@
     </main>
 
     <footer class="page">
-      <p>Luxebyte Labs · Tilt Blocks (<code>com.luxebyte.tiltblocks</code>) · Version 1.0, 30 July 2026</p>
+      <p>Luxebyte Labs · Tilt Blocks (<code>com.luxebyte.tiltblocks</code>) · Version 1.1, 26 August 2026</p>
     </footer>
   </div>
 </body>
