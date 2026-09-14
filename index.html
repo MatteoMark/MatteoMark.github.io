@@ -71,42 +71,7 @@
       della batteria"; "comandi della torcia" (not only switch on commands); "opporti alla
       «vendita»" for the CCPA opt out.
 
-    What 2.13 changed, in both languages:
-    * Section 3(d), the rewarded-video unlock item: the unlock now also carries roughly how long
-      you waited for the video after tapping to watch it, as one of six fixed words (five bands
-      plus "unknown"), or a seventh meaning "no wait" where no wait happened at all
-      (EventVocabulary.P_WAIT_BUCKET / adSecondsBucket, AdGrantLedger.NO_WAIT). The span runs
-      from the tap to the moment the App hands over to the video or decides it cannot show one;
-      it never includes the video, and the App keeps only the word once the wait has ended
-      (RewardedAdSlot.pendingWaitBand is a String, not a duration).
-    * Section 3(d), NEW ITEM: each request the App makes to Google for a rewarded video —
-      whether one arrived or which of three kinds of failure was reported, and roughly how long
-      the request took, as the same six words (EventVocabulary.E_AD_LOAD, AdLoadLedger). It was
-      requesting them before; nothing about the request was recorded until now.
-    * Section 3(d), the named-taps item: the button that leaves the short wait now also carries
-      that same band, for that one control alone. Leaving the wait and the wait ending on its
-      own are the two ways a wait finishes, and the two are read together.
-    * Section 3(d), the count sentence after the list: seven live items becomes eight.
-    * No new data category, no new recipient, no new purpose: bands of a monotonic span measured
-      inside one process, and one closed four-word result. Play Data safety is unchanged.
-
-    What 2.12 changed, in both languages:
-    * Section 3(d), "Collected automatically by Google": adds the App being uninstalled and its
-      data being cleared. Google's SDK sends both (EventVocabulary.SDK_AUTOMATIC_EVENT_NAMES:
-      app_remove, app_clear_data) and has done so for as long as these statistics have been
-      active. NEITHER WAS DISCLOSED in versions 2.8 to 2.11. That was an omission in this
-      policy, not a change in the App.
-    * Section 3(d), the locked feature item: the second reason is no longer described as
-      consent being refused. Google's consent system leaves advertising requestable after a
-      refusal, so that value records a consent check that never completed, in practice a new
-      installation that has not yet been online.
-    * Sections 3(a) and 5: "the two coarse bands" becomes one. The Section 3(d) carve out has
-      named a single band since version 2.10, when the mini game rounds stopped being sent.
-    * Italian wording only: "pseudonimizzati" for "pseudonimi"; "esenzione dall'ottimizzazione
-      della batteria"; "comandi della torcia" (not only switch on commands); "opporti alla
-      «vendita»" for the CCPA opt out.
-
-  -->
+-->
   <style>
     :root {
       --ink: #1a1c1e;
