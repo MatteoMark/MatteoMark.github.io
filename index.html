@@ -6,10 +6,24 @@
   <title>Privacy Policy — Shake to Enable Torch</title>
   <meta name="description" content="Privacy policy for the Shake to Enable Torch Android app by Luxebyte Labs, including Google AdMob advertising disclosures." />
   <!--
-    Policy version 2.14, 14 September 2026. Effective date unchanged: 25 August 2026.
+    Policy version 2.15, 15 September 2026. Effective date unchanged: 25 August 2026.
     This page carries no visible version number and no changelog; the version history lives in
     privacy-policy/privacy-policy.en.md and privacy-policy/informativa-privacy.it.md, which are
     kept in step with it.
+
+    What 2.15 changed, in both languages:
+    * Section 3(a), the phone-call paragraph: the App NO LONGER STORES the time at which a
+      call-related pause began. The paragraph that disclosed that timestamp is replaced by one
+      saying the value is no longer written, that a value left by an earlier version is cleared on
+      the next App start (RevivalInitializer.reviveIfWanted), and that all the App keeps is
+      whether a call is in progress while it is running — in memory only (ShakeService's
+      `talkingOnCall` latch, fed by CallGate.next), never on the device, never in the Android
+      backup, never on the wire.
+    * This is a REMOVAL of a disclosure, following a removal of a stored value: the App is not
+      stopped for a call any more (KNOWN_BUGS CALL-1), so there is no pause to time. No new data
+      category, no new recipient, no new purpose. Play Data safety is unchanged.
+    * Nothing else on the page moves. The permission itself, what is observed (ringing / in
+      progress / finished) and the "never profiled, never transmitted" sentence are untouched.
 
     What 2.14 changed, in both languages:
     * Section 3(d), the startup-prompt outcome item: THREE fixed values become TWO. The
@@ -56,6 +70,42 @@
     * Italian wording only: "pseudonimizzati" for "pseudonimi"; "esenzione dall'ottimizzazione
       della batteria"; "comandi della torcia" (not only switch on commands); "opporti alla
       «vendita»" for the CCPA opt out.
+
+    What 2.13 changed, in both languages:
+    * Section 3(d), the rewarded-video unlock item: the unlock now also carries roughly how long
+      you waited for the video after tapping to watch it, as one of six fixed words (five bands
+      plus "unknown"), or a seventh meaning "no wait" where no wait happened at all
+      (EventVocabulary.P_WAIT_BUCKET / adSecondsBucket, AdGrantLedger.NO_WAIT). The span runs
+      from the tap to the moment the App hands over to the video or decides it cannot show one;
+      it never includes the video, and the App keeps only the word once the wait has ended
+      (RewardedAdSlot.pendingWaitBand is a String, not a duration).
+    * Section 3(d), NEW ITEM: each request the App makes to Google for a rewarded video —
+      whether one arrived or which of three kinds of failure was reported, and roughly how long
+      the request took, as the same six words (EventVocabulary.E_AD_LOAD, AdLoadLedger). It was
+      requesting them before; nothing about the request was recorded until now.
+    * Section 3(d), the named-taps item: the button that leaves the short wait now also carries
+      that same band, for that one control alone. Leaving the wait and the wait ending on its
+      own are the two ways a wait finishes, and the two are read together.
+    * Section 3(d), the count sentence after the list: seven live items becomes eight.
+    * No new data category, no new recipient, no new purpose: bands of a monotonic span measured
+      inside one process, and one closed four-word result. Play Data safety is unchanged.
+
+    What 2.12 changed, in both languages:
+    * Section 3(d), "Collected automatically by Google": adds the App being uninstalled and its
+      data being cleared. Google's SDK sends both (EventVocabulary.SDK_AUTOMATIC_EVENT_NAMES:
+      app_remove, app_clear_data) and has done so for as long as these statistics have been
+      active. NEITHER WAS DISCLOSED in versions 2.8 to 2.11. That was an omission in this
+      policy, not a change in the App.
+    * Section 3(d), the locked feature item: the second reason is no longer described as
+      consent being refused. Google's consent system leaves advertising requestable after a
+      refusal, so that value records a consent check that never completed, in practice a new
+      installation that has not yet been online.
+    * Sections 3(a) and 5: "the two coarse bands" becomes one. The Section 3(d) carve out has
+      named a single band since version 2.10, when the mini game rounds stopped being sent.
+    * Italian wording only: "pseudonimizzati" for "pseudonimi"; "esenzione dall'ottimizzazione
+      della batteria"; "comandi della torcia" (not only switch on commands); "opporti alla
+      «vendita»" for the CCPA opt out.
+
   -->
   <style>
     :root {
@@ -138,7 +188,7 @@
       <h1>Privacy Policy <span aria-hidden="true">·</span> Informativa sulla privacy</h1>
       <p class="meta">Shake to Enable Torch — Android (<code>com.luxebyte.shaketoenabletorch</code>)</p>
       <p class="meta">Publisher / Editore: <strong>Luxebyte Labs</strong> · <a href="mailto:luxebytecomp@gmail.com">luxebytecomp@gmail.com</a></p>
-      <p class="meta">Effective / In vigore dal: <time datetime="2026-08-25">25 August 2026</time> <span lang="it">/ 25 agosto 2026</span> · Last updated / Ultimo aggiornamento: <time datetime="2026-09-14">14 September 2026</time> <span lang="it">/ 14 settembre 2026</span></p>
+      <p class="meta">Effective / In vigore dal: <time datetime="2026-08-25">25 August 2026</time> <span lang="it">/ 25 agosto 2026</span> · Last updated / Ultimo aggiornamento: <time datetime="2026-09-15">15 September 2026</time> <span lang="it">/ 15 settembre 2026</span></p>
       <nav class="langnav" aria-label="Language / Lingua">
         <a id="tab-en" href="#en" aria-current="true">English</a>
         <a id="tab-it" href="#it" aria-current="false">Italiano</a>
@@ -281,11 +331,13 @@
       read your phone number, your call history, your contacts, or who is calling. The state is
       read transiently on the device, for the sole purpose of not leaving a torch on during a
       call, and is never profiled or transmitted to the Developer.</p>
-      <p>So that the torch can be restored to its previous state, the App stores on the device the
-      time at which a call-related pause began. That timestamp is kept in the same preferences
-      described above, and is therefore included in the Android backup described above. It records
-      nothing about the call itself — no number, no direction, no duration, no identity — and it
-      is never sent to the Developer.</p>
+      <p>The App no longer stores when a call paused it. Earlier versions kept on the device the
+      time at which a call-related pause began; nothing writes that value any more, and a value
+      left by an earlier version is cleared the next time the App starts. All the App keeps is
+      whether a call is in progress while the App is running — held in memory only, never written
+      to the device, never included in the Android backup described above, and never sent to the
+      Developer. It records nothing about the call itself — no number, no direction, no duration,
+      no identity.</p>
       <p>The permission is requested at the moment you enable that option, not at install time,
       and the feature is optional: if you refuse the permission, or leave the option off, the rest
       of the App is unaffected. You can withdraw the permission at any time in
@@ -909,11 +961,13 @@
       registro delle chiamate, i tuoi contatti né chi ti sta chiamando. Lo stato è letto in modo
       transitorio sul dispositivo, al solo fine di non lasciare una torcia accesa durante una
       chiamata, e non viene mai profilato né trasmesso allo Sviluppatore.</p>
-      <p>Per poter riportare la torcia allo stato precedente, l’App memorizza sul dispositivo
-      l’ora in cui è iniziata una pausa dovuta a una chiamata. Tale marcatura temporale è
-      conservata nelle stesse preferenze descritte sopra ed è quindi inclusa nel backup di Android
-      descritto sopra. Non registra nulla della chiamata in sé — né numero, né direzione, né
-      durata, né identità — e non viene mai inviata allo Sviluppatore.</p>
+      <p>L’App non memorizza più il momento in cui una chiamata l’ha messa in pausa. Le versioni
+      precedenti conservavano sul dispositivo l’ora in cui era iniziata una pausa dovuta a una
+      chiamata; nulla scrive più quel valore, e un valore lasciato da una versione precedente viene
+      cancellato al successivo avvio dell’App. L’unica cosa che l’App conserva è se una chiamata è
+      in corso mentre l’App è in esecuzione, e la conserva soltanto nella memoria: mai scritta sul
+      dispositivo, mai inclusa nel backup di Android descritto sopra, mai inviata allo Sviluppatore.
+      Non registra nulla della chiamata in sé — né numero, né direzione, né durata, né identità.</p>
       <p>L’autorizzazione viene richiesta nel momento in cui attivi quell’opzione, non al momento
       dell’installazione, e la funzione è facoltativa: se rifiuti l’autorizzazione, o lasci
       l’opzione disattivata, il resto dell’App non ne risente. Puoi revocarla in qualsiasi momento
