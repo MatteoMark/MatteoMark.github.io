@@ -6,10 +6,21 @@
   <title>Privacy Policy — Shake to Enable Torch</title>
   <meta name="description" content="Privacy policy for the Shake to Enable Torch Android app by Luxebyte Labs, including Google AdMob advertising disclosures." />
   <!--
-    Policy version 2.13, 10 September 2026. Effective date unchanged: 25 August 2026.
+    Policy version 2.14, 14 September 2026. Effective date unchanged: 25 August 2026.
     This page carries no visible version number and no changelog; the version history lives in
     privacy-policy/privacy-policy.en.md and privacy-policy/informativa-privacy.it.md, which are
     kept in step with it.
+
+    What 2.14 changed, in both languages:
+    * Section 3(d), the startup-prompt outcome item: THREE fixed values become TWO. The
+      cross-promotion popup was rebuilt as a bottom sheet with a close "X", and on the owner's
+      instruction "not now", the "X" and the back gesture are one answer — the App reports
+      `declined` for all three and no longer reports `back_press` at all
+      (PromoFunnel.exitValue keeps the mapping so recorded history keeps its meaning;
+      source/PromoSheetTripwireTest fails if a call site produces it again). Nothing new is
+      collected: one word left a closed list. Play Data safety is unchanged — same event, same
+      parameter, same "App interactions" box.
+    * Nothing else. No new data category, no new recipient, no new purpose.
 
     What 2.13 changed, in both languages:
     * Section 3(d), the rewarded-video unlock item: the unlock now also carries roughly how long
@@ -127,7 +138,7 @@
       <h1>Privacy Policy <span aria-hidden="true">·</span> Informativa sulla privacy</h1>
       <p class="meta">Shake to Enable Torch — Android (<code>com.luxebyte.shaketoenabletorch</code>)</p>
       <p class="meta">Publisher / Editore: <strong>Luxebyte Labs</strong> · <a href="mailto:luxebytecomp@gmail.com">luxebytecomp@gmail.com</a></p>
-      <p class="meta">Effective / In vigore dal: <time datetime="2026-08-25">25 August 2026</time> <span lang="it">/ 25 agosto 2026</span> · Last updated / Ultimo aggiornamento: <time datetime="2026-09-10">10 September 2026</time> <span lang="it">/ 10 settembre 2026</span></p>
+      <p class="meta">Effective / In vigore dal: <time datetime="2026-08-25">25 August 2026</time> <span lang="it">/ 25 agosto 2026</span> · Last updated / Ultimo aggiornamento: <time datetime="2026-09-14">14 September 2026</time> <span lang="it">/ 14 settembre 2026</span></p>
       <nav class="langnav" aria-label="Language / Lingua">
         <a id="tab-en" href="#en" aria-current="true">English</a>
         <a id="tab-it" href="#it" aria-current="false">Italiano</a>
@@ -443,7 +454,7 @@
       <p><strong>Product usage</strong></p>
       <ul>
         <li>when the occasional startup prompt is shown — the offer of our other app, which is the only such prompt the App shows. It is counted once when it appears and not counted again until you answer it, so a screen that Android rebuilds is not counted twice;</li>
-        <li>how that prompt ended, as one of three fixed values: you accepted it and went to the store listing; you chose “not now”; or you dismissed it with the back gesture. If you never answer it, nothing is sent;</li>
+        <li>how that prompt ended, as one of two fixed values: you accepted it and went to the store listing; or you declined it — and “declined” covers all three ways of saying no, whether you chose “not now”, closed it with the “X”, or dismissed it with the back gesture. Which of the three you used is not recorded. If you never answer it, nothing is sent;</li>
         <li>when the Google Play listing for our other app is opened, and which of two places you opened it from: the game card in the settings list, or the startup prompt itself;</li>
         <li>when the game card in the settings list is actually on your screen — counted once per visit to that screen, never again for scrolling past it or for a screen Android rebuilds — so that the openings above have an honest count of how many people saw the card;</li>
         <li>when you come back to the App after opening that Play listing, and roughly how long that took, as one of five fixed words: under 2 seconds, 2 to 10 seconds, 10 to 60 seconds, over a minute, or unknown. The stretch is measured on a clock that counts steadily from the device’s last restart, including while the device sleeps, is held only in the App’s memory for the length of the trip, and only the single word is sent — never a time of day, never an exact number;</li>
@@ -1076,7 +1087,7 @@
       <p><strong>Utilizzo del prodotto</strong></p>
       <ul>
         <li>quando viene mostrato il messaggio occasionale di avvio — la proposta della nostra altra app, che è l’unico messaggio di questo tipo mostrato dall’App. Viene contato una volta sola quando compare e non viene contato di nuovo finché non gli dai una risposta, così una schermata che Android ricrea non viene contata due volte;</li>
-        <li>come si è concluso quel messaggio, con uno di tre valori fissi: lo hai accettato e sei andato alla scheda dello store; hai scelto “non ora”; oppure lo hai chiuso con il gesto indietro. Se non gli dai mai una risposta, non viene inviato nulla;</li>
+        <li>come si è concluso quel messaggio, con uno di due valori fissi: lo hai accettato e sei andato alla scheda dello store; oppure lo hai rifiutato — e “rifiutato” comprende tutti e tre i modi di dire di no, sia che tu abbia scelto “non ora”, sia che tu lo abbia chiuso con la “X”, sia che tu lo abbia chiuso con il gesto indietro. Quale dei tre tu abbia usato non viene registrato. Se non gli dai mai una risposta, non viene inviato nulla;</li>
         <li>quando viene aperta la scheda su Google Play della nostra altra app e da quale dei due punti l’hai aperta: la scheda del gioco nell’elenco delle impostazioni oppure il messaggio di avvio stesso;</li>
         <li>quando la scheda del gioco nell’elenco delle impostazioni è effettivamente sul tuo schermo — contata una volta sola per visita a quella schermata, mai di nuovo per uno scorrimento o per una schermata che Android ricrea — così le aperture del punto precedente hanno un conteggio onesto di quante persone hanno visto la scheda;</li>
         <li>quando torni nell’App dopo aver aperto quella scheda su Google Play e all’incirca quanto tempo è passato, come una di cinque parole fisse: meno di 2 secondi, da 2 a 10 secondi, da 10 a 60 secondi, oltre un minuto, oppure sconosciuto. L’intervallo è misurato su un orologio che conta dall’ultimo riavvio del dispositivo, anche mentre il dispositivo dorme, resta soltanto nella memoria dell’App per la durata del viaggio, e viene inviata solo la singola parola — mai un orario, mai un numero esatto;</li>
