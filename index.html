@@ -6,10 +6,34 @@
   <title>Privacy Policy — Shake to Enable Torch</title>
   <meta name="description" content="Privacy policy for the Shake to Enable Torch Android app by Luxebyte Labs, including Google AdMob advertising disclosures." />
   <!--
-    Policy version 2.18, 15 September 2026. Effective date unchanged: 25 August 2026.
+    Policy version 2.19, 15 September 2026. Effective date unchanged: 25 August 2026.
     This page carries no visible version number and no changelog; the version history lives in
     privacy-policy/privacy-policy.en.md and privacy-policy/informativa-privacy.it.md, which are
     kept in step with it.
+
+    What 2.19 changed, in both languages:
+    * A CORRECTION, and the only change in this version. Versions 2.7 to 2.18 stated that the
+      usage and reliability statistics of Section 3(d) were "not collected at all" in the EEA,
+      the UK and Switzerland. That was false from the day the analytics shipped (24 August 2026).
+      The claim rested on the belief that the UMP build the App ships could never carry an
+      analytics purpose; the release classpath actually resolves
+      com.google.android.ump:user-messaging-platform 2.2.0 -> 3.0.0, which writes whatever
+      consent-mode key the AdMob message names, the owner's AdMob console has "Enable consent
+      mode for analytics purposes" ON, and ConsentSignal/AnalyticsGate grant the moment that key
+      reads 1. MEASURED: the GA4 country table for all events over 21 Aug - 15 Sep 2026 shows
+      ~34K events from European countries out of 3.36M (~1%) — Germany 5,468, Poland 4,887,
+      Netherlands 3,637, Italy 3,425, France 3,331, Austria 2,683, Spain 2,630, UK 2,131,
+      Romania 1,788, and 18 more. So Europe collects, with consent, and always did.
+    * Sections 3 (intro), 3(a) carve-out, 3(d) ("Where this is active" and "How to switch it
+      off"), 4 (row 6 and the legal-basis notes), 5 (the analytics recipient bullet), 7 and 9 now
+      say: in the EEA/UK/Switzerland the Section 3(d) statistics are collected ONLY on consent
+      given in the Google UMP message ("analytics storage", TCF purpose 1, which the App reads as
+      analytics consent); no consent means nothing collected and no app-instance id created;
+      withdrawal at any time from "Ad & privacy settings"; legal basis Art. 6(1)(a) GDPR. Outside
+      those regions the in-app "share usage statistics" switch governs, exactly as before.
+    * NO new data category, NO new recipient, NO new purpose, NO new event or parameter, and NO
+      Data safety change — every type is already declared collected, shared and required, and the
+      Data safety form is region-blind. Nothing in the App changed; only the description did.
 
     What 2.18 changed, in both languages:
     * Section 3(d), the periodic summary: three new items counting the shakes that did NOT work
@@ -60,8 +84,9 @@
       `sensitivity_bucket`). The quartile is NOT retired — it is declared in the GA4 console and
       is the only column a month of history reads through.
     * No new data category, no new recipient, no new purpose, and no change to the consent rules:
-      it rides the Section 3(d) collection exactly as the quartile does — never in the EEA, the UK
-      or Switzerland, and elsewhere only until the in-app switch is turned off. It is a setting
+      it rides the Section 3(d) collection exactly as the quartile does — in the EEA, the UK and
+      Switzerland only on consent (see the 2.19 correction above), and elsewhere only until the
+      in-app switch is turned off. It is a setting
       the user chose, not a measurement of them: nothing about how, when or how hard they shake.
       Play Data safety is unchanged (App activity → App interactions, already ticked).
     * Why the yes/no exists at all: the shipped default (SensitivityMapper.DEFAULT_RAW_SENSIBILITY
@@ -314,8 +339,8 @@
       data, collected by Google and never received by the Developer (Section&nbsp;3(b)); a single
       request for a static file, which carries no information about you but necessarily discloses
       the IP address it is sent from (Section&nbsp;3(c)); and a limited set of counts and category
-      values describing how reliably the App is working, which is not collected at all in the EEA,
-      the UK and Switzerland, and which can be switched off at any time everywhere else
+      values describing how reliably the App is working, which in the EEA, the UK and Switzerland
+      is collected only if you consent, and which can be switched off at any time everywhere else
       (Section&nbsp;3(d)).</p>
 
       <h3>3(a) — Data kept on your device, never transmitted to us</h3>
@@ -355,8 +380,8 @@
         <em>Settings → Google → Backup</em>.</p>
       </div>
       <p>One narrow carve-out applies. Where the usage and reliability statistics described in
-      Section&nbsp;3(d) are active — never in the EEA, the UK or Switzerland, and elsewhere only
-      until you turn the in-app switch off — one of the values above is also sent: the sensitivity
+      Section&nbsp;3(d) are active — in the EEA, the UK and Switzerland only if you consent, and
+      elsewhere only until you turn the in-app switch off — one of the values above is also sent: the sensitivity
       setting. It is sent as a coarse band — which quarter of the slider you are on — and, since
       the September 2026 update, also as the exact position of the slider, a whole number from 5
       to 150, together with whether you have ever moved that slider on this installation, as a
@@ -511,19 +536,22 @@
       arrives from. That is sufficient for the data to constitute personal data, and it is treated
       as personal data throughout this policy.</p>
 
-      <h4>Where this is active, and where nothing is sent at all</h4>
+      <h4>Where this is active, and what governs it</h4>
       <p>The territorial position is set out first.</p>
-      <p>In the EEA, the UK and Switzerland, nothing is sent: no reduced set, no anonymised set,
-      and no data of this category in any form. The consent form described in Section&nbsp;7 is
-      presented by a Google component that, in the version this release ships, carries no
-      analytics purpose, so the App can never receive consent for this purpose in those regions
-      and treats it as never given. That is a property of the App as built. It rests on one matter
-      that is not: whether a consent form is required for you at all is decided by Google’s
-      consent system, on the basis of the consent message we publish for those regions — the same
-      mechanism that already decides whether the advertising described in Section&nbsp;3(b) is
-      personalised there. The App does not determine your location itself, and does not attempt
-      to. Should either of those change, that form becomes the control, this Section will be
-      amended accordingly, and this policy will be updated before any collection begins there.</p>
+      <p>In the EEA, the UK and Switzerland, these statistics are collected only if you consent.
+      The consent message Google shows you on first launch, described in Section&nbsp;7, asks for
+      the <strong>“analytics storage”</strong> purpose — TCF purpose 1, which the App reads as
+      consent to analytics — alongside the advertising purposes. If you agree, the statistics
+      described in this Section are collected, exactly as they are elsewhere. If you do not agree,
+      nothing is collected and the random app-instance identifier described further down is never
+      created. You can withdraw your consent at any time by reopening that message from the App’s
+      <strong>“Ad &amp; privacy settings”</strong> row, and the collection stops. The legal basis
+      here is your consent (Art.&nbsp;6(1)(a) GDPR, and ePrivacy Art.&nbsp;5(3) for the identifier
+      on your device); Section&nbsp;4 sets it out. Whether a consent message is shown to you at
+      all is decided by Google’s consent system, on the basis of the message we publish for those
+      regions — the same mechanism that already decides whether the advertising described in
+      Section&nbsp;3(b) is personalised there. The App does not determine your location itself,
+      and does not attempt to.</p>
       <p>Everywhere else, these statistics are active. The App carries the Google Analytics for
       Firebase SDK and is built with the Google project credentials it needs, so what is described
       below is a collection and not merely a capability. Collection is on unless you turn it off:
@@ -606,7 +634,7 @@
       <h4>How to switch these statistics off</h4>
       <p>Either one of the following is sufficient to stop the collection:</p>
       <ol>
-        <li>In the EEA, the UK and Switzerland, these statistics are not collected at all in this version of the App, whichever way you answer any form. The consent form described in Section&nbsp;7 is provided by a Google component that, in the version this release ships, carries no analytics purpose; the App therefore treats consent for this purpose as never given in those regions and sends nothing. Should that ever change, that same form — reopenable at any time from the App’s <strong>“Ad &amp; privacy settings”</strong> row — becomes the control, and this Section will say so before any collection begins.</li>
+        <li>In the EEA, the UK and Switzerland, the Google consent message. Decline the analytics purpose and nothing is collected at all. If you have already agreed, reopen that message at any time from the App’s <strong>“Ad &amp; privacy settings”</strong> row and withdraw: withdrawal is as easy as giving consent, it stops the collection, and it does not affect what was lawfully collected before.</li>
         <li>The in-app <strong>“share usage statistics”</strong> switch, everywhere else. It starts in the on position; turning it off stops collection immediately and completely. You can turn it back on at any time, and nothing else in the App changes either way.</li>
       </ol>
       <div class="callout">
@@ -661,7 +689,7 @@
           <tr>
             <td><strong>Understand why the shake stops working on some devices, and which parts of the App are used</strong> — the usage and reliability statistics in Section&nbsp;3(d)</td>
             <td>Banded counts, fixed-list reasons and category values, plus the random app-instance identifier and the IP-derived approximate location described in Section&nbsp;3(d)</td>
-            <td>In the <strong>EEA, the UK, and Switzerland</strong> these statistics are <strong>not collected at all</strong> in this version (Section&nbsp;3(d)); were that to change, the basis would be <strong>your consent</strong> (Art.&nbsp;6(1)(a) GDPR, and ePrivacy consent for the identifier on your device), taken through the same Google UMP form used for advertising. Outside those regions: our <strong>legitimate interest</strong> (Art.&nbsp;6(1)(f) GDPR) in diagnosing a fault we otherwise cannot see, with an opt-out available at any time — the in-app <strong>“share usage statistics”</strong> switch, which is on by default and takes effect the moment you turn it off.</td>
+            <td>In the <strong>EEA, the UK, and Switzerland: your consent</strong> (Art.&nbsp;6(1)(a) GDPR, and ePrivacy consent for the identifier on your device), given through the <strong>“analytics storage”</strong> purpose of the same Google UMP consent message used for advertising, and withdrawable at any time from <strong>“Ad &amp; privacy settings”</strong> — if you do not consent, these statistics are <strong>not collected at all</strong> (Section&nbsp;3(d)). Outside those regions: our <strong>legitimate interest</strong> (Art.&nbsp;6(1)(f) GDPR) in diagnosing a fault we otherwise cannot see, with an opt-out available at any time — the in-app <strong>“share usage statistics”</strong> switch, which is on by default and takes effect the moment you turn it off.</td>
           </tr>
         </tbody>
       </table>
@@ -679,8 +707,10 @@
       it is taken before any ad request, because the App fetches ads in advance of your tap
       (Section&nbsp;3(b)). No advert is displayed to anyone who did not ask for one, and the App
       relies on no imposed advertising format anywhere in this analysis.</p>
-      <p>For the statistics in Section&nbsp;3(d) we rely, outside the consent regions, on our
-      legitimate interest in being able to diagnose a fault that is otherwise invisible to us,
+      <p>For the statistics in Section&nbsp;3(d) we rely, in the EEA, the UK and Switzerland, on
+      your consent, given in the Google UMP consent message and withdrawable at any time
+      (Section&nbsp;7); nothing is collected there unless you give it. Outside those regions we
+      rely on our legitimate interest in being able to diagnose a fault that is otherwise invisible to us,
       balanced by the facts that the data is banded rather than exact, carries no advertising
       identifier, and can be switched off in the App at any time. You do not have to give a reason
       to opt out, and the App is fully usable either way. For that purpose the Developer does
@@ -694,7 +724,7 @@
       file described in Section&nbsp;3(c):</p>
       <ul>
         <li><strong>Google</strong> — specifically <strong>Google Ireland Limited</strong> (for users in the EEA/UK/Switzerland) and <strong>Google LLC</strong> (United States), operating Google Mobile Ads / AdMob; and</li>
-        <li><strong>Google</strong>, in a separate role — the same two companies, operating <strong>Google Analytics for Firebase</strong>, which receives the usage and reliability statistics described in Section&nbsp;3(d) where they are enabled. This is a different purpose from advertising and it stays a different purpose, but the two are no longer wholly apart in Google’s systems: our <strong>AdMob advertising account is linked to this analytics property</strong>, so that advertising <strong>revenue totals</strong> appear beside the usage statistics in the reports only we see — a total earned from a coarse group of users, never from any one of them. The link runs in one direction only. The usage statistics are <strong>not</strong> used to personalise advertising: personalisation from analytics data is switched off for <strong>every region</strong>, and <strong>Google signals</strong>, the feature that would associate this data with a signed-in Google account, is off. No advertising identifier is collected for this purpose, so the identifier described in Section&nbsp;3(b) remains the advertising SDK’s alone; and the controls are unchanged — nothing is collected for this purpose in the EEA, the UK and Switzerland, and everywhere else the <strong>“share usage statistics”</strong> switch stops it; and</li>
+        <li><strong>Google</strong>, in a separate role — the same two companies, operating <strong>Google Analytics for Firebase</strong>, which receives the usage and reliability statistics described in Section&nbsp;3(d) where they are enabled. This is a different purpose from advertising and it stays a different purpose, but the two are no longer wholly apart in Google’s systems: our <strong>AdMob advertising account is linked to this analytics property</strong>, so that advertising <strong>revenue totals</strong> appear beside the usage statistics in the reports only we see — a total earned from a coarse group of users, never from any one of them. The link runs in one direction only. The usage statistics are <strong>not</strong> used to personalise advertising: personalisation from analytics data is switched off for <strong>every region</strong>, and <strong>Google signals</strong>, the feature that would associate this data with a signed-in Google account, is off. No advertising identifier is collected for this purpose, so the identifier described in Section&nbsp;3(b) remains the advertising SDK’s alone; and the controls are unchanged — in the EEA, the UK and Switzerland nothing is collected for this purpose unless you consent, and everywhere else the <strong>“share usage statistics”</strong> switch stops it; and</li>
         <li><strong>Google’s advertising partners</strong> (third-party ad networks, demand partners, and measurement providers involved in serving and measuring the ads described in Section&nbsp;3(b)); and</li>
         <li><strong>Google</strong>, in a third role — as the operator of <strong>Android Auto Backup / Google Drive</strong>, which holds the backup copy of the on-device data described in Section&nbsp;3(a) if you have device backup switched on. That copy is held in your own Google account, not ours, and we have no access to it; and</li>
         <li><strong>GitHub,&nbsp;Inc.</strong> — only as the host of the one static text file described in Section&nbsp;3(c). It receives the IP address that request is made from, and nothing else. GitHub privacy statement — <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement</a></li>
@@ -749,13 +779,13 @@
       <p>You can change or withdraw your choice at any time, from inside the App, via the
       <strong>“Ad &amp; privacy settings”</strong> option — the App’s existing privacy settings
       row, which reopens exactly the same form. Withdrawing consent is as easy as giving it.</p>
-      <p><strong>What that form does not cover in this version.</strong> The usage and reliability
-      statistics in Section&nbsp;3(d) are not collected at all in the EEA, the UK and Switzerland
-      in this version of the App, whichever way you answer. The Google component that presents
-      this form carries no analytics purpose in the version the App ships, so the App treats
-      consent for that purpose as never given here and sends nothing. If that ever changes, this
-      same form becomes the control for both purposes and this policy will say so before any
-      collection begins.</p>
+      <p><strong>What that form also covers.</strong> The same form carries the
+      <strong>“analytics storage”</strong> purpose — TCF purpose 1, which the App reads as consent
+      to analytics — and that is what governs the usage and reliability statistics in
+      Section&nbsp;3(d) here. Agree to it and those statistics are collected, exactly as they are
+      outside these regions; decline it and nothing is collected and no app-instance identifier is
+      created. Reopening the form later and withdrawing stops the collection. The in-app
+      <strong>“share usage statistics”</strong> switch is the control everywhere else.</p>
       <h3>Outside the EEA, the UK, and Switzerland</h3>
       <p>Where no consent form is shown, advertising is governed by Google’s own policies and by
       the Android Advertising ID controls below. The App still displays no advert you did not ask
@@ -784,7 +814,7 @@
       <strong>rectification</strong>, <strong>erasure</strong>, <strong>restriction</strong>,
       <strong>objection</strong> to legitimate-interest processing, <strong>data
       portability</strong>, to <strong>withdraw consent</strong> at any time (for advertising, and
-      for the statistics in Section&nbsp;3(d) where they are ever collected on that basis —
+      for the statistics in Section&nbsp;3(d), which are collected here on that basis —
       Section&nbsp;7), and to <strong>lodge a complaint</strong> with a supervisory authority. In
       Italy this is the <strong>Garante per la protezione dei dati personali</strong>
       (<a href="https://www.garante.it">www.garante.it</a>); you may also complain to the
@@ -951,9 +981,9 @@
       raccolti da Google e mai ricevuti dallo Sviluppatore (Sezione&nbsp;3(b)); un’unica richiesta
       di un file statico, che non trasporta alcuna informazione su di te ma rivela necessariamente
       l’indirizzo IP da cui proviene (Sezione&nbsp;3(c)); e un insieme limitato di conteggi e
-      valori di categoria relativi all’affidabilità di funzionamento dell’App, che non viene
-      raccolto affatto nello SEE, nel Regno Unito e in Svizzera e che ovunque altrove puoi
-      disattivare in qualsiasi momento (Sezione&nbsp;3(d)).</p>
+      valori di categoria relativi all’affidabilità di funzionamento dell’App, che nello SEE, nel
+      Regno Unito e in Svizzera viene raccolto soltanto se presti il consenso e che ovunque altrove
+      puoi disattivare in qualsiasi momento (Sezione&nbsp;3(d)).</p>
       <h3>3(a) — Dati conservati sul tuo dispositivo, mai trasmessi a noi</h3>
       <p>Per fornire le proprie funzionalità, l’App memorizza una piccola quantità di informazioni
       solo localmente sul tuo dispositivo, utilizzando l’archiviazione standard di Android
@@ -994,8 +1024,9 @@
         backup di questa App, in <em>Impostazioni → Google → Backup</em>.</p>
       </div>
       <p>Si applica un’unica eccezione circoscritta. Dove le statistiche di utilizzo e
-      affidabilità descritte nella Sezione&nbsp;3(d) sono attive — mai nello SEE, nel Regno Unito
-      o in Svizzera, e altrove soltanto finché non disattivi l’interruttore in-app — uno dei
+      affidabilità descritte nella Sezione&nbsp;3(d) sono attive — nello SEE, nel Regno Unito e in
+      Svizzera soltanto se presti il consenso, e altrove soltanto finché non disattivi
+      l’interruttore in-app — uno dei
       valori sopra elencati viene inviato anche: l’impostazione di sensibilità. Viene inviata come
       fascia approssimativa — in quale quarto del cursore ti trovi — e, dall’aggiornamento di
       settembre 2026, anche come posizione vera e propria del cursore, un numero intero da 5 a
@@ -1159,21 +1190,23 @@
       l’indirizzo IP da cui i dati arrivano. Ciò è sufficiente perché tali dati costituiscano dati
       personali, e come dati personali sono trattati in tutta la presente informativa.</p>
 
-      <h4>Dove sono attive e dove non viene inviato nulla</h4>
+      <h4>Dove sono attive e che cosa le governa</h4>
       <p>L’ambito territoriale è indicato per primo.</p>
-      <p>Nello SEE, nel Regno Unito e in Svizzera non viene inviato nulla: nessun insieme ridotto,
-      nessun insieme anonimizzato, nessun dato di questa categoria in alcuna forma. Il modulo di
-      consenso descritto nella Sezione&nbsp;7 è presentato da un componente Google che, nella
-      versione distribuita con questa release, non include alcuna finalità analitica: l’App non
-      può quindi ricevere il consenso per questa finalità in tali aree e lo considera come mai
-      prestato. Questa è una proprietà dell’App così come è compilata. Poggia però su un elemento
-      che non lo è: se per te sia richiesto un modulo di consenso lo decide il sistema di consenso
-      di Google, in base al messaggio di consenso che pubblichiamo per tali aree — lo stesso
-      meccanismo che già decide se la pubblicità descritta nella Sezione&nbsp;3(b) sia
-      personalizzata. L’App non determina da sé la tua posizione e non tenta di farlo. Se uno dei
-      due elementi dovesse cambiare, quel modulo diventerà il controllo, questa Sezione verrà
-      modificata di conseguenza e la presente informativa verrà aggiornata prima che qualsiasi
-      raccolta abbia inizio in tali aree.</p>
+      <p>Nello SEE, nel Regno Unito e in Svizzera queste statistiche sono raccolte soltanto se
+      presti il consenso. Il messaggio di consenso che Google ti mostra al primo avvio, descritto
+      nella Sezione&nbsp;7, chiede anche la finalità <strong>«archiviazione dei dati
+      analitici»</strong> — la finalità TCF n.&nbsp;1, che l’App interpreta come consenso
+      all’analisi — accanto alle finalità pubblicitarie. Se acconsenti, le statistiche descritte
+      in questa Sezione vengono raccolte, esattamente come altrove. Se non acconsenti, non viene
+      raccolto nulla e l’identificativo casuale di installazione descritto più sotto non viene mai
+      creato. Puoi revocare il consenso in qualsiasi momento riaprendo quel messaggio dalla voce
+      <strong>“Annunci e privacy”</strong> dell’App, e la raccolta si interrompe. La base giuridica
+      qui è il tuo consenso (art.&nbsp;6, par.&nbsp;1, lett.&nbsp;a) GDPR, e art.&nbsp;5,
+      par.&nbsp;3, Direttiva ePrivacy per l’identificativo sul tuo dispositivo); la
+      Sezione&nbsp;4 la indica. Se per te venga mostrato un messaggio di consenso lo decide il
+      sistema di consenso di Google, in base al messaggio che pubblichiamo per tali aree — lo
+      stesso meccanismo che già decide se la pubblicità descritta nella Sezione&nbsp;3(b) sia
+      personalizzata. L’App non determina da sé la tua posizione e non tenta di farlo.</p>
       <p>Ovunque altrove, queste statistiche sono attive. L’App contiene l’SDK di Google Analytics
       per Firebase ed è compilata con le credenziali del progetto Google necessarie: quanto
       descritto di seguito è quindi una raccolta e non soltanto una capacità. La raccolta è attiva
@@ -1258,7 +1291,7 @@
       <h4>Come disattivare queste statistiche</h4>
       <p>Per fermare la raccolta è sufficiente uno solo dei due controlli seguenti:</p>
       <ol>
-        <li>Nello SEE, nel Regno Unito e in Svizzera queste statistiche non vengono raccolte affatto in questa versione dell’App, qualunque risposta tu dia a qualsiasi modulo. Il modulo di consenso descritto nella Sezione&nbsp;7 è fornito da un componente Google che, nella versione distribuita con questa release, non include alcuna finalità analitica; l’App considera quindi il consenso per questa finalità come mai prestato in tali aree e non invia nulla. Se ciò dovesse cambiare, quello stesso modulo — riapribile in qualsiasi momento dalla voce <strong>“Annunci e privacy”</strong> dell’App — diventerà il controllo, e questa Sezione lo dirà prima che inizi qualsiasi raccolta.</li>
+        <li>Nello SEE, nel Regno Unito e in Svizzera, il messaggio di consenso di Google. Rifiuta la finalità analitica e non viene raccolto proprio nulla. Se hai già acconsentito, riapri quel messaggio in qualsiasi momento dalla voce <strong>“Annunci e privacy”</strong> dell’App e revoca: revocare è facile quanto prestare il consenso, interrompe la raccolta e non pregiudica quanto era già stato lecitamente raccolto.</li>
         <li>L’interruttore in-app <strong>“Condividi statistiche d’uso”</strong>, in tutte le altre aree. Parte in posizione attiva; disattivandolo, la raccolta cessa immediatamente e del tutto. Puoi riattivarlo in qualsiasi momento, e nulla d’altro nell’App cambia in un senso o nell’altro.</li>
       </ol>
       <div class="callout">
@@ -1316,7 +1349,7 @@
           <tr>
             <td><strong>Capire perché lo scuotimento smette di funzionare su alcuni dispositivi e quali parti dell’App vengono usate</strong> — le statistiche di utilizzo e affidabilità della Sezione&nbsp;3(d)</td>
             <td>Conteggi a fasce, motivi ed elenchi fissi di valori di categoria, oltre all’identificativo casuale dell’installazione e alla posizione approssimativa ricavata dall’IP descritti nella Sezione&nbsp;3(d)</td>
-            <td>Nello <strong>SEE, nel Regno Unito e in Svizzera</strong> queste statistiche <strong>non vengono raccolte affatto</strong> in questa versione (Sezione&nbsp;3(d)); se ciò dovesse cambiare, la base sarebbe <strong>il tuo consenso</strong> (art.&nbsp;6, par.&nbsp;1, lett.&nbsp;a) GDPR, e il consenso ePrivacy per l’identificativo sul tuo dispositivo), raccolto tramite lo stesso modulo Google UMP usato per la pubblicità. Al di fuori di tali aree: il nostro <strong>legittimo interesse</strong> (art.&nbsp;6, par.&nbsp;1, lett.&nbsp;f) GDPR) a diagnosticare un guasto che altrimenti non possiamo vedere, con un opt-out disponibile in qualsiasi momento — l’interruttore in-app <strong>“Condividi statistiche d’uso”</strong>, attivo per impostazione predefinita e con effetto immediato dal momento in cui lo disattivi.</td>
+            <td>Nello <strong>SEE, nel Regno Unito e in Svizzera: il tuo consenso</strong> (art.&nbsp;6, par.&nbsp;1, lett.&nbsp;a) GDPR, e il consenso ePrivacy per l’identificativo sul tuo dispositivo), prestato tramite la finalità <strong>«archiviazione dei dati analitici»</strong> dello stesso messaggio di consenso Google UMP usato per la pubblicità, e revocabile in qualsiasi momento dalla voce <strong>«Annunci e privacy»</strong> — se non presti il consenso, queste statistiche <strong>non vengono raccolte affatto</strong> (Sezione&nbsp;3(d)). Al di fuori di tali aree: il nostro <strong>legittimo interesse</strong> (art.&nbsp;6, par.&nbsp;1, lett.&nbsp;f) GDPR) a diagnosticare un guasto che altrimenti non possiamo vedere, con un opt-out disponibile in qualsiasi momento — l’interruttore in-app <strong>“Condividi statistiche d’uso”</strong>, attivo per impostazione predefinita e con effetto immediato dal momento in cui lo disattivi.</td>
           </tr>
         </tbody>
       </table>
@@ -1337,8 +1370,10 @@
       l’App scarica gli annunci in anticipo rispetto al tuo tocco (Sezione&nbsp;3(b)). Nessun
       annuncio viene mostrato a chi non lo ha chiesto, e l’App non si basa su alcun formato
       pubblicitario imposto in alcun punto della presente analisi.</p>
-      <p>Per le statistiche della Sezione&nbsp;3(d), al di fuori delle aree in cui si raccoglie il
-      consenso, ci basiamo sul nostro legittimo interesse a poter diagnosticare un guasto che
+      <p>Per le statistiche della Sezione&nbsp;3(d), nello SEE, nel Regno Unito e in Svizzera ci
+      basiamo sul tuo consenso, prestato nel messaggio di consenso Google e revocabile in
+      qualsiasi momento (Sezione&nbsp;7); lì non viene raccolto nulla se non lo presti. Al di
+      fuori di tali aree ci basiamo sul nostro legittimo interesse a poter diagnosticare un guasto che
       altrimenti ci resta invisibile, bilanciato dal fatto che i dati sono a fasce anziché esatti,
       non recano alcun identificativo pubblicitario e possono essere disattivati nell’App in
       qualsiasi momento. Non devi motivare l’opt-out, e l’App resta pienamente utilizzabile in
@@ -1352,7 +1387,7 @@
       soggetto che ospita l’unico file descritto nella Sezione&nbsp;3(c):</p>
       <ul>
         <li><strong>Google</strong> — in particolare <strong>Google Ireland Limited</strong> (per gli utenti nello SEE/Regno Unito/Svizzera) e <strong>Google LLC</strong> (Stati Uniti), che gestiscono Google Mobile Ads / AdMob; e</li>
-        <li><strong>Google</strong>, in un ruolo distinto — le stesse due società, che gestiscono <strong>Google Analytics per Firebase</strong>, destinatario delle statistiche di utilizzo e affidabilità descritte nella Sezione&nbsp;3(d) dove siano attive. È una finalità diversa dalla pubblicità e tale resta, ma le due non sono più del tutto separate nei sistemi di Google: il nostro <strong>account pubblicitario AdMob è collegato a questa proprietà di analytics</strong>, così che i <strong>totali dei ricavi pubblicitari</strong> compaiano accanto alle statistiche di utilizzo nei report che vediamo solo noi — un totale ricavato da un gruppo generico di utenti, mai da uno soltanto. Il collegamento funziona in una sola direzione. Le statistiche di utilizzo <strong>non</strong> vengono usate per personalizzare la pubblicità: la personalizzazione a partire dai dati di analytics è disattivata per <strong>ogni area geografica</strong>, e <strong>Google signals</strong>, la funzione che assocerebbe questi dati a un account Google con cui hai effettuato l’accesso, è disattivata. Per questa finalità non viene raccolto alcun identificativo pubblicitario, perciò l’identificativo descritto nella Sezione&nbsp;3(b) resta esclusivamente dell’SDK pubblicitario; e i controlli non cambiano — nel SEE, nel Regno Unito e in Svizzera per questa finalità non viene raccolto nulla, e ovunque altrove l’interruttore <strong>“condividi statistiche di utilizzo”</strong> la interrompe; e</li>
+        <li><strong>Google</strong>, in un ruolo distinto — le stesse due società, che gestiscono <strong>Google Analytics per Firebase</strong>, destinatario delle statistiche di utilizzo e affidabilità descritte nella Sezione&nbsp;3(d) dove siano attive. È una finalità diversa dalla pubblicità e tale resta, ma le due non sono più del tutto separate nei sistemi di Google: il nostro <strong>account pubblicitario AdMob è collegato a questa proprietà di analytics</strong>, così che i <strong>totali dei ricavi pubblicitari</strong> compaiano accanto alle statistiche di utilizzo nei report che vediamo solo noi — un totale ricavato da un gruppo generico di utenti, mai da uno soltanto. Il collegamento funziona in una sola direzione. Le statistiche di utilizzo <strong>non</strong> vengono usate per personalizzare la pubblicità: la personalizzazione a partire dai dati di analytics è disattivata per <strong>ogni area geografica</strong>, e <strong>Google signals</strong>, la funzione che assocerebbe questi dati a un account Google con cui hai effettuato l’accesso, è disattivata. Per questa finalità non viene raccolto alcun identificativo pubblicitario, perciò l’identificativo descritto nella Sezione&nbsp;3(b) resta esclusivamente dell’SDK pubblicitario; e i controlli non cambiano — nel SEE, nel Regno Unito e in Svizzera per questa finalità non viene raccolto nulla se non presti il consenso, e ovunque altrove l’interruttore <strong>“condividi statistiche di utilizzo”</strong> la interrompe; e</li>
         <li>i <strong>partner pubblicitari di Google</strong> (reti pubblicitarie di terzi, demand partner e fornitori di misurazione coinvolti nell’erogazione e nella misurazione degli annunci descritti nella Sezione&nbsp;3(b)); e</li>
         <li><strong>Google</strong>, in un terzo ruolo — quale gestore del <strong>backup automatico di Android / Google Drive</strong>, che detiene la copia di backup dei dati on-device descritti nella Sezione&nbsp;3(a) se hai attivato il backup del dispositivo. Tale copia è detenuta nel tuo account Google, non nel nostro, e noi non vi abbiamo accesso; e</li>
         <li><strong>GitHub,&nbsp;Inc.</strong> — unicamente in quanto soggetto che ospita l’unico file di testo statico descritto nella Sezione&nbsp;3(c). Riceve l’indirizzo IP da cui proviene la richiesta, e nient’altro. Informativa privacy di GitHub — <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement</a></li>
@@ -1411,14 +1446,14 @@
       tramite l’opzione <strong>“Annunci e privacy”</strong> — la voce di impostazioni privacy già
       presente nell’App, che riapre esattamente lo stesso modulo. Revocare il consenso è facile
       quanto concederlo.</p>
-      <p><strong>Che cosa quel modulo non copre in questa versione.</strong> Le statistiche di
-      utilizzo e affidabilità della Sezione&nbsp;3(d) non vengono raccolte affatto nello SEE, nel
-      Regno Unito e in Svizzera in questa versione dell’App, qualunque risposta tu dia. Il
-      componente Google che presenta questo modulo non include alcuna finalità analitica nella
-      versione distribuita con l’App, per cui l’App considera il consenso per quella finalità come
-      mai prestato qui e non invia nulla. Se ciò dovesse cambiare, sarà questo stesso modulo il
-      controllo per entrambe le finalità, e la presente informativa lo dirà prima che inizi
-      qualsiasi raccolta.</p>
+      <p><strong>Che cosa quel modulo copre, oltre alla pubblicità.</strong> Lo stesso modulo
+      comprende la finalità <strong>«archiviazione dei dati analitici»</strong> — la finalità TCF
+      n.&nbsp;1, che l’App interpreta come consenso all’analisi — ed è questa a governare qui le
+      statistiche di utilizzo e affidabilità della Sezione&nbsp;3(d). Se acconsenti, tali
+      statistiche vengono raccolte, esattamente come al di fuori di queste aree; se rifiuti, non
+      viene raccolto nulla e nessun identificativo di installazione viene creato. Riaprire il
+      modulo e revocare interrompe la raccolta. In tutte le altre aree il controllo è
+      l’interruttore in-app <strong>«condividi statistiche di utilizzo»</strong>.</p>
       <h3>Al di fuori dello SEE, del Regno Unito e della Svizzera</h3>
       <p>Dove non viene mostrato alcun modulo di consenso, la pubblicità è disciplinata dalle
       informative di Google e dai controlli dell’ID pubblicità di Android indicati di seguito.
@@ -1448,8 +1483,8 @@
       <strong>accesso</strong>, <strong>rettifica</strong>, <strong>cancellazione</strong>,
       <strong>limitazione</strong>, <strong>opposizione</strong> al trattamento basato sul
       legittimo interesse, <strong>portabilità</strong>, di <strong>revocare il consenso</strong>
-      in qualsiasi momento (per la pubblicità e, dove mai fossero raccolte su tale base, per le
-      statistiche della Sezione&nbsp;3(d) — Sezione&nbsp;7) e di <strong>proporre
+      in qualsiasi momento (per la pubblicità e per le statistiche della Sezione&nbsp;3(d), che
+      qui sono raccolte su tale base — Sezione&nbsp;7) e di <strong>proporre
       reclamo</strong> a un’autorità di controllo. In Italia è il <strong>Garante per la
       protezione dei dati personali</strong>
       (<a href="https://www.garante.it">www.garante.it</a>); puoi inoltre rivolgerti all’autorità
