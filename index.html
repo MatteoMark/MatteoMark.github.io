@@ -6,10 +6,34 @@
   <title>Privacy Policy — Shake to Enable Torch</title>
   <meta name="description" content="Privacy policy for the Shake to Enable Torch Android app by Luxebyte Labs, including Google AdMob advertising disclosures." />
   <!--
-    Policy version 2.17, 15 September 2026. Effective date unchanged: 25 August 2026.
+    Policy version 2.18, 15 September 2026. Effective date unchanged: 25 August 2026.
     This page carries no visible version number and no changelog; the version history lives in
     privacy-policy/privacy-policy.en.md and privacy-policy/informativa-privacy.it.md, which are
     kept in step with it.
+
+    What 2.18 changed, in both languages:
+    * Section 3(d), the periodic summary: three new items counting the shakes that did NOT work
+      — how many gestures cleared 70% of the user's threshold without firing the detector
+      (`near_miss`, the same 0 / 1-5 / 6-20 / >20 banding as the existing counts), how close the
+      strongest of those came (`near_band`, two bands: 70-85% and 85-100%), and how many were
+      followed by a real detection inside ten seconds (`retry`). Counts and bands only; the ratio
+      never leaves the process. See logic/NearMissDetector.
+    * Section 3(d), the same summary: a FOURTH new parameter, `fail_reason` — one closed word for
+      why a flashlight command failed (none / in_use / disabled / unavailable / no_camera /
+      other), the LAST failure in the window. `torch_fail` has counted the failures since these
+      statistics began and has never said why. Never the system's message, never another app's
+      name. See EventVocabulary.failReason.
+    * Section 3(d), one new item: the same summary sent ONCE per installation, on the first
+      backgrounding after install (`first_session`). Same fields, no `strategy`, and its window
+      figure is time since first launch. It exists because `shake_day` refuses any window under
+      30 minutes, so an install that failed and was removed the same day reported nothing at all.
+      See logic/analytics/FirstSessionPolicy.
+    * NO new data category, NO new recipient, NO new purpose, and no Data safety row moves: these
+      are closed enums authored by the App, in the App activity -> App interactions box already
+      declared. Uninstall (`app_remove`) and the device model were ALREADY disclosed under
+      "Collected automatically by Google" and are unchanged.
+    * Four new event PARAMETERS need declaring as event-scoped custom dimensions in GA4
+      (`near_miss`, `near_band`, `retry`, `fail_reason`); the new event NAME needs nothing.
 
     What 2.17 changed, in both languages:
     * Section 3(b), rewarded placements: a FOURTH placement. Switching on the "Ignore shakes
@@ -536,8 +560,11 @@
       <ul>
         <li>how many shakes were detected, how many flashlight commands were attempted, how many failed, and how many were refused by the camera — each as a band (“0”, “1–5”, “6–20”, “more than 20”);</li>
         <li>whether the strongest motion reading in that window was below, near, or above the sensitivity threshold you chose;</li>
+        <li>how many times movement looked like a shake but stayed under your sensitivity threshold, counted and banded (“0”, “1–5”, “6–20”, “more than 20”); how close the strongest of those came, as one of two bands (70–85&nbsp;% or 85–100&nbsp;% of your threshold); and how many of those were followed by a shake that did work within ten seconds — counts only, never the readings;</li>
+        <li>and, when a flashlight command could not be carried out, a single fixed word saying why: that another app was using the camera, that the camera was switched off by a device policy, that the flashlight was taken back by the system, that no rear camera could be found, or “other”. It is the last such failure in that window and nothing more — never the message the system gave, never the name of any other app;</li>
         <li>which quarter of the sensitivity slider you are on — and, since the September 2026 update, the exact position of that slider, a whole number from 5 to 150, and whether you have ever moved it on this installation, as a simple yes or no. Those last two are recorded as a property of the installation rather than of this summary: the App sets them each time you open it and again whenever you release the slider, and Google’s SDK then attaches the current value of each to every item it uploads from that installation, this summary included. They are the setting you chose and nothing else: never how, when or how hard you shake;</li>
-        <li>which screen-off strategy was in force.</li>
+        <li>which screen-off strategy was in force;</li>
+        <li>the same summary once more, sent a single time, for the first time you leave the App after installing it — so that an installation which never got the torch to work is counted even if it is removed the same day. It contains nothing the summary above does not; it is sent once per installation and never again; and in place of the window’s length it carries how long it has been since you first opened the App.</li>
       </ul>
       <p><strong>Product usage</strong></p>
       <ul>
@@ -1183,8 +1210,11 @@
       <ul>
         <li>quanti scuotimenti sono stati rilevati, quanti comandi della torcia sono stati tentati, quanti sono falliti e quanti sono stati rifiutati dalla fotocamera — ciascuno come fascia (“0”, “1–5”, “6–20”, “più di 20”);</li>
         <li>se la lettura di movimento più intensa di quella finestra era sotto, vicino o sopra la soglia di sensibilità da te scelta;</li>
+        <li>quante volte un movimento è sembrato uno scuotimento ma è rimasto sotto la tua soglia di sensibilità, come conteggio in fasce (“0”, “1–5”, “6–20”, “più di 20”); quanto è arrivato vicino il più intenso di essi, come una di due fasce (70–85&nbsp;% o 85–100&nbsp;% della tua soglia); e quanti di essi sono stati seguiti entro dieci secondi da uno scuotimento riuscito — solo conteggi, mai le letture;</li>
+        <li>e, quando un comando della torcia non ha potuto essere eseguito, una singola parola fissa che ne dice il motivo: che un’altra app stava usando la fotocamera, che la fotocamera era disattivata da una politica del dispositivo, che la torcia è stata ripresa dal sistema, che non è stata trovata alcuna fotocamera posteriore, oppure “altro”. È l’ultimo di tali fallimenti in quella finestra e nient’altro — mai il messaggio restituito dal sistema, mai il nome di un’altra app;</li>
         <li>in quale quarto del cursore di sensibilità ti trovi — e, dall’aggiornamento di settembre 2026, la posizione vera e propria di quel cursore, un numero intero da 5 a 150, e se lo hai mai spostato su questa installazione, come semplice sì o no. Questi ultimi due sono registrati come proprietà dell’installazione e non di questo riepilogo: l’App li imposta a ogni apertura e di nuovo ogni volta che rilasci il cursore, e l’SDK di Google allega poi il valore corrente di ciascuno a ogni voce che carica da quella installazione, questo riepilogo compreso. Sono l’impostazione che hai scelto e nient’altro: mai come, quando o con quanta forza scuoti il dispositivo;</li>
-        <li>quale strategia a schermo spento era in vigore.</li>
+        <li>quale strategia a schermo spento era in vigore;</li>
+        <li>lo stesso riepilogo ancora una volta, inviato una sola volta, alla prima uscita dall’App dopo averla installata — così che un’installazione che non è mai riuscita ad accendere la torcia venga conteggiata anche se viene rimossa lo stesso giorno. Non contiene nulla che il riepilogo qui sopra non contenga; viene inviato una volta per installazione e mai più; e, al posto della durata della finestra, indica quanto tempo è passato da quando hai aperto l’App per la prima volta.</li>
       </ul>
       <p><strong>Utilizzo del prodotto</strong></p>
       <ul>
