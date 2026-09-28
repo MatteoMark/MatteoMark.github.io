@@ -157,28 +157,89 @@
       cannot help revealing where it came from, and one is a small, fixed set of usage statistics
       that you can switch off.</p>
 
-      <h3>3(a). Data kept ONLY on your device — never transmitted to us or anyone</h3>
+      <h3>3(a). Data kept on your device, never transmitted to us</h3>
       <p>To make the App work, the App stores a small amount of information <strong>locally on your
-      device only</strong>, using Android’s standard <code>SharedPreferences</code> storage. This is
-      the complete list:</p>
+      device</strong>, using Android’s standard <code>SharedPreferences</code> storage. This is the
+      complete list, grouped by what it is for.</p>
+
+      <p><strong>Your game</strong></p>
       <ul>
-        <li>your <strong>best score</strong>;</li>
-        <li>your <strong>unfinished game</strong>, so a run can be resumed after you close the App
-        (the board, the score, the turn count and the pieces in your hand);</li>
-        <li>your <strong>settings</strong>: sound on or off, and the language you have chosen;</li>
-        <li>your <strong>board skin</strong>: which one is in use, and the moment each unlocked skin
-        was unlocked, because an unlock lasts 24 hours and has to know when it started.</li>
+        <li>your <strong>best score</strong>, and which version of the game’s scoring rules it was set
+        under, so that a score from earlier rules is not carried into a game that plays
+        differently;</li>
+        <li>your <strong>unfinished game</strong>, so a run can be resumed after you close the App: the
+        board, the score, the turn count, the pieces in your hand, how many extra lives and second
+        chances that game has used, and where it is in its sequence of pieces.</li>
       </ul>
+
+      <p><strong>Your settings</strong></p>
+      <ul>
+        <li>sound on or off, and the language you have chosen;</li>
+        <li>your <strong>board skin</strong>: which one is in use, and the moment each unlocked skin
+        was unlocked, because an unlock lasts 24 hours and has to know when it started;</li>
+        <li>whether <strong>usage statistics</strong> (Section 3(d)) are switched on;</li>
+        <li>a copy of what Google’s consent component last told the App: whether a consent message
+        applies to you and, if it does, whether it has been answered (not what you answered). The
+        App keeps it so it can tell whether usage statistics may be sent without first asking over
+        the network (Section 7).</li>
+      </ul>
+
+      <p><strong>The tutorial</strong></p>
+      <ul>
+        <li>whether the tutorial has already been shown to you when the App was first opened, so that
+        it is shown automatically only once;</li>
+        <li>whether you have ever played one whole turn (a placement and the tilt after it), in the
+        tutorial or in a game, which is how the App decides whether to keep offering you the
+        tutorial.</li>
+      </ul>
+
+      <p><strong>The rating request</strong></p>
+      <ul>
+        <li><strong>how many games you have played to the end</strong>, a single number, which the App
+        uses to pick a good moment to ask for a rating;</li>
+        <li><strong>how many times the App has asked for a rating, and when it last asked</strong>, so
+        that it does not ask too often. The App asks Google Play to show its rating card; Google
+        Play decides whether the card actually appears and does not tell the App.</li>
+      </ul>
+
+      <p><strong>Where your installation came from</strong></p>
+      <ul>
+        <li>the words saying which link brought you to the App’s store page, and roughly how long
+        after installation the App was first opened, both described in Section 3(d), together with
+        whether they have been read and sent yet and how many times reading them has failed.</li>
+      </ul>
+
+      <p><strong>The advertising switch</strong></p>
+      <ul>
+        <li>the last copy of the file described in Section 3(c), and when it was fetched, so that the
+        App does not fetch it again for 24 hours and can use the last copy when it cannot reach the
+        internet.</li>
+      </ul>
+
+      <p>Two kinds of stored data are not on this list because the current App does not write them.
+      Older versions of the App may have left a few entries that this version no longer writes (an
+      old light or dark theme setting, for example). And Google’s own components described in
+      Sections 3(b), 3(d) and 7 keep their own records on your device, such as your consent answer
+      and the usage statistics identifier; those Sections describe them.</p>
 
       <p>This on-device data:</p>
       <ul>
-        <li><strong>never leaves your device</strong>;</li>
         <li>is <strong>never transmitted to the Developer</strong>, who has no servers to receive it;</li>
         <li>is <strong>never sold or shared</strong> with anyone;</li>
-        <li>contains <strong>nothing that identifies you</strong> — there is no account, no login, no
+        <li>contains <strong>nothing that identifies you</strong>: there is no account, no login, no
         name, no email address and no device identifier in it;</li>
-        <li>is fully under your control — uninstalling the App, or clearing the App’s storage/data in
-        Android <strong>Settings → Apps → Tilt Blocks → Storage</strong>, deletes it.</li>
+        <li>is <strong>not sent anywhere by the App</strong>, except what Section 3(d) describes, and
+        only where usage statistics are permitted: the words about where your installation came from
+        and how soon it was first opened, sent once; the board skin in use; and the new value when
+        you change the sound or the language. Your scores, your unfinished game, your count of
+        finished games, and the tutorial and rating records are never sent;</li>
+        <li>may be included in <strong>your phone’s own backup</strong>: if backup is switched on in
+        your phone’s settings, Android can copy the App’s stored data to your Google account, as it
+        does for most apps, and put it back when you reinstall the App or move to a new phone. That
+        copy is kept by Google under your account, and the Developer cannot see it;</li>
+        <li>is fully under your control: uninstalling the App, or clearing the App’s storage/data in
+        Android <strong>Settings → Apps → Tilt Blocks → Storage</strong>, deletes it from your
+        phone.</li>
       </ul>
 
       <p>The App declares <strong>three</strong> permissions and no others:</p>
