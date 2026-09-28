@@ -152,10 +152,12 @@
 
       <h2 id="en-3">3. What data is processed</h2>
       <p>The App processes four clearly separate categories of data. We keep them separate on
-      purpose, because they behave very differently: one never leaves your device, one is collected
+      purpose, because they behave very differently: one is kept on your device, one is collected
       by Google and never reaches us, one is a single request that carries nothing about you but
       cannot help revealing where it came from, and one is a small, fixed set of usage statistics
-      that you can switch off.</p>
+      that you can switch off. The App sends none of the data kept on your device anywhere, except
+      a few items named in Section 3(a), which are sent with the usage statistics in Section 3(d)
+      where those are permitted.</p>
 
       <h3>3(a). Data kept on your device, never transmitted to us</h3>
       <p>To make the App work, the App stores a small amount of information <strong>locally on your
@@ -322,8 +324,10 @@
       requested and the type of client. That server is <strong>GitHub Pages</strong>, operated by
       <strong>GitHub, Inc.</strong>, which hosts the file as a plain static document. We run no
       server, and we never see a log of these requests.</p>
-      <p>A successful response is stored on your device for 24 hours, so a returning player usually
-      makes no request at all.</p>
+      <p>The App keeps the last successful response on your device. For 24 hours after it was
+      fetched the App uses it without asking again, so a returning player usually makes no request
+      at all; after that the App fetches the file again, and if that fails it keeps using the last
+      copy, however old, until a new fetch succeeds.</p>
       <p>Separately from this file, the App asks Google’s consent component at every start
       whether a consent message is required for you (Section 7). It does so whether advertising is
       switched on or off, because the answer also governs the usage statistics in Section 3(d).
@@ -642,9 +646,12 @@
 
       <h2 id="en-8">8. Data retention — how long data is kept</h2>
       <ul>
-        <li><strong>On-device data (Section 3(a)):</strong> kept until you delete it, by clearing the
-        App’s storage or uninstalling the App. We have no copy and therefore no retention period of
-        our own.</li>
+        <li><strong>On-device data (Section 3(a)):</strong> kept on your phone until you delete it,
+        by clearing the App’s storage or uninstalling the App. If backup is switched on in your
+        phone’s settings, Android may also keep a copy in your Google account, as Section 3(a)
+        describes; that copy is governed by Google, not by us, and Android can put it back when you
+        reinstall the App or move to a new phone. We have no copy and therefore no retention period
+        of our own.</li>
         <li><strong>Advertising data (Section 3(b)):</strong> retained by <strong>Google</strong>
         according to Google’s own retention schedules, which are described in Google’s privacy
         documentation. The Developer holds none of it and cannot delete it on your behalf; requests
