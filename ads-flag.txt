@@ -3,3 +3,4 @@ ads.dark_theme=true
 ads.tiltblocks=true
 torch.promo=true
 torch.ad_exp=true
+torch.range_cap=off
