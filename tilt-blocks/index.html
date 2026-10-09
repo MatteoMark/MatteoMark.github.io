@@ -171,8 +171,9 @@
         under, so that a score from earlier rules is not carried into a game that plays
         differently;</li>
         <li>your <strong>unfinished game</strong>, so a run can be resumed after you close the App: the
-        board, the score, the turn count, the pieces in your hand, how many extra lives and second
-        chances that game has used, and where it is in its sequence of pieces.</li>
+        board, the score, the turn count, your current streak of clears, the pieces in your hand, how
+        many extra lives and second chances that game has used, where it is in its sequence of
+        pieces, and, when the game has one, where Blocky’s tile is.</li>
       </ul>
 
       <p><strong>Your settings</strong></p>
@@ -185,7 +186,8 @@
         <li>your <strong>gems</strong>, the in-game currency you earn by playing and spend on board
         skins (Section 3(b)): how many you have now, how many you have earned in total, how many you
         have earned in the game in progress, including any doubling by a video (shown to you when it
-        ends), the day you earned your first one, and whether the App has already paid the one-off
+        ends), a number that tells one game’s gems from the next, so that a doubling is paid to the
+        game it was for, the day you earned your first one, and whether the App has already paid the one-off
         credit for achievements and daily goals you finished before gems existed. Gems are kept only
         on your device and never expire;</li>
         <li>whether <strong>usage statistics</strong> (Section 3(d)) are switched on;</li>
@@ -204,6 +206,16 @@
         tutorial.</li>
       </ul>
 
+      <p><strong>Blocky, the App’s guide</strong></p>
+      <ul>
+        <li>whether Blocky’s welcome has already started, so that it plays only once;</li>
+        <li>how many blocks you have placed, in the tutorial and in games, counted only up to 20,
+        after which Blocky no longer shows his “Place a block first!” hint;</li>
+        <li>for his greeting on the main menu: the last thing he said there, the day of your last
+        visit to the main menu, and your best score at that visit, so that he does not repeat
+        himself and can tell when your best has risen.</li>
+      </ul>
+
       <p><strong>Your daily goal and achievements</strong></p>
       <ul>
         <li><strong>today’s goal</strong>: which day it belongs to, how far you have got with it, the
@@ -211,15 +223,22 @@
         the last day the App showed you that you had finished it;</li>
         <li>the last day the App played the short animation that presents today’s goal, so that
         starting a game does not play it a second time that day;</li>
-        <li><strong>which of the App’s eleven achievements you have unlocked</strong>, and which of
-        them you have not yet looked at in the achievements list.</li>
+        <li><strong>which of the 50 medals of the App’s achievements you hold</strong>, which of them
+        you have not yet looked at in the achievements list, and which ones you have earned that are
+        still waiting to be awarded, because the App spaces medals out by the turns you play: it
+        keeps how many turns you have played in games and the count when it last awarded one;</li>
+        <li>the <strong>running totals the medals are measured against</strong>, all counted from
+        your games: lines cleared, points scored in all, games that reached the EINSTEIN rung, your
+        longest game in turns, your biggest single clear, clears of four lines or more, your longest
+        streak, boards emptied, turns whose block cleared and whose tilt then cleared again, Blocky
+        tiles freed, how many days you have played on, the first and the last of those days, and the
+        gems earned by playing (never those from a video).</li>
       </ul>
 
       <p><strong>The daily reminder</strong></p>
       <ul>
-        <li>whether the daily reminder is switched on, whether the App has already asked for
-        permission to post it, and on how many end-of-game screens (at most two) it has offered you
-        the reminder;</li>
+        <li>whether the daily reminder is switched on, and how many times (at most two) and on which
+        day the App last asked Android for permission to post it;</li>
         <li>the day the last reminder was posted, how many reminders in a row have gone unanswered,
         and when the App was last opened, which is how the App decides whether a reminder is due and
         stops after three unanswered;</li>
@@ -259,6 +278,10 @@
         <li>while a video you chose to watch to unlock a board skin is on its way or playing, which
         skin it is for, removed when the video ends, so that a skin whose video was interrupted by
         the phone closing the App is unlocked at the App’s next start;</li>
+        <li>while a video you chose to watch to double a game’s gems is on its way or playing, which
+        game it is for and how many gems it adds, removed when they are added or when it ends without
+        them, so that a video interrupted by the phone closing the App still adds its gems once, at
+        the App’s next start;</li>
         <li>for the video that adds gems in the skins gallery, how many have paid their gems today
         and which day that is, so that no more than three are offered in a day; and, while one you
         chose to watch is on its way or playing, which day it was pressed on and which of that day’s
@@ -284,12 +307,13 @@
         and how soon it was first opened, sent once; the board skin in use; when you buy a board
         skin, which one, how many you now own, and roughly how many days have passed since your
         first gem, as a band; which kind of daily goal you finished, when you finish one; the name of
-        each achievement you unlock, when you unlock it; that a daily reminder was posted, which goal
-        it named, and whether you opened the App from it; your answer to the reminder permission
-        question; and the new value when you change the sound, the language or the daily reminder.
-        Your scores, your unfinished game, your count of finished games, your gems (how many you
-        have, or earned in a game, or earned in total), and the tutorial and rating records are
-        never sent;</li>
+        each achievement medal the App awards you, when it awards it; that a daily reminder was
+        posted, which goal it named, and whether you opened the App from it; your answer to
+        Android’s notification question; and the new value when you change the sound, the language
+        or the daily reminder. Your scores, your unfinished game, your count of finished games, your
+        gems (how many you have, or earned in a game, or earned in total), the running totals behind
+        your achievements, Blocky’s records, and the tutorial and rating records are never
+        sent;</li>
         <li>may be included in <strong>your phone’s own backup</strong>: if backup is switched on in
         your phone’s settings, Android can copy the App’s stored data to your Google account, as it
         does for most apps, and put it back when you reinstall the App or move to a new phone. That
@@ -312,7 +336,10 @@
         written down rather than guessed at;</li>
         <li><strong>Notifications</strong> (<code>POST_NOTIFICATIONS</code>), for the daily reminder
         described below. On Android 13 and later Android asks you first, and the App posts nothing
-        unless you allow it. On older versions Android does not ask, and the reminder is on unless
+        unless you allow it. The App shows Android’s question by itself when you first open it (or,
+        if it cannot then, on the main menu), and again only on a later day; pressing the reminder
+        switch in Settings can also show it. In all, the App shows it at most twice. On older
+        versions Android does not ask, and the reminder is on unless
         you switch it off, in the App’s Settings or in Android’s;</li>
         <li><strong>Run at startup</strong> (<code>RECEIVE_BOOT_COMPLETED</code>), so that a reminder
         already scheduled is not lost when the phone restarts. It lets the App’s scheduling library
@@ -389,8 +416,9 @@
         button are on the same screen). When the video has played, those gems are paid a second time
         at once, and if you then take an extra life, every turn of the same game after it also earns
         its gems twice, until the game ends. Gems from the daily goal and from achievements are never
-        doubled. If the video cannot be shown once you have pressed the button, the gems are doubled
-        anyway; if you close it early, nothing is added. Starting a new game while the video is on
+        doubled. If the video cannot be shown once you have pressed the button, or the phone closes
+        the App while it is playing, the gems are doubled anyway (in the second case, at the App’s
+        next start); if you close it early, nothing is added. Starting a new game while the video is on
         its way never moves the bonus onto the new game. It is used at most once per game: after it,
         later game overs of that game show “Turn gems doubled” and no button. While its video is
         still loading, the button is greyed, shows three dots in place of the video mark and cannot
@@ -533,16 +561,20 @@
         once per game, and <strong>never the score itself</strong>;</li>
         <li><strong>that you finished today’s goal</strong>, once a day, and which of its three kinds
         it was: clearing lines, playing turns, or clearing on turns in a row;</li>
-        <li><strong>that you unlocked an achievement</strong>, and which of the App’s eleven it was,
-        once each.</li>
+        <li><strong>that the App awarded you an achievement medal</strong>, and which of its 50 medals
+        it was, by a fixed name (for example the silver medal of “Line clearer”), once each. When one
+        medal brings the lower medals of the same row with it, each of them is reported. Medals
+        awarded all at once, the first time the App counts medals, for play already recorded on your
+        device are not reported.</li>
       </ul>
 
       <p><strong>The tutorial and the rules</strong></p>
       <ul>
         <li>that the “New here?” offer was <strong>shown</strong>, and how it was answered: play,
         skip, or closed;</li>
-        <li>that the tutorial was <strong>opened</strong>, and from where: that offer, “How to
-        play” on the main menu, or “How to play” inside a game;</li>
+        <li>that the tutorial was <strong>opened</strong>, and from where: by itself, the first time
+        the App is opened; that offer; “How to play” on the main menu; or “How to play” inside a
+        game;</li>
         <li>that the tutorial <strong>ended</strong>, how (finished or skipped), at which of its five
         numbered steps, and, for that one step, how many times you started dragging and how many
         times you tapped, each as one of four bands (none, one, two, three or more);</li>
@@ -592,7 +624,9 @@
 
       <p><strong>The daily reminder</strong></p>
       <ul>
-        <li>how you <strong>answered the reminder question</strong>: yes or no thanks;</li>
+        <li>how you <strong>answered Android’s notification question</strong> for the daily
+        reminder: allowed, or not allowed (a refusal, or the question closed without an
+        answer);</li>
         <li>that a <strong>reminder was posted</strong>, and which of the three daily goals it named.
         It is sent from the phone in the background, through the same switch and consent rules as
         everything else in this Section;</li>
@@ -643,7 +677,8 @@
       in Section 3(b) is used by the advertising SDK alone. No free text of any kind. No precise
       timestamps as data fields. No record of individual moves, placements or tilts: the tutorial’s
       two counts above are bands of how many drags and taps there were on one step, not what any of
-      them did or where. No score, no saved game, no best score, no gem balance. No setting other
+      them did or where. No score, no saved game, no best score, no gem balance, no achievement
+      totals. No setting other
       than the four named above. No contacts, no
       location from the device, no account.</p>
 
