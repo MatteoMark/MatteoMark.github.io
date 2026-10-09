@@ -59,7 +59,7 @@
       padding: .9rem 1.1rem; margin: 1.2rem 0;
     }
     .callout strong { color: var(--ink); }
-    code { background: var(--surface); border: 1px solid var(--hairline); border-radius: 5px; padding: .05em .4em; font-size: .9em; }
+    code { background: var(--surface); border: 1px solid var(--hairline); border-radius: 5px; padding: .05em .4em; font-size: .9em; overflow-wrap: anywhere; }
     table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: .96rem; }
     th, td { border: 1px solid var(--hairline); padding: .55rem .7rem; text-align: left; vertical-align: top; }
     th { background: var(--surface); }
@@ -80,7 +80,7 @@
       <h1>Privacy Policy</h1>
       <p class="meta">Tilt Blocks — Android (<code>com.luxebyte.tiltblocks</code>)</p>
       <p class="meta">Publisher: <strong>Matteo Lamarque</strong>, trading as <strong>Luxebyte Labs</strong> · <a href="mailto:luxebytecomp@gmail.com">luxebytecomp@gmail.com</a></p>
-      <p class="meta">Effective: <time datetime="2026-07-30">30 July 2026</time> · Last updated: <time datetime="2026-09-28">28 September 2026</time></p>
+      <p class="meta">Effective: <time datetime="2026-07-30">30 July 2026</time> · Last updated: <time datetime="2026-10-09">9 October 2026</time></p>
     </header>
 
     <main id="main">
@@ -161,7 +161,8 @@
 
       <h3>3(a). Data kept on your device, never transmitted to us</h3>
       <p>To make the App work, the App stores a small amount of information <strong>locally on your
-      device</strong>, using Android’s standard <code>SharedPreferences</code> storage. This is the
+      device</strong>, using Android’s standard <code>SharedPreferences</code> storage (and, for the
+      next daily reminder only, the scheduling library’s own storage, named below). This is the
       complete list, grouped by what it is for.</p>
 
       <p><strong>Your game</strong></p>
@@ -177,8 +178,16 @@
       <p><strong>Your settings</strong></p>
       <ul>
         <li>sound on or off, and the language you have chosen;</li>
-        <li>your <strong>board skin</strong>: which one is in use, and the moment each unlocked skin
-        was unlocked, because an unlock lasts 24 hours and has to know when it started;</li>
+        <li>your <strong>board skin</strong>: which one is in use, which skins you have bought with
+        gems, and, for a skin unlocked for 24 hours by a video in an earlier version of the App, the
+        moment it was unlocked, because that unlock lasts 24 hours and has to know when it
+        started;</li>
+        <li>your <strong>gems</strong>, the in-game currency you earn by playing and spend on board
+        skins (Section 3(b)): how many you have now, how many you have earned in total, how many you
+        have earned in the game in progress, including any doubling by a video (shown to you when it
+        ends), the day you earned your first one, and whether the App has already paid the one-off
+        credit for achievements and daily goals you finished before gems existed. Gems are kept only
+        on your device and never expire;</li>
         <li>whether <strong>usage statistics</strong> (Section 3(d)) are switched on;</li>
         <li>a copy of what Google’s consent component last told the App: whether a consent message
         applies to you and, if it does, whether it has been answered (not what you answered). The
@@ -193,6 +202,29 @@
         <li>whether you have ever played one whole turn (a placement and the tilt after it), in the
         tutorial or in a game, which is how the App decides whether to keep offering you the
         tutorial.</li>
+      </ul>
+
+      <p><strong>Your daily goal and achievements</strong></p>
+      <ul>
+        <li><strong>today’s goal</strong>: which day it belongs to, how far you have got with it, the
+        last day you finished one, how many you have finished in total (never how many in a row), and
+        the last day the App showed you that you had finished it;</li>
+        <li>the last day the App played the short animation that presents today’s goal, so that
+        starting a game does not play it a second time that day;</li>
+        <li><strong>which of the App’s eleven achievements you have unlocked</strong>, and which of
+        them you have not yet looked at in the achievements list.</li>
+      </ul>
+
+      <p><strong>The daily reminder</strong></p>
+      <ul>
+        <li>whether the daily reminder is switched on, whether the App has already asked for
+        permission to post it, and on how many end-of-game screens (at most two) it has offered you
+        the reminder;</li>
+        <li>the day the last reminder was posted, how many reminders in a row have gone unanswered,
+        and when the App was last opened, which is how the App decides whether a reminder is due and
+        stops after three unanswered;</li>
+        <li>the next reminder itself, which WorkManager, a scheduling library built into the App,
+        keeps in its own storage on your device until it is due.</li>
       </ul>
 
       <p><strong>The rating request</strong></p>
@@ -218,6 +250,23 @@
         internet.</li>
       </ul>
 
+      <p><strong>The optional videos</strong></p>
+      <ul>
+        <li>while a video you chose to watch is on its way or playing, which of the four offers in
+        Section 3(b) it was for, removed as soon as the App records how it ended, so that a video
+        interrupted by the phone closing the App can still be counted once, at the App’s next start
+        (Section 3(d));</li>
+        <li>while a video you chose to watch to unlock a board skin is on its way or playing, which
+        skin it is for, removed when the video ends, so that a skin whose video was interrupted by
+        the phone closing the App is unlocked at the App’s next start;</li>
+        <li>for the video that adds gems in the skins gallery, how many have paid their gems today
+        and which day that is, so that no more than three are offered in a day; and, while one you
+        chose to watch is on its way or playing, which day it was pressed on and which of that day’s
+        three it is, removed when its gems are added or when it ends without them, so that a video
+        interrupted by the phone closing the App still adds its gems once, at the App’s next
+        start.</li>
+      </ul>
+
       <p>Two kinds of stored data are not on this list because the current App does not write them.
       Older versions of the App may have left a few entries that this version no longer writes (an
       old light or dark theme setting, for example). And Google’s own components described in
@@ -232,9 +281,15 @@
         name, no email address and no device identifier in it;</li>
         <li>is <strong>not sent anywhere by the App</strong>, except what Section 3(d) describes, and
         only where usage statistics are permitted: the words about where your installation came from
-        and how soon it was first opened, sent once; the board skin in use; and the new value when
-        you change the sound or the language. Your scores, your unfinished game, your count of
-        finished games, and the tutorial and rating records are never sent;</li>
+        and how soon it was first opened, sent once; the board skin in use; when you buy a board
+        skin, which one, how many you now own, and roughly how many days have passed since your
+        first gem, as a band; which kind of daily goal you finished, when you finish one; the name of
+        each achievement you unlock, when you unlock it; that a daily reminder was posted, which goal
+        it named, and whether you opened the App from it; your answer to the reminder permission
+        question; and the new value when you change the sound, the language or the daily reminder.
+        Your scores, your unfinished game, your count of finished games, your gems (how many you
+        have, or earned in a game, or earned in total), and the tutorial and rating records are
+        never sent;</li>
         <li>may be included in <strong>your phone’s own backup</strong>: if backup is switched on in
         your phone’s settings, Android can copy the App’s stored data to your Google account, as it
         does for most apps, and put it back when you reinstall the App or move to a new phone. That
@@ -244,23 +299,63 @@
         phone.</li>
       </ul>
 
-      <p>The App declares <strong>three</strong> permissions and no others:</p>
+      <p>The App itself declares <strong>five</strong> permissions:</p>
       <ul>
-        <li><strong>Vibration</strong>, to make blocks feel like objects in your hand;</li>
-        <li><strong>Internet access</strong>, used by the advertising and consent components
-        described in 3(b), by the single request described in 3(c), by the usage statistics
-        described in 3(d), and by nothing else;</li>
+        <li><strong>Vibration</strong> (<code>VIBRATE</code>), to make blocks feel like objects in
+        your hand;</li>
+        <li><strong>Internet access</strong> (<code>INTERNET</code>), used by the advertising and
+        consent components described in 3(b), by the single request described in 3(c), by the usage
+        statistics described in 3(d), and by nothing else;</li>
         <li><strong>Advertising ID</strong> (<code>com.google.android.gms.permission.AD_ID</code>),
         which is what allows Google to read the resettable advertising identifier described in 3(b).
         It is declared explicitly rather than inherited silently, so that what the App can reach is
-        written down rather than guessed at.</li>
+        written down rather than guessed at;</li>
+        <li><strong>Notifications</strong> (<code>POST_NOTIFICATIONS</code>), for the daily reminder
+        described below. On Android 13 and later Android asks you first, and the App posts nothing
+        unless you allow it. On older versions Android does not ask, and the reminder is on unless
+        you switch it off, in the App’s Settings or in Android’s;</li>
+        <li><strong>Run at startup</strong> (<code>RECEIVE_BOOT_COMPLETED</code>), so that a reminder
+        already scheduled is not lost when the phone restarts. It lets the App’s scheduling library
+        put the reminder back; it starts no game and reads nothing.</li>
       </ul>
+      <p>The libraries built into the App, all named in this policy, declare these as well, and only
+      those libraries use them:</p>
+      <ul>
+        <li><strong>Network state</strong> (<code>ACCESS_NETWORK_STATE</code>), so the advertising,
+        analytics and scheduling libraries can tell whether the phone is online before they try;</li>
+        <li><strong>Keep awake</strong> (<code>WAKE_LOCK</code>) and <strong>Foreground
+        service</strong> (<code>FOREGROUND_SERVICE</code>), which WorkManager and Google’s components
+        use to finish short pieces of work in the background, such as the daily reminder;</li>
+        <li><strong>Ad services</strong> (<code>ACCESS_ADSERVICES_AD_ID</code>,
+        <code>ACCESS_ADSERVICES_ATTRIBUTION</code> and <code>ACCESS_ADSERVICES_TOPICS</code>),
+        Android’s Privacy Sandbox interfaces, declared by Google’s advertising and analytics
+        components, which may use them for the advertising purposes in Section 3(b) under the consent
+        described in Section 7;</li>
+        <li><strong>Install referrer</strong>
+        (<code>com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE</code>), which
+        lets the App ask Google Play, once, which link brought you to it (Section 3(d));</li>
+        <li>an internal permission named after the App
+        (<code>com.luxebyte.tiltblocks.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION</code>), declared by
+        Android’s support library so that only the App itself can send messages to its own
+        components.</li>
+      </ul>
+      <p>Those are all the permissions the App as published contains, and there are no others.</p>
+
+      <p><strong>The daily reminder.</strong> The App can post <strong>at most one notification a
+      day</strong>, about today’s goal, and only on a day you have not opened the App yet. It is
+      scheduled on your device by WorkManager, a library built into the App; there is <strong>no push
+      service and no server</strong>, and nothing is sent to anyone to make it happen. It
+      <strong>never contains an ad</strong>, and tapping it opens the App’s main menu, which shows none
+      either. After three reminders in a row go unanswered it stops until you next open the App. You
+      can switch it off at any time in <strong>Main menu → Settings → Daily goal reminder</strong>, or
+      in Android’s notification settings for the App.</p>
+
       <p>It has <strong>no</strong> access to your camera, microphone, location, contacts, files, or
       phone state, and no permission that identifies you personally.</p>
 
       <h3>3(b). Advertising data — collected and shared by Google (AdMob)</h3>
       <p>The App offers one kind of advertisement, a <strong>rewarded video ad</strong>, which you
-      may <em>choose</em> to watch in exactly <strong>two places</strong>:</p>
+      may <em>choose</em> to watch in exactly <strong>four places</strong>:</p>
       <ol>
         <li><strong>An extra life, when a game ends.</strong> The <strong>Keep playing</strong> button
         carries the line “Watch a short ad”, so the button says what it starts before you press it,
@@ -268,23 +363,71 @@
         <strong>two</strong> per game, a limit built into the game’s rules and not adjustable by us
         at runtime.</li>
         <li><strong>A board skin, in the skins gallery</strong> (opened from the main menu or from
-        the game’s header). Pressing <strong>Unlock for 24h</strong> on a skin opens a dialog saying
-        a short ad unlocks that skin for 24 hours, with <strong>Watch ad</strong> and <strong>Not
-        now</strong>; nothing plays until you press Watch ad. Each video unlocks one skin for 24
-        hours, and watching again replaces that time rather than adding to it. There is no
-        per-game limit, because a skin changes only how the board looks.</li>
+        the game’s header). Skins are bought with <strong>gems</strong>, which you earn by playing
+        (Section 3(a)); gems cannot be bought with money. When you have enough gems for a skin,
+        pressing it opens an unlock step that shows its price, with a button reading <strong>Watch an
+        ad to unlock</strong> and the skin’s name, and <strong>Not now</strong> the same size beside
+        or under it; nothing plays until you press the button. When the video has played, the gems
+        are spent and the skin is yours to keep. If you close the video early, nothing is spent and
+        nothing is unlocked. If the video cannot be shown (no video available, no connection, an
+        error), or the phone closes the App while it is playing, the skin is unlocked and the gems
+        are spent all the same (in the second case, at the App’s next start). Where ads are switched
+        off (Section 3(c)) or advertising consent has been refused, the unlock step names no video
+        and the skin unlocks without one. There is no per-game limit, because a skin changes only
+        how the board looks. A skin unlocked for 24 hours by a video in an earlier version of the App
+        keeps the rest of its 24 hours and then ends; you can buy it with gems at any time, including
+        while those hours run.</li>
+        <li><strong>Double a game’s turn gems, when a game ends.</strong> At any game over where that
+        game’s turns have earned gems, including one that also offers <strong>Keep playing</strong>,
+        a small button at the end of the line showing the game’s gems reads “×2” with the gem,
+        <strong>Double the gems</strong> (left out on narrow screens where it does not fit) and the
+        same video mark as <strong>Keep playing</strong>, so it says it starts a video before you
+        press it. Screen readers read it as <strong>Double the gems · Watch ad</strong> and the exact
+        number of gems it adds now, which is the number that game’s turns have earned so far (on all
+        but the shortest screens also shown under that line as “This run”). Nothing plays until you
+        press it, and not pressing it is the way to decline (Play again, Keep playing and the Home
+        button are on the same screen). When the video has played, those gems are paid a second time
+        at once, and if you then take an extra life, every turn of the same game after it also earns
+        its gems twice, until the game ends. Gems from the daily goal and from achievements are never
+        doubled. If the video cannot be shown once you have pressed the button, the gems are doubled
+        anyway; if you close it early, nothing is added. Starting a new game while the video is on
+        its way never moves the bonus onto the new game. It is used at most once per game: after it,
+        later game overs of that game show “Turn gems doubled” and no button. While its video is
+        still loading, the button is greyed, shows three dots in place of the video mark and cannot
+        be pressed; with no video ready or on its way, it is not offered. It has its own video,
+        separate from the extra life’s, so taking one never uses up or hides the other.</li>
+        <li><strong>Gems for a video, in the skins gallery.</strong> Under the gallery’s title, a
+        button reads <strong>Watch ad</strong> with the video mark and <strong>+150</strong> with the
+        gem, and beside it how many of today’s videos are left; the same button also appears in the
+        short message the gallery shows when you press a skin you do not yet have enough gems for.
+        Nothing plays until you press it, and not pressing it is the way to decline. When the video
+        has played, <strong>150 gems</strong> are added. At most <strong>three</strong> a day, counted
+        on your phone’s own calendar day; once they are used, the button is greyed, reads “Back
+        tomorrow” and cannot be pressed. If the video cannot be shown once you have pressed the
+        button, or the phone closes the App while it is playing, the gems are added all the same (in
+        the second case, at the App’s next start), and that counts as one of the day’s three; if you
+        close it early, nothing is added and it does not count. While its video is still loading, the
+        button is greyed, reads “Loading ad…” and cannot be pressed; with no video ready or on its
+        way, it is not offered. It has its own video, separate from the other three offers’, so
+        taking one never uses up or hides another.</li>
       </ol>
-      <p>In both places the ad is:</p>
+      <p>In all four places the ad is:</p>
       <ul>
-        <li><strong>opt-in</strong> — nothing plays until you press a button that names the
-        video;</li>
+        <li><strong>opt-in</strong> — nothing plays until you press a button that names the video or
+        carries its video mark;</li>
         <li><strong>never auto-played</strong>, never shown on the board, and never shown in a
         notification;</li>
-        <li><strong>fully declinable</strong> — <strong>Play again</strong> after a game and
-        <strong>Not now</strong> in the gallery are free, always present, and cost nothing; the free
-        board, Gloss, is always available;</li>
-        <li><strong>offered only when a video is ready</strong> — with no ad loaded the offer is not
-        shown at all (the gallery reads “No ad right now”).</li>
+        <li><strong>fully declinable</strong> — after a game, <strong>Play again</strong> and
+        <strong>Home</strong> are free, always present and cost nothing, and the offers there need no
+        answer; <strong>Not now</strong> in the gallery is free and always present, and the gallery’s
+        gem video needs no answer; the free board, Gloss, is always available;</li>
+        <li><strong>never a loss to you when no video is ready</strong> — after a game, the extra life
+        is offered only when a video is ready, and the doubling of a game’s gems can be pressed only
+        when its video is ready (while it loads, its button is greyed); with no video ready or on its
+        way, neither offer is shown at all; in the gallery, a video that is not ready or cannot play
+        never costs you the skin, which unlocks without it, and the gem video can be pressed only when
+        its video is ready (while it loads, its button is greyed) and is not shown at all with no
+        video ready or on its way.</li>
       </ul>
 
       <p>To serve this ad we use the <strong>Google Mobile Ads SDK (Google AdMob)</strong>. When an
@@ -337,7 +480,7 @@
       <p><strong>Why this exists, plainly.</strong> Tilt Blocks is made by one person, and the only
       thing that person can otherwise see is a star rating. This Section describes the small,
       fixed set of facts the App can send so that we can learn whether people find the tutorial, how
-      far their games get, whether the two optional video offers are understood, and which board
+      far their games get, whether the four optional video offers are understood, and which board
       colours are used. Nothing here changes the game: the pieces you are dealt, the difficulty ramp
       and the offers you see are decided by rules that cannot read any of this data, and that
       separation is enforced by automated tests in the App’s source.</p>
@@ -374,8 +517,8 @@
 
       <p><strong>Your games</strong></p>
       <ul>
-        <li><strong>that a game started</strong>, and through which of three doors: the main menu,
-        the “Play again” button after a game, or the end of the tutorial;</li>
+        <li><strong>that a game started</strong>, and through which of four doors: the main menu,
+        the “Play again” button after a game, finishing the tutorial, or skipping it;</li>
         <li><strong>that a game ended</strong>, with: roughly how many turns it lasted, as one of six
         bands (under 20, 20–49, 50–99, 100–199, 200–399, 400 or more); the <strong>rank
         band</strong> the game showed you at that moment (one of twelve fixed values such as
@@ -387,7 +530,11 @@
         <li><strong>that you reached a new difficulty rung</strong>, and which one — once per rung
         per game;</li>
         <li><strong>that you set a new personal best</strong>, with the rank band at that moment —
-        once per game, and <strong>never the score itself</strong>.</li>
+        once per game, and <strong>never the score itself</strong>;</li>
+        <li><strong>that you finished today’s goal</strong>, once a day, and which of its three kinds
+        it was: clearing lines, playing turns, or clearing on turns in a row;</li>
+        <li><strong>that you unlocked an achievement</strong>, and which of the App’s eleven it was,
+        once each.</li>
       </ul>
 
       <p><strong>The tutorial and the rules</strong></p>
@@ -396,33 +543,60 @@
         skip, or closed;</li>
         <li>that the tutorial was <strong>opened</strong>, and from where: that offer, “How to
         play” on the main menu, or “How to play” inside a game;</li>
-        <li>that the tutorial <strong>ended</strong>, how (finished or skipped), and at which of its
-        five numbered steps;</li>
+        <li>that the tutorial <strong>ended</strong>, how (finished or skipped), at which of its five
+        numbered steps, and, for that one step, how many times you started dragging and how many
+        times you tapped, each as one of four bands (none, one, two, three or more);</li>
         <li>that <strong>“How to play” was opened</strong>, from the menu or from inside a
         game.</li>
       </ul>
 
-      <p><strong>The two optional video offers</strong></p>
+      <p><strong>The four optional video offers</strong></p>
       <ul>
-        <li>that an offer was <strong>put on the screen</strong> — the extra life after a game, or a
-        board colour unlock;</li>
-        <li>that you <strong>accepted</strong> an offer by pressing the button that names the
-        video;</li>
+        <li>that an offer was <strong>put on the screen</strong> — the extra life after a game, a
+        board colour unlock, doubling a game’s gems after it, or gems for a video in the
+        gallery;</li>
+        <li>that you <strong>accepted</strong> an offer by pressing the button that names the video
+        or carries its video mark;</li>
         <li>that the feature was <strong>handed over</strong>, and why: the video played through; the
         video could not be shown and the feature was given anyway; or no video was available and the
         feature was given anyway. For a board colour unlock, which of the five colours it was;</li>
+        <li><strong>how each accepted offer ended</strong>, once per press, with which of the four
+        offers it was and one of eleven fixed words: the video was watched; it was closed early; it
+        could not be shown; no video arrived in time; another video was already playing; the App’s
+        screen was closing; ads were no longer allowed; the press came while an earlier one was still
+        waiting; no video player was available; the video’s end was never reported and the App
+        recovered on its own; or the phone closed the App while the video was on its way or playing,
+        recorded at the App’s next start;</li>
         <li>that you were offered an extra life and <strong>chose “Play again” instead</strong>,
         and how many extra lives you had already taken in that game.</li>
       </ul>
 
       <p><strong>Your settings</strong></p>
       <ul>
-        <li>that you <strong>changed a setting</strong>, which of two it was, and the new value:
-        sound on or off, or the language you chose from the App’s own list (or “follow the phone”).
-        Versions of the App before the light/dark theme was removed could also report that theme;
-        this version does not;</li>
+        <li>that you <strong>changed a setting</strong>, which of three it was, and the new value:
+        sound on or off, the language you chose from the App’s own list (or “follow the phone”), or
+        the daily reminder on or off. Versions of the App before the light/dark theme was removed
+        could also report that theme; this version does not;</li>
         <li>which <strong>board colour</strong> you selected from the gallery — one of six
-        names.</li>
+        names;</li>
+        <li>that you <strong>bought a board colour with gems</strong>, once per colour, with: which
+        colour it was (one of the five names that can be bought); how it was unlocked, as one of four
+        words (after the video was watched; the video could not be shown and it was unlocked anyway;
+        no video could be offered; or the phone closed the App during the video and it was unlocked
+        at the next start); how many colours you now own, from 1 to 5; and roughly how many days
+        after you earned your first gem, as one of five bands (under 7, 7–13, 14–27, 28–55, 56 or
+        more). Either of the last two reads “unknown” when the App cannot work it out, for example
+        when the phone’s clock was set back. <strong>Your gem balance and the gems you earn in a game
+        are never sent.</strong></li>
+      </ul>
+
+      <p><strong>The daily reminder</strong></p>
+      <ul>
+        <li>how you <strong>answered the reminder question</strong>: yes or no thanks;</li>
+        <li>that a <strong>reminder was posted</strong>, and which of the three daily goals it named.
+        It is sent from the phone in the background, through the same switch and consent rules as
+        everything else in this Section;</li>
+        <li>that you <strong>opened the App from a reminder</strong>, and which goal it named.</li>
       </ul>
 
       <p><strong>Where your installation came from</strong></p>
@@ -456,18 +630,21 @@
 
       <p><strong>Collected automatically by Google.</strong> Once the switch above is on, Google’s
       SDK also records, on its own: the first opening after installation; each opening; the start of
-      a session and roughly how long it lasted; an App update; an operating-system update; a screen
-      view each time the App’s single screen comes to the front; where Google Play tells the SDK
+      a session and roughly how long it lasted; an App update; an operating-system update; that the App was
+      removed, or its data cleared; a screen view each time the App’s single screen comes to the front; where Google Play tells the SDK
       that your installation came from a campaign link, that campaign’s name, source and medium;
-      that an advert was shown, where Google’s advertising SDK reports that to the same system; and
+      that an advert was shown, and that a rewarded video paid its reward, where Google’s
+      advertising SDK reports those to the same system; and
       an approximate country or region derived by Google from the IP address. Google also records
       the device model, operating-system version, App version and language with each event.</p>
 
       <p><strong>What is deliberately not collected.</strong> No advertising identifier is used for
       this purpose — the App switches that off explicitly, and the advertising identifier described
       in Section 3(b) is used by the advertising SDK alone. No free text of any kind. No precise
-      timestamps as data fields. No record of individual moves, placements or tilts. No score, no
-      saved game, no best score. No setting other than the three named above. No contacts, no
+      timestamps as data fields. No record of individual moves, placements or tilts: the tutorial’s
+      two counts above are bands of how many drags and taps there were on one step, not what any of
+      them did or where. No score, no saved game, no best score, no gem balance. No setting other
+      than the four named above. No contacts, no
       location from the device, no account.</p>
 
       <p><strong>The identifier.</strong> Google’s app-instance identifier is random, scoped to this
@@ -555,9 +732,10 @@
       </table>
       </div>
 
-      <p>If you refuse consent, the App keeps working in full. You are not shown fewer features, and
-      the extra life offered at the end of a game is granted <strong>for free</strong> when no ad can
-      be shown.</p>
+      <p>If you refuse consent, the game plays in full. The extra life, the doubling of a game’s gems
+      and the gallery’s gem video are offered only when a video can be shown, so where no ad can be
+      requested none of them appears (the doubling’s and the gem video’s buttons show greyed only
+      while their video is loading); a board skin you have the gems for unlocks without a video.</p>
 
       <h2 id="en-5">5. Who receives data (third parties / recipients)</h2>
       <ul>
@@ -573,7 +751,7 @@
         provider, and processes the data additionally for its own purposes as described in the
         policies linked above. Our <strong>AdMob account and this analytics property are
         linked</strong>, which is what lets the advertising revenue totals Google already holds
-        appear in our analytics reports — as a total earned from a coarse group of players, never
+        appear in our analytics reports, as a total earned from a coarse group of players, never
         from any one of them. That link runs in one direction only: the usage statistics are
         <strong>not</strong> used to personalise advertising — the setting that would allow it is
         switched off for <strong>every region</strong>, and <strong>Google signals</strong>, the
@@ -680,15 +858,15 @@
         according to Google’s own retention schedules, which are described in Google’s privacy
         documentation. The Developer holds none of it and cannot delete it on your behalf; requests
         concerning it should be directed to Google, and we will help where we can.</li>
+        <li><strong>The static-file request (Section 3(c)):</strong> whatever server log GitHub
+        keeps is subject to GitHub's own retention schedule. We receive no such log and hold nothing
+        from it.</li>
         <li><strong>Usage statistics (Section 3(d)):</strong> event-level data is kept by
         <strong>Google</strong> for <strong>2 months</strong> — the shortest period Google offers,
         and the value a new property carries by default. It is a setting in the Google Analytics
         console, applied to the whole property, and if we ever lengthen it this policy will say so
         before we do. The random app-instance identifier is discarded when you turn the switch off,
         when you clear the App’s data, or when you uninstall.</li>
-        <li><strong>The static-file request (Section 3(c)):</strong> whatever server log GitHub
-        keeps is subject to GitHub's own retention schedule. We receive no such log and hold nothing
-        from it.</li>
       </ul>
 
       <h2 id="en-9">9. Your privacy rights</h2>
