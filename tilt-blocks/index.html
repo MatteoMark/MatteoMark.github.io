@@ -270,14 +270,16 @@
       <ul>
         <li>once you have pressed <strong>Invite a friend</strong>: your <strong>invite
         code</strong>; how many friends the App has already paid you gems for (at most 10); how many
-        newly counted friends Blocky has still to tell you about; and when you last shared your link
-        and when the App last checked your counter;</li>
+        newly counted friends Blocky has still to tell you about; when you last shared your link;
+        when the App last checked your counter and how many times it checked that day; and when it
+        last paid you for a friend;</li>
         <li>if you installed the App from a friend’s invite link: <strong>your friend’s
         code</strong>, read from that link, and where the App’s one report of it stands (waiting,
         sent, refused or given up), with how many tries it has made, when it first tried and when it
         may try next;</li>
         <li>the last <strong>Firebase App Check token</strong> (Section 3(f)) and when it expires,
-        kept in a separate file so that it can be reused until then.</li>
+        and, after a failed attempt to get one, when the App may ask again, kept in a separate file
+        so that the token can be reused until then.</li>
       </ul>
 
       <p><strong>The advertising switch</strong></p>
@@ -756,13 +758,15 @@
       <strong>Nothing about the person who installed is stored by us</strong>: no name, no account,
       no device or advertising identifier, and the database keeps no IP address. Their copy sends
       the code once; if it cannot get through (no connection, for example), it tries again later,
-      for at most 30 days. It sends nothing if the code is its own, as when a phone restores its own
+      for at most 30 days. If the database refuses the report, that copy reads the counter once, by
+      the same code, to tell a full counter (10 friends: the report is dropped) from a refusal that
+      may pass (it tries again a day later). It sends nothing if the code is its own, as when a phone restores its own
       backup. The person who installed receives nothing for being counted and is asked
       nothing.</p>
 
       <p><strong>Your gems.</strong> While you have a code, your copy of the App reads your code’s
-      counter from time to time: at most a few times a day, only for up to 60 days after you last
-      shared your link, and never again once 10 friends have been paid. The request carries your
+      counter from time to time: at most four times a day, only for 30 days after you last shared
+      your link or were last paid for a friend, and never again once 10 friends have been paid. The request carries your
       code, and the answer is the number. For each friend counted that it has not paid yet, the App
       adds <strong>1,000 gems</strong> on your phone, up to 10 friends per code. The gems themselves
       are kept only on your phone (Section 3(a)).</p>
@@ -788,9 +792,11 @@
       (<a href="https://developer.android.com/google/play/integrity/terms#data-safety">Google’s
       description</a>). We do not ask Google Play for its optional “environment details”. We
       never see the check or its result; the Firebase console shows us only totals of verified and
-      unverified requests. Every request in this Section also names the App by its package name and
-      the fingerprint of its signing certificate, which are the same for every copy of the App, and
-      Google, which runs these services, sees the IP address each request comes from. If the check
+      unverified requests. The two requests to Firebase App Check that obtain the token also name
+      the App by its package name and the fingerprint of its signing certificate, which are the same
+      for every copy of the App; the requests to the database carry only the code and, when the App
+      has one, the token. Google, which runs these services, sees the IP address each request comes
+      from. If the check
       fails, the request goes out without a token and may be refused; nothing is shown and play is
       not affected.</p>
 
