@@ -80,7 +80,7 @@
       <h1>Privacy Policy</h1>
       <p class="meta">Tilt Blocks — Android (<code>com.luxebyte.tiltblocks</code>)</p>
       <p class="meta">Publisher: <strong>Matteo Lamarque</strong>, trading as <strong>Luxebyte Labs</strong> · <a href="mailto:luxebytecomp@gmail.com">luxebytecomp@gmail.com</a></p>
-      <p class="meta">Effective: <time datetime="2026-07-30">30 July 2026</time> · Last updated: <time datetime="2026-10-09">9 October 2026</time></p>
+      <p class="meta">Effective: <time datetime="2026-07-30">30 July 2026</time> · Last updated: <time datetime="2026-10-11">11 October 2026</time></p>
     </header>
 
     <main id="main">
@@ -125,7 +125,10 @@
 
       <div class="callout">
         <p><strong>Important to understand up front:</strong> the Developer operates <strong>no
-        servers</strong> and runs <strong>no backend</strong> of its own. We do <strong>not</strong>
+        servers</strong> and runs <strong>no backend</strong> of its own, with one small exception:
+        the invite counter described in Section 3(f), which is stored in Google Cloud Firestore, in
+        our own Firebase project, with Google as our processor. It holds random codes, numbers up to
+        10 and times, and nothing else. We do <strong>not</strong>
         receive, store, or have access to the advertising data described in Section 3(b). That data
         is collected and processed by <strong>Google</strong> (our advertising provider) and its
         partners. We are the controller only in the sense that we chose to integrate advertising
@@ -151,15 +154,16 @@
       using the App and uninstall it.</p>
 
       <h2 id="en-3">3. What data is processed</h2>
-      <p>The App processes four clearly separate categories of data. We keep them separate on
+      <p>The App processes five clearly separate categories of data. We keep them separate on
       purpose, because they behave very differently: one is kept on your device, one is collected
       by Google and never reaches us, one is a single request that carries nothing about you but
-      cannot help revealing where it came from, and one is a small, fixed set of usage statistics
-      that you can switch off. The App sends none of the data kept on your device anywhere, except
-      a few items named in Section 3(a), which are sent with the usage statistics in Section 3(d)
-      where those are permitted.</p>
+      cannot help revealing where it came from, one is a small, fixed set of usage statistics
+      that you can switch off, and one is a counter we keep for the invite links players share. The
+      App sends none of the data kept on your device anywhere, except a few items named in Section
+      3(a), which are sent with the usage statistics in Section 3(d) where those are permitted, and
+      the invite code described in Section 3(f).</p>
 
-      <h3>3(a). Data kept on your device, never transmitted to us</h3>
+      <h3>3(a). Data kept on your device</h3>
       <p>To make the App work, the App stores a small amount of information <strong>locally on your
       device</strong>, using Android’s standard <code>SharedPreferences</code> storage (and, for the
       next daily reminder only, the scheduling library’s own storage, named below). This is the
@@ -183,9 +187,9 @@
         gems, and, for a skin unlocked for 24 hours by a video in an earlier version of the App, the
         moment it was unlocked, because that unlock lasts 24 hours and has to know when it
         started;</li>
-        <li>your <strong>gems</strong>, the in-game currency you earn by playing and spend on board
-        skins (Section 3(b)): how many you have now, how many you have earned in total, how many you
-        have earned in the game in progress, including any doubling by a video (shown to you when it
+        <li>your <strong>gems</strong>, the in-game currency you earn by playing (and by inviting
+        friends, Section 3(f)) and spend on board skins (Section 3(b)): how many you have now, how
+        many you have earned in total, how many you have earned in the game in progress, including any doubling by a video (shown to you when it
         ends), a number that tells one game’s gems from the next, so that a doubling is paid to the
         game it was for, the day you earned your first one, and whether the App has already paid the one-off
         credit for achievements and daily goals you finished before gems existed. Gems are kept only
@@ -232,7 +236,7 @@
         longest game in turns, your biggest single clear, clears of four lines or more, your longest
         streak, boards emptied, turns whose block cleared and whose tilt then cleared again, Blocky
         tiles freed, how many days you have played on, the first and the last of those days, and the
-        gems earned by playing (never those from a video).</li>
+        gems earned by playing (never those from a video or from inviting friends).</li>
       </ul>
 
       <p><strong>The daily reminder</strong></p>
@@ -260,6 +264,20 @@
         <li>the words saying which link brought you to the App’s store page, and roughly how long
         after installation the App was first opened, both described in Section 3(d), together with
         whether they have been read and sent yet and how many times reading them has failed.</li>
+      </ul>
+
+      <p><strong>Invite a friend</strong> (Section 3(f))</p>
+      <ul>
+        <li>once you have pressed <strong>Invite a friend</strong>: your <strong>invite
+        code</strong>; how many friends the App has already paid you gems for (at most 10); how many
+        newly counted friends Blocky has still to tell you about; and when you last shared your link
+        and when the App last checked your counter;</li>
+        <li>if you installed the App from a friend’s invite link: <strong>your friend’s
+        code</strong>, read from that link, and where the App’s one report of it stands (waiting,
+        sent, refused or given up), with how many tries it has made, when it first tried and when it
+        may try next;</li>
+        <li>the last <strong>Firebase App Check token</strong> (Section 3(f)) and when it expires,
+        kept in a separate file so that it can be reused until then.</li>
       </ul>
 
       <p><strong>The advertising switch</strong></p>
@@ -298,13 +316,20 @@
 
       <p>This on-device data:</p>
       <ul>
-        <li>is <strong>never transmitted to the Developer</strong>, who has no servers to receive it;</li>
+        <li>is <strong>never transmitted to the Developer</strong>, who has no servers to receive it,
+        except an invite code, which reaches the invite counter we keep in Google Cloud Firestore
+        (Section 3(f));</li>
         <li>is <strong>never sold or shared</strong> with anyone;</li>
-        <li>contains <strong>nothing that identifies you</strong>: there is no account, no login, no
-        name, no email address and no device identifier in it;</li>
-        <li>is <strong>not sent anywhere by the App</strong>, except what Section 3(d) describes, and
-        only where usage statistics are permitted: the words about where your installation came from
-        and how soon it was first opened, sent once; the board skin in use; when you buy a board
+        <li>contains <strong>nothing that identifies you by name</strong>: there is no account, no
+        login, no name, no email address and no device or advertising identifier in it. The one
+        identifier it can hold is an <strong>invite code</strong> (Section 3(f)): a random string the
+        App draws itself, made from nothing about you or your phone, but which names one entry in our
+        invite counter and is written into the link you share. We treat it as pseudonymous personal
+        data;</li>
+        <li>is <strong>not sent anywhere by the App</strong>, except the invite codes Section 3(f)
+        describes, which are sent whatever your advertising and statistics choices, and what Section
+        3(d) describes, only where usage statistics are permitted: the words about where your
+        installation came from and how soon it was first opened, sent once; the board skin in use; when you buy a board
         skin, which one, how many you now own, and roughly how many days have passed since your
         first gem, as a band; which kind of daily goal you finished, when you finish one; the name of
         each achievement medal the App awards you, when it awards it; that a daily reminder was
@@ -329,7 +354,8 @@
         your hand;</li>
         <li><strong>Internet access</strong> (<code>INTERNET</code>), used by the advertising and
         consent components described in 3(b), by the single request described in 3(c), by the usage
-        statistics described in 3(d), and by nothing else;</li>
+        statistics described in 3(d), by the invite requests described in 3(f), and by nothing
+        else;</li>
         <li><strong>Advertising ID</strong> (<code>com.google.android.gms.permission.AD_ID</code>),
         which is what allows Google to read the resettable advertising identifier described in 3(b).
         It is declared explicitly rather than inherited silently, so that what the App can reach is
@@ -391,7 +417,7 @@
         at runtime.</li>
         <li><strong>A board skin, in the skins gallery</strong> (opened from the main menu or from
         the game’s header). Skins are bought with <strong>gems</strong>, which you earn by playing
-        (Section 3(a)); gems cannot be bought with money. When you have enough gems for a skin,
+        (Section 3(a)) or by inviting friends (Section 3(f)); gems cannot be bought with money. When you have enough gems for a skin,
         pressing it opens an unlock step that shows its price, with a button reading <strong>Watch an
         ad to unlock</strong> and the skin’s name, and <strong>Not now</strong> the same size beside
         or under it; nothing plays until you press the button. When the video has played, the gems
@@ -494,7 +520,7 @@
       from</strong>, together with ordinary connection information such as the time, the file
       requested and the type of client. That server is <strong>GitHub Pages</strong>, operated by
       <strong>GitHub, Inc.</strong>, which hosts the file as a plain static document. We run no
-      server, and we never see a log of these requests.</p>
+      server for it, and we never see a log of these requests.</p>
       <p>The App keeps the last successful response on your device. For 24 hours after it was
       fetched the App uses it without asking again, so a returning player usually makes no request
       at all; after that the App fetches the file again, and if that fails it keeps using the last
@@ -637,11 +663,13 @@
       <ul>
         <li><strong>which link brought you to the App’s store page</strong>, once per installation,
         as three words from a fixed list: whether the link was in our torch app, <em>Shake to Enable
-        Torch</em>, or was Google Play itself; the name of our one promotion; and, for the torch
-        app, which of its four buttons, and a short code the torch app writes into its own link,
+        Torch</em>, was a friend’s invite link (Section 3(f)), or was Google Play itself; the name
+        of our one promotion; and which of the torch app’s four buttons it was, or “friend” for an
+        invite link; and, for the torch app, a short code the torch app writes into its own link,
         naming which version of the torch app and which design of the promotion you saw (for example
         “1043_swipe”). Any other link, and any code of a different shape, is recorded only as
-        “other”, and a missing one as “none”. The link’s own text is never sent. Google Play
+        “other”, and a missing one as “none”. The link’s own text is never sent with this event,
+        and neither is the code in a friend’s invite link. Google Play
         supplies this to the App once, after installation; the App keeps these words on your device
         until the statistics are permitted to be sent, sends them once, and never again. Google’s
         SDK records the same fact by itself (see below); this is the App’s own copy of it;</li>
@@ -702,9 +730,76 @@
       <h3>3(e). What the App does NOT do</h3>
       <p>For the avoidance of doubt, the App contains <strong>no</strong> crash-reporting SDK,
       <strong>no</strong> attribution or install-tracking SDK, <strong>no</strong> social login and
-      <strong>no</strong> in-app purchases. Apart from the Google advertising and consent components
-      named in 3(b), the analytics component named in 3(d), and the single static-file request
-      described in 3(c), the App makes no network requests of any kind.</p>
+      <strong>no</strong> in-app purchases. Invite a friend (Section 3(f)) counts installs from a
+      friend’s link with the App’s own code, not with such an SDK, and tells no advertiser about
+      them. Apart from the Google advertising and consent components named in 3(b), the analytics
+      component named in 3(d), the single static-file request described in 3(c), and the invite
+      requests described in 3(f) (together with the integrity check that Google Play services
+      makes for them), the App makes no network requests of any kind.</p>
+
+      <h3>3(f). Invite a friend: a counter for the links you share</h3>
+      <p><strong>Your link.</strong> The App has an <strong>Invite a friend</strong> button. The
+      first time you press it, the App creates a random 12-character <strong>invite code</strong>
+      on your phone. The code is drawn at random and made from nothing about you or your phone. The
+      App keeps it (Section 3(a)), puts it into a Google Play link to the App, and opens Android’s
+      share sheet; you choose whether to share the link and with whom. Nothing is sent over the
+      network when the code is created or when you share.</p>
+
+      <p><strong>When someone installs from your link.</strong> Google Play hands the referral part
+      of the link to the newly installed App once, as Section 3(d) describes. If it contains an
+      invite code, that person’s copy of the App, once opened, sends <strong>that code</strong> to a
+      database we control: <strong>Google Cloud Firestore</strong>, in our Firebase project
+      “tilt-blocks”, stored in Google’s <strong>European Union multi-region</strong> (eur3). The
+      database adds one to the counter for that code, up to <strong>10</strong>, and stores the time
+      of that request. That is the whole record: one entry per code that at least one friend has
+      reported, holding a number from 1 to 10 and the time of the last friend counted.
+      <strong>Nothing about the person who installed is stored by us</strong>: no name, no account,
+      no device or advertising identifier, and the database keeps no IP address. Their copy sends
+      the code once; if it cannot get through (no connection, for example), it tries again later,
+      for at most 30 days. It sends nothing if the code is its own, as when a phone restores its own
+      backup. The person who installed receives nothing for being counted and is asked
+      nothing.</p>
+
+      <p><strong>Your gems.</strong> While you have a code, your copy of the App reads your code’s
+      counter from time to time: at most a few times a day, only for up to 60 days after you last
+      shared your link, and never again once 10 friends have been paid. The request carries your
+      code, and the answer is the number. For each friend counted that it has not paid yet, the App
+      adds <strong>1,000 gems</strong> on your phone, up to 10 friends per code. The gems themselves
+      are kept only on your phone (Section 3(a)).</p>
+
+      <p><strong>Who can see a counter.</strong> The database’s rules let a request read an entry
+      only by its exact code, never list the codes it holds, change a count only by adding one, and
+      never delete an entry; only we, from the Firebase console, can correct or delete one (Sections
+      8 and 9). The code is in the link you shared, so anyone you gave the link to could
+      in principle read your counter: how many friends, and the time of the last one.</p>
+
+      <p><strong>The integrity check.</strong> To keep the counter honest, each request to the
+      database carries a short-lived token from <strong>Firebase App Check</strong>, a Google
+      service that confirms the request comes from a genuine copy of the App installed from Google
+      Play. To obtain that token, the App asks <strong>Google Play</strong>, through Google Play
+      services on your phone, for an integrity check, and passes the result to Firebase App Check,
+      which returns the token. The App keeps the token and reuses it until it expires (Section
+      3(a)). Google Play carries out the integrity check under the Google Play Terms of Service, not
+      on our behalf. Google states that for each check it collects: the request’s own content (a
+      one-time challenge), the App’s identity (package name, version and signing certificate), the
+      App’s Google Play licence status for the Google accounts signed in on the phone, and device
+      attestation information generated by Google Play services; that the data is used to verify
+      the App, its licence and the device; and that it is deleted after a fixed retention period
+      (<a href="https://developer.android.com/google/play/integrity/terms#data-safety">Google’s
+      description</a>). We do not ask Google Play for its optional “environment details”. We
+      never see the check or its result; the Firebase console shows us only totals of verified and
+      unverified requests. Every request in this Section also names the App by its package name and
+      the fingerprint of its signing certificate, which are the same for every copy of the App, and
+      Google, which runs these services, sees the IP address each request comes from. If the check
+      fails, the request goes out without a token and may be refused; nothing is shown and play is
+      not affected.</p>
+
+      <p><strong>Not tied to your consent choices.</strong> All of this happens whether or not you
+      have given advertising consent (Section 7) and whether or not usage statistics are switched
+      on, because it is neither advertising nor statistics. The App never puts an invite code into
+      an ad request or into its own usage-statistics events. If you never press Invite a friend, the
+      App creates no code and reads no counter; if you installed from a friend’s link and do not
+      want to be counted, Section 9 says how to object.</p>
 
       <h2 id="en-4">4. Why we process data, and the legal basis for each purpose (GDPR)</h2>
       <p>Where the EU/UK GDPR applies to you:</p>
@@ -716,7 +811,8 @@
         <tbody>
           <tr>
             <td>Running the game (score, saved run, settings)</td>
-            <td>Section 3(a), on-device only</td>
+            <td>Section 3(a), on-device only (the invite codes are covered by the two Invite a friend
+            rows below)</td>
             <td>Not personal data processing by us — the data never reaches us. To the extent it is
             processing, it is <strong>necessary to perform the service you asked for</strong>
             (Art. 6(1)(b)).</td>
@@ -763,6 +859,28 @@
             how the game is played, with the in-app opt-out available at any time and effective the
             moment it is used.</td>
           </tr>
+          <tr>
+            <td>Invite a friend, your side: paying you gems for friends who install from your link
+            (Section 3(f))</td>
+            <td>Your invite code, your counter (a number up to 10 and a time), the App Check token,
+            and the IP address Google sees in transit</td>
+            <td><strong>Necessary to perform the feature you asked for</strong> by pressing Invite a
+            friend (Art. 6(1)(b)). The integrity check also serves our <strong>legitimate
+            interest</strong> in keeping the counter honest (Art. 6(1)(f)).</td>
+          </tr>
+          <tr>
+            <td>Invite a friend, crediting the person who invited you (Section 3(f))</td>
+            <td>The code in the link you installed from, the time it is counted, the integrity
+            check made by Google Play, and the IP address Google sees in transit</td>
+            <td>Our <strong>legitimate interests</strong> (Art. 6(1)(f)) in crediting the person who
+            invited you and in preventing abuse of the counter. Nothing about you is stored by us,
+            and you may object at any time (Section 9). The App does not ask your consent for this
+            under the ePrivacy rules on accessing your device (Art. 5(3) of the ePrivacy Directive):
+            our position is that the App only reads the link’s referral words, which Google Play
+            hands to it, stores no identifier of you, and leaves the integrity check to Google Play
+            under its own terms. That is our reading; it has not been confirmed by a regulator or a
+            court.</td>
+          </tr>
         </tbody>
       </table>
       </div>
@@ -796,6 +914,18 @@
         unchanged by the link: in the EEA, the UK and Switzerland nothing is sent for this purpose
         unless you consent to it in the consent message, and everywhere else the switch described in
         Section 3(d) decides.</li>
+        <li><strong>Google Ireland Limited / Google LLC</strong> a third time, as <strong>our
+        processor</strong> for <strong>Cloud Firestore</strong>, which holds the invite counter, and
+        <strong>Firebase App Check</strong>, which issues the tokens described in Section 3(f). Both
+        are governed by the Google Cloud Platform Terms of Service and its Cloud Data Processing
+        Addendum
+        (<a href="https://firebase.google.com/terms">https://firebase.google.com/terms</a>), under
+        which Google processes this data on our instructions.</li>
+        <li><strong>Google Play</strong> (Google Ireland Limited / Google LLC), for the
+        <strong>integrity check</strong> described in Section 3(f). Google Play makes that check
+        under the Google Play Terms of Service and on its own account, <strong>not as our
+        processor</strong>; what it collects is set out in Section 3(f) and in
+        <a href="https://developer.android.com/google/play/integrity/terms#data-safety">https://developer.android.com/google/play/integrity/terms#data-safety</a>.</li>
         <li><strong>Google’s advertising partners</strong>, where you consent to personalized ads.
         The current list of partners is presented to you inside the consent message and can be
         reviewed there at any time.</li>
@@ -804,14 +934,22 @@
         GitHub's privacy statement:
         <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement</a>.</li>
       </ul>
-      <p>The Developer discloses your data to <strong>no one else</strong>. We do not sell data, and
-      we have nothing to sell — see Section 9.</p>
+      <p>The Developer discloses your data to <strong>no one else</strong>. We do not sell data — see
+      Section 9.</p>
 
       <h2 id="en-6">6. International data transfers</h2>
-      <p>The Developer neither receives nor stores any of this data, and so transfers none of it.
-      That is not the same as saying nothing leaves your device: the App is designed to cause
-      requests to the recipients named in Section 5, and those recipients may process what they
-      receive outside Switzerland, the EEA and the UK.</p>
+      <p>The Developer stores one thing itself, the invite counter described in Section 3(f), and it
+      is kept in Google Cloud Firestore in Google’s <strong>European Union multi-region</strong>
+      (eur3); we do not move it anywhere else. Apart from that counter, the Developer neither
+      receives nor stores any of this data, and so transfers none of it. That is not the same as
+      saying nothing leaves your device: the App is designed to cause requests to the recipients
+      named in Section 5, and those recipients may process what they receive outside Switzerland,
+      the EEA and the UK.</p>
+      <p>For the invite requests in Section 3(f), Google may handle the requests themselves (for
+      example the IP address they come from) and the Firebase App Check tokens wherever it operates,
+      including in the <strong>United States</strong>, under the Cloud Data Processing Addendum and
+      the safeguards Google states below. Google Play’s integrity check is made by Google Play under
+      its own terms, and Google may process it in the same places.</p>
       <p>The static file described in Section 3(c) is served by GitHub, Inc., a company based in the
       <strong>United States</strong>, so the IP address that request is made from is received
       there.</p>
@@ -870,6 +1008,11 @@
       start, including when advertising is switched off remotely (Section 3(c)); outside these
       regions that check shows nothing.</p>
 
+      <h3>Not covered by these choices: Invite a friend</h3>
+      <p>The invite requests described in Section 3(f) are not advertising or statistics, so neither
+      the consent message nor the usage statistics switch turns them on or off. Section 4 gives their
+      legal basis, and Section 9 says how to object or have an entry deleted.</p>
+
       <h3>Everywhere — controlling your Advertising ID at the Android level</h3>
       <p>Independently of the App, Android lets you control the advertising identifier:</p>
       <div class="callout">
@@ -887,8 +1030,9 @@
         by clearing the App’s storage or uninstalling the App. If backup is switched on in your
         phone’s settings, Android may also keep a copy in your Google account, as Section 3(a)
         describes; that copy is governed by Google, not by us, and Android can put it back when you
-        reinstall the App or move to a new phone. We have no copy and therefore no retention period
-        of our own.</li>
+        reinstall the App or move to a new phone. Apart from an invite code that names an entry in
+        the invite counter (below), we have no copy and therefore no retention period of our
+        own.</li>
         <li><strong>Advertising data (Section 3(b)):</strong> retained by <strong>Google</strong>
         according to Google’s own retention schedules, which are described in Google’s privacy
         documentation. The Developer holds none of it and cannot delete it on your behalf; requests
@@ -902,6 +1046,11 @@
         console, applied to the whole property, and if we ever lengthen it this policy will say so
         before we do. The random app-instance identifier is discarded when you turn the switch off,
         when you clear the App’s data, or when you uninstall.</li>
+        <li><strong>The invite counter (Section 3(f)):</strong> each entry is kept while the Invite a
+        friend feature exists, and the whole counter is deleted when the feature ends. An entry is
+        deleted earlier when you ask and send us its code (Section 9). There is <strong>no automatic
+        expiry</strong>. The integrity check is kept by Google Play for its own fixed retention
+        period, as Section 3(f) describes.</li>
       </ul>
 
       <h2 id="en-9">9. Your privacy rights</h2>
@@ -922,6 +1071,16 @@
         Google’s privacy policy. Write to
         <a href="mailto:luxebytecomp@gmail.com"><strong>luxebytecomp@gmail.com</strong></a> as well
         and we will do what we can to assist and to point you to the right place.</li>
+        <li>For the <strong>invite counter</strong> (Section 3(f)), we are the controller and we
+        act ourselves. Send us the code to
+        <a href="mailto:luxebytecomp@gmail.com"><strong>luxebytecomp@gmail.com</strong></a>: your
+        own code is in the link you shared, and if you installed from a friend’s link, it is that
+        friend’s code. We will tell you what the entry holds, delete it (<strong>erasure</strong>),
+        or, if you installed from that link and <strong>object</strong> to being counted, take your
+        count off it. The code is random and nothing in the counter links it to you, so we cannot find
+        an entry for you without it, and we keep no other information to identify you
+        (Art. 11 GDPR). If you cannot give the code, write anyway and we will explain what we can and
+        cannot do.</li>
       </ul>
       <p>You also have the right to <strong>lodge a complaint with a supervisory authority</strong>
       in your country of residence, place of work, or place of the alleged infringement.</p>
@@ -937,8 +1096,9 @@
         <li>to withdraw your consent at any time from <strong>Main menu → Settings → Ad and privacy
         settings</strong> in the App.</li>
       </ul>
-      <p>We hold none of this data on any server, so for most requests we will tell you that, and
-      help you take the request to Google, which holds it. Write to
+      <p>Apart from the invite counter, which we handle ourselves as described above when you send
+      us its code, we hold none of this data on any server, so for most requests we will tell you
+      that, and help you take the request to Google, which holds it. Write to
       <a href="mailto:luxebytecomp@gmail.com"><strong>luxebytecomp@gmail.com</strong></a>.</p>
       <p>You can also report a concern to the Swiss <strong>Federal Data Protection and Information
       Commissioner (FDPIC)</strong>, Feldeggweg 1, 3003 Bern, Switzerland,
@@ -947,8 +1107,8 @@
       consequence for you or a considerable adverse effect on you.</p>
 
       <h3>If you are in California (CCPA/CPRA) or another US state with a privacy law</h3>
-      <p>We do <strong>not sell</strong> your personal information, and we receive none of it
-      ourselves.</p>
+      <p>We do <strong>not sell</strong> your personal information. The only data we keep ourselves
+      is the invite counter in Section 3(f), and it is not sold or shared.</p>
       <p>We do <strong>not</strong> claim that no “sharing” takes place. Showing a
       <strong>personalized</strong> ad means advertising data is made available to Google and its
       partners for cross-context behavioural advertising, and that is capable of being
@@ -961,7 +1121,8 @@
         <li><strong>On the device:</strong> the Android Advertising ID controls described in
         Section 7, which apply wherever you are.</li>
       </ul>
-      <p>You may also request access to, or deletion of, personal information we hold about you. We
+      <p>You may also request access to, or deletion of, personal information we hold about you.
+      Apart from an entry in the invite counter, which we can find only from its code (see above), we
       hold none, and we will tell you so.</p>
 
       <h2 id="en-10">10. Children’s privacy</h2>
@@ -970,7 +1131,8 @@
       <p>We are aware that a colourful puzzle game can attract younger players. If you believe a
       child has used the App in a way that resulted in personal data being processed, contact
       <a href="mailto:luxebytecomp@gmail.com"><strong>luxebytecomp@gmail.com</strong></a> and we will
-      help you direct the request to Google, who holds the data.</p>
+      help you direct the request to Google, who holds the data, or, for an entry in the invite
+      counter (Section 3(f)), delete it ourselves once you send us its code.</p>
       <p>If the App’s declared target audience ever changes to include children, the advertising
       configuration will change with it — child-directed treatment will be signalled to the ads SDK
       and the advertising identifier permission will be removed — and this policy will be updated
@@ -978,8 +1140,11 @@
 
       <h2 id="en-11">11. Security</h2>
       <p>The App stores its data using Android’s standard app-private storage, which the operating
-      system isolates from other apps. We hold no servers, no databases and no accounts, which
-      removes an entire category of risk: there is no place for us to be breached.</p>
+      system isolates from other apps. We hold no servers and no accounts. Our one database is the
+      invite counter in Section 3(f), in Google Cloud Firestore, which Google encrypts in transit
+      and at rest. Its rules let a request read an entry only by its exact code, never list the
+      entries, only add one to a count, up to 10, and never delete. It holds random codes, numbers
+      and times, so a breach of it would expose nothing that names anyone.</p>
       <p>No method of electronic storage or transmission is completely secure, and we cannot
       guarantee absolute security of data handled by third parties such as Google.</p>
 
