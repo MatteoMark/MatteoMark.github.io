@@ -80,7 +80,7 @@
       <h1>Privacy Policy</h1>
       <p class="meta">Tilt Blocks — Android (<code>com.luxebyte.tiltblocks</code>)</p>
       <p class="meta">Publisher: <strong>Matteo Lamarque</strong>, trading as <strong>Luxebyte Labs</strong> · <a href="mailto:luxebytecomp@gmail.com">luxebytecomp@gmail.com</a></p>
-      <p class="meta">Effective: <time datetime="2026-07-30">30 July 2026</time> · Last updated: <time datetime="2026-10-11">11 October 2026</time></p>
+      <p class="meta">Effective: <time datetime="2026-07-30">30 July 2026</time> · Last updated: <time datetime="2026-10-16">16 October 2026</time> (adds Section 3(g))</p>
     </header>
 
     <main id="main">
@@ -160,7 +160,8 @@
       cannot help revealing where it came from, one is a small, fixed set of usage statistics
       that you can switch off, one is a counter we keep for the invite links players share, and one
       is a record, sent to Meta, that the App was installed and opened, so that our own advertising
-      can be measured; it is never sent in the EEA, the UK or Switzerland (Section 3(g)). The
+      can be measured (Section 3(g)); it is never sent in the EEA, the UK or Switzerland, and the
+      usage statistics switch turns it off everywhere else. The
       App sends none of the data kept on your device anywhere, except a few items named in Section
       3(a), which are sent with the usage statistics in Section 3(d) where those are permitted, and
       the invite code described in Section 3(f).</p>
@@ -366,11 +367,11 @@
         your hand;</li>
         <li><strong>Internet access</strong> (<code>INTERNET</code>), used by the advertising and
         consent components described in 3(b), by the single request described in 3(c), by the usage
-        statistics described in 3(d), by the invite requests described in 3(f), and by nothing
-        else;</li>
+        statistics described in 3(d), by the invite requests described in 3(f), by the Meta
+        component described in 3(g), and by nothing else;</li>
         <li><strong>Advertising ID</strong> (<code>com.google.android.gms.permission.AD_ID</code>),
-        which is what allows Google to read the resettable advertising identifier described in 3(b).
-        It is declared explicitly rather than inherited silently, so that what the App can reach is
+        which is what allows Google to read the resettable advertising identifier described in 3(b),
+        and Meta’s component to read it where Section 3(g) says it is active. It is declared explicitly rather than inherited silently, so that what the App can reach is
         written down rather than guessed at;</li>
         <li><strong>Notifications</strong> (<code>POST_NOTIFICATIONS</code>), for the daily reminder
         described below. On Android 13 and later Android asks you first, and the App posts nothing
@@ -683,10 +684,10 @@
         of our one promotion; and which of the torch app’s four buttons it was, or “friend” for an
         invite link; and, for the torch app, a short code the torch app writes into its own link,
         naming which version of the torch app and which design of the promotion you saw (for example
-        “1043_swipe”). Since version 0.12.1 two more words are on the list: “google_ads”, when
+        “1043_swipe”). Two more words are on the list: “google_ads”, when
         Google Play’s record of the link carries a Google Ads click identifier, and “meta”, when it
-        carries the encrypted campaign block Meta adds to links from its adverts; only the word is
-        sent, never the click identifier or Meta’s block. Any other link, and any code of a
+        carries the encrypted campaign block Meta adds to links from its adverts. Only the word is
+        sent: the click identifier and Meta’s block themselves are never kept or sent. Any other link, and any code of a
         different shape, is recorded only as “other”, and a missing one as “none”. The link’s own text is never sent with this event,
         and neither is the code in a friend’s invite link. Google Play
         supplies this to the App once, after installation; the App keeps these words on your device
@@ -751,8 +752,7 @@
       <strong>no</strong> social login and <strong>no</strong> in-app purchases. Its only
       attribution component is the Meta SDK described in Section 3(g), used for install and open
       events alone. Invite a friend (Section 3(f)) counts installs from a
-      friend’s link with the App’s own code, not with such an SDK, and tells no advertiser about
-      them. Apart from the Google advertising and consent components named in 3(b), the analytics
+      friend’s link with the App’s own code, not with Meta’s SDK. Apart from the Google advertising and consent components named in 3(b), the analytics
       component named in 3(d), the Meta component named in 3(g), the single static-file request
       described in 3(c), and the invite
       requests described in 3(f) (together with the integrity check that Google Play services
@@ -827,7 +827,7 @@
       want to be counted, Section 9 says how to object.</p>
 
       <h3>3(g). Measuring our own advertising (Meta App Events)</h3>
-      <p><strong>Why this exists, plainly.</strong> From version 0.12.1 we may pay for small
+      <p><strong>Why this exists, plainly.</strong> We may pay for small
       advertising campaigns on Meta’s services (Facebook, Instagram, and Meta’s ad network in other
       apps) to find new players. Meta can only tell us whether such an advert led to an
       installation, and can only show the advert to people likely to install, if the App tells Meta
@@ -847,7 +847,7 @@
         <li><strong>Everywhere else, it follows the usage statistics switch.</strong> The switch at
         <strong>Main menu → Settings → Share usage statistics</strong> (Section 3(d)) also controls
         this. While it is on, the component starts once the App has checked with Google’s consent
-        component, during that launch, that no consent message applies to you. Turning it off stops
+        component that no consent message applies to you. Turning it off stops
         the App’s collection of the advertising identifier at once and stops the open events no
         later than the next time the App starts (Meta’s SDK still sends one last note that its
         settings changed, which carries no advertising identifier); while it is off, the Meta
@@ -873,8 +873,7 @@
         <li>if Meta’s SDK itself fails, a report of that failure, where Meta has switched such
         reports on.</li>
       </ul>
-      <p>Meta, like any server, also sees the <strong>IP address</strong> the data comes from. The
-      invite code and the invite counter in Section 3(f) are never sent to Meta.</p>
+      <p>Meta, like any server, also sees the <strong>IP address</strong> the data comes from.</p>
       <p><strong>The recipient.</strong> <strong>Meta Platforms Ireland Limited</strong> (Block J,
       Serpentine Avenue, Dublin 4, Ireland), which Meta’s Business Tools Terms name as the Meta
       company where the business using them is subject to the GDPR, as we are, being based in Italy.
