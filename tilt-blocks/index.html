@@ -80,7 +80,7 @@
       <h1>Privacy Policy</h1>
       <p class="meta">Tilt Blocks — Android (<code>com.luxebyte.tiltblocks</code>)</p>
       <p class="meta">Publisher: <strong>Matteo Lamarque</strong>, trading as <strong>Luxebyte Labs</strong> · <a href="mailto:luxebytecomp@gmail.com">luxebytecomp@gmail.com</a></p>
-      <p class="meta">Effective: <time datetime="2026-07-30">30 July 2026</time> · Last updated: <time datetime="2026-10-16">16 October 2026</time> (adds Section 3(g))</p>
+      <p class="meta">Effective: <time datetime="2026-07-30">30 July 2026</time> · Last updated: <time datetime="2026-10-17">17 October 2026</time> (adds Section 3(g))</p>
     </header>
 
     <main id="main">
@@ -159,7 +159,8 @@
       by Google and never reaches us, one is a single request that carries nothing about you but
       cannot help revealing where it came from, one is a small, fixed set of usage statistics
       that you can switch off, one is a counter we keep for the invite links players share, and one
-      is a record, sent to Meta, that the App was installed and opened, so that our own advertising
+      is a record, sent to Meta, that the App was installed and opened, and, when it came from one of
+      Meta’s adverts, the Google Play link that brought the installation, so that our own advertising
       can be measured (Section 3(g)); it is never sent in the EEA, the UK or Switzerland, and the
       usage statistics switch turns it off everywhere else. The
       App sends none of the data kept on your device anywhere, except a few items named in Section
@@ -399,7 +400,8 @@
         described in Section 7;</li>
         <li><strong>Install referrer</strong>
         (<code>com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE</code>), which
-        lets the App ask Google Play, once, which link brought you to it (Section 3(d));</li>
+        lets the App ask Google Play, once, which link brought you to it (Section 3(d)), and lets
+        Meta’s component ask the same, once, where Section 3(g) says it is active;</li>
         <li>an internal permission named after the App
         (<code>com.luxebyte.tiltblocks.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION</code>), declared by
         Android’s support library so that only the App itself can send messages to its own
@@ -862,9 +864,18 @@
         <strong>opened</strong> and <strong>closed</strong>, with how long a session lasted, how many
         times it was interrupted, and roughly how long it had been since the last one;</li>
         <li>the <strong>Android advertising identifier</strong> and whether you have limited ad
-        tracking, a random identifier the SDK generates for this installation, and the <strong>link
-        the App was installed from</strong>, as Google Play reports it (this is how Meta recognises
-        an installation that came from one of its adverts);</li>
+        tracking, and a random identifier the SDK generates for this installation;</li>
+        <li>the <strong>Google Play link that brought the installation</strong>, as Google Play
+        reports it, only when that link contains the letters “fb” or the word “facebook”, as the
+        links in Meta’s adverts do (this is how Meta recognises an installation that came from one of
+        its adverts). Meta’s SDK asks Google Play for the link once, keeps it on your device, and
+        sends it whole with the installation record and with each later batch of events; a link
+        without those letters is not sent. A friend’s invite link (Section 3(f)) never contains them,
+        so neither it nor its code reaches Meta, with one exception: a code made by a version of the
+        App from before the Meta component was added may contain “fb” (about 1 code in 93), and a
+        friend’s installation from that link sends it to Meta with the rest of the link. A link from
+        anyone else’s advert, such as a Google Ads link, is sent whole, any click identifier
+        included, if its text happens to contain those letters;</li>
         <li><strong>technical facts about the device</strong>, as Meta’s SDK collects them: the App’s
         package name and version, which app store installed it, the Android version, the device
         model, the language and region setting, the time zone, the name of the mobile network, the

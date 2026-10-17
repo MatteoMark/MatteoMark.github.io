@@ -112,8 +112,10 @@
       </ul>
       <p>Then Meta’s SDK in the game tells Meta that the game was <strong>installed</strong> and that
       it was <strong>opened</strong>, so that we can measure our own adverts. With those events it
-      sends the Android advertising identifier, a random identifier for this installation, the link
-      the game was installed from, and basic facts about the device, and Meta sees your IP address.
+      sends the Android advertising identifier, a random identifier for this installation and basic
+      facts about the device, and Meta sees your IP address. If the Google Play link that brought
+      the installation contains the letters “fb” or the word “facebook”, as the links in Meta’s
+      adverts do, Meta’s SDK sends that link too, whole; any other link is not sent.
       The game sends Meta no game events, no scores and no settings. The full list is in
       <a href="../#en-3g">Section 3(g) of the privacy policy</a>.</p>
       <p>We do not receive this data, so we cannot delete it for you. Meta can.</p>
