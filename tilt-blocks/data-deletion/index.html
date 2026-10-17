@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Deleting your data · Tilt Blocks</title>
+  <meta name="description" content="How to delete the data of the Tilt Blocks Android app by Luxebyte Labs, and how to ask Meta and Google to delete theirs." />
+  <style>
+    :root {
+      --ink: #1a1c1e;
+      --ink-muted: #4a4f55;
+      --canvas: #ffffff;
+      --surface: #f6f7f9;
+      --hairline: #d9dde2;
+      --accent: #0b5cad;
+      --accent-soft: #e8f0fa;
+      --maxw: 52rem;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --ink: #e8eaed;
+        --ink-muted: #aab1b9;
+        --canvas: #14161a;
+        --surface: #1d2024;
+        --hairline: #333941;
+        --accent: #6db3ff;
+        --accent-soft: #1b2733;
+      }
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--canvas);
+      color: var(--ink);
+      font: 17px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      -webkit-text-size-adjust: 100%;
+    }
+    .wrap { max-width: var(--maxw); margin: 0 auto; padding: 2rem 1.25rem 5rem; }
+    header.page {
+      border-bottom: 1px solid var(--hairline);
+      padding-bottom: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+    h1 { font-size: 1.9rem; line-height: 1.2; margin: 0 0 .35rem; }
+    h2 {
+      font-size: 1.35rem; line-height: 1.25; margin: 2.6rem 0 .6rem;
+      padding-top: .4rem; border-top: 1px solid var(--hairline);
+    }
+    h3 { font-size: 1.08rem; margin: 1.6rem 0 .4rem; }
+    h4 { font-size: 1rem; margin: 1.3rem 0 .35rem; }
+    p, li { color: var(--ink); }
+    a { color: var(--accent); }
+    a:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+    .meta { color: var(--ink-muted); font-size: .95rem; margin: .15rem 0; }
+    .callout {
+      background: var(--surface); border: 1px solid var(--hairline);
+      border-left: 4px solid var(--accent); border-radius: 8px;
+      padding: .9rem 1.1rem; margin: 1.2rem 0;
+    }
+    .callout strong { color: var(--ink); }
+    code { background: var(--surface); border: 1px solid var(--hairline); border-radius: 5px; padding: .05em .4em; font-size: .9em; overflow-wrap: anywhere; }
+    table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: .96rem; }
+    th, td { border: 1px solid var(--hairline); padding: .55rem .7rem; text-align: left; vertical-align: top; }
+    th { background: var(--surface); }
+    .tablewrap { overflow-x: auto; }
+    .toc { background: var(--surface); border: 1px solid var(--hairline); border-radius: 8px; padding: 1rem 1.25rem; }
+    .toc ol { margin: .3rem 0 0; padding-left: 1.4rem; }
+    .toc li { margin: .15rem 0; }
+    .skiplink { position: absolute; left: -999px; }
+    .skiplink:focus { left: 1rem; top: 1rem; background: var(--accent); color: #fff; padding: .5rem .8rem; border-radius: 6px; z-index: 10; }
+    footer.page { margin-top: 3rem; padding-top: 1.25rem; border-top: 1px solid var(--hairline); color: var(--ink-muted); font-size: .9rem; }
+    hr { border: none; border-top: 1px solid var(--hairline); margin: 2rem 0; }
+  </style>
+</head>
+<body>
+  <a class="skiplink" href="#main">Skip to content</a>
+  <div class="wrap">
+    <header class="page">
+      <h1>Deleting your data</h1>
+      <p class="meta">Tilt Blocks for Android (<code>com.luxebyte.tiltblocks</code>)</p>
+      <p class="meta">Publisher: <strong>Matteo Lamarque</strong>, trading as <strong>Luxebyte Labs</strong> · <a href="mailto:luxebytecomp@gmail.com">luxebytecomp@gmail.com</a></p>
+      <p class="meta">Last updated: <time datetime="2026-10-17">17 October 2026</time></p>
+    </header>
+
+    <main id="main">
+    <section id="en" lang="en" aria-label="Deleting your data (English)">
+
+      <div class="callout">
+        <p><strong>Tilt Blocks has no accounts.</strong> There is nothing to sign in to, so there is
+        no account to delete. Your games, scores, gems, skins, achievements and settings are kept on
+        your phone, and we never receive them.</p>
+      </div>
+
+      <h2 id="en-1">1. Delete what the game keeps on your phone</h2>
+      <p>Either of these deletes everything the game has stored:</p>
+      <ul>
+        <li><strong>Uninstall Tilt Blocks</strong>; or</li>
+        <li>open Android <strong>Settings → Apps → Tilt Blocks → Storage</strong> and tap
+        <strong>Clear storage</strong> (the wording varies by device).</li>
+      </ul>
+      <p>We hold no copy, so we cannot bring it back afterwards. If backup is switched on in your
+      phone’s settings, Android may also keep a copy in your Google account and put it back when you
+      reinstall the game. Google keeps that copy under your account, and you manage it there.</p>
+
+      <h2 id="en-2">2. What Meta receives</h2>
+      <p>Meta receives data from the game only when all three of these are true:</p>
+      <ul>
+        <li>you are <strong>outside the EEA, the UK and Switzerland</strong>;</li>
+        <li>no US state privacy message applies to you; and</li>
+        <li><strong>Main menu → Settings → Share usage statistics</strong> is on.</li>
+      </ul>
+      <p>Then Meta’s SDK in the game tells Meta that the game was <strong>installed</strong> and that
+      it was <strong>opened</strong>, so that we can measure our own adverts. With those events it
+      sends the Android advertising identifier, a random identifier for this installation, the link
+      the game was installed from, and basic facts about the device, and Meta sees your IP address.
+      The game sends Meta no game events, no scores and no settings. The full list is in
+      <a href="../#en-3g">Section 3(g) of the privacy policy</a>.</p>
+      <p>We do not receive this data, so we cannot delete it for you. Meta can.</p>
+
+      <h2 id="en-3">3. Ask Meta to delete its data</h2>
+      <ul>
+        <li><strong>Stop new data.</strong> Turn off <strong>Main menu → Settings → Share usage
+        statistics</strong>. You can also reset or delete your Android advertising identifier in
+        <strong>Settings → Google → Ads</strong> (the wording varies by device).</li>
+        <li><strong>If you have a Facebook or Instagram account:</strong> open
+        <strong>Accounts Center → Your information and permissions → Your activity off Meta
+        technologies</strong>. There you can clear what apps have sent to Meta and disconnect
+        future activity.</li>
+        <li><strong>With or without an account:</strong> Meta’s privacy policy explains how to
+        exercise your rights, including deletion, and how to contact Meta:
+        <a href="https://www.facebook.com/privacy/policy">https://www.facebook.com/privacy/policy</a>.</li>
+      </ul>
+
+      <h2 id="en-4">4. Data held by Google</h2>
+      <p>The optional video ads and the usage statistics are handled by Google, not by us. Usage
+      statistics are kept by Google for 2 months. To delete Google’s data, use the contacts in
+      Google’s privacy policy; the <a href="../#en-9">privacy policy, Section 9</a>, says how, and we
+      will help you find the right place.</p>
+
+      <h2 id="en-5">5. Data we hold: the invite counter</h2>
+      <p>If you used <strong>Invite a friend</strong>, our one database holds a counter for your
+      random invite code: a number of friends, up to 10, and a time. Nothing in it names you. Email
+      us the code (it is in the link you shared) and we will delete its entry. If you installed from
+      a friend’s link and do not want to be counted, send us that link’s code and we will take your
+      count off it.</p>
+
+      <h2 id="en-6">6. Contact</h2>
+      <p><a href="mailto:luxebytecomp@gmail.com"><strong>luxebytecomp@gmail.com</strong></a></p>
+      <p>Write to us with any request about your data. The full details are in the
+      <a href="../">Tilt Blocks privacy policy</a>.</p>
+
+    </section>
+    </main>
+    <footer class="page">
+      <p>Luxebyte Labs · Tilt Blocks (<code>com.luxebyte.tiltblocks</code>). Contact: <a href="mailto:luxebytecomp@gmail.com">luxebytecomp@gmail.com</a></p>
+      <p><a href="../">Privacy policy</a> · <a href="../terms/">Terms of service</a> · <a href="../data-deletion/">Deleting your data</a></p>
+    </footer>
+  </div>
+</body>
+</html>
