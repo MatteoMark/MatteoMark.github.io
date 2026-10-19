@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Privacy Policy — Posture Break</title>
+  <meta name="description" content="Privacy policy for the Posture Break Android app by Luxebyte Labs: data kept on your device, Google AdMob advertising, usage statistics and the one-time Pro purchase." />
+  <!--
+    Source of https://matteomark.github.io/posture/ (PostureApp plan P6-03). Edit rules: present
+    tense, a legal document, no change narration in Sections 1 to 13 (PrivacyPolicyShapeTest).
+    Every merged permission is named here (PolicyPermissionsTest). Wellness words only outside the
+    allowlisted not-a-device paragraph (BannedWordsTest, anchor policy_not_a_device).
+  -->
+  <style>
+    :root {
+      --ink: #1a1c1e;
+      --ink-muted: #4a4f55;
+      --canvas: #ffffff;
+      --surface: #f6f7f9;
+      --hairline: #d9dde2;
+      --accent: #0b5cad;
+      --accent-soft: #e8f0fa;
+      --maxw: 52rem;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --ink: #e8eaed;
+        --ink-muted: #aab1b9;
+        --canvas: #14161a;
+        --surface: #1d2024;
+        --hairline: #333941;
+        --accent: #6db3ff;
+        --accent-soft: #1b2733;
+      }
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--canvas);
+      color: var(--ink);
+      font: 17px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      -webkit-text-size-adjust: 100%;
+    }
+    .wrap { max-width: var(--maxw); margin: 0 auto; padding: 2rem 1.25rem 5rem; }
+    header.page {
+      border-bottom: 1px solid var(--hairline);
+      padding-bottom: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+    h1 { font-size: 1.9rem; line-height: 1.2; margin: 0 0 .35rem; }
+    h2 {
+      font-size: 1.35rem; line-height: 1.25; margin: 2.6rem 0 .6rem;
+      padding-top: .4rem; border-top: 1px solid var(--hairline);
+    }
+    h3 { font-size: 1.08rem; margin: 1.6rem 0 .4rem; }
+    h4 { font-size: 1rem; margin: 1.3rem 0 .35rem; }
+    p, li { color: var(--ink); }
+    a { color: var(--accent); }
+    a:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+    .meta { color: var(--ink-muted); font-size: .95rem; margin: .15rem 0; }
+    .callout {
+      background: var(--surface); border: 1px solid var(--hairline);
+      border-left: 4px solid var(--accent); border-radius: 8px;
+      padding: .9rem 1.1rem; margin: 1.2rem 0;
+    }
+    .callout strong { color: var(--ink); }
+    code { background: var(--surface); border: 1px solid var(--hairline); border-radius: 5px; padding: .05em .4em; font-size: .9em; overflow-wrap: anywhere; }
+    table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: .96rem; }
+    th, td { border: 1px solid var(--hairline); padding: .55rem .7rem; text-align: left; vertical-align: top; }
+    th { background: var(--surface); }
+    .tablewrap { overflow-x: auto; }
+    .toc { background: var(--surface); border: 1px solid var(--hairline); border-radius: 8px; padding: 1rem 1.25rem; }
+    .toc ol { margin: .3rem 0 0; padding-left: 1.4rem; }
+    .toc li { margin: .15rem 0; }
+    .skiplink { position: absolute; left: -999px; }
+    .skiplink:focus { left: 1rem; top: 1rem; background: var(--accent); color: #fff; padding: .5rem .8rem; border-radius: 6px; z-index: 10; }
+    footer.page { margin-top: 3rem; padding-top: 1.25rem; border-top: 1px solid var(--hairline); color: var(--ink-muted); font-size: .9rem; }
+  </style>
+</head>
+<body>
+  <a class="skiplink" href="#main">Skip to content</a>
+  <div class="wrap">
+    <header class="page">
+      <h1>Privacy Policy</h1>
+      <p class="meta">Posture Break — Android (<code>com.luxebyte.posture</code>)</p>
+      <p class="meta">Publisher: <strong>Matteo Lamarque</strong>, trading as <strong>Luxebyte Labs</strong> · <a href="mailto:luxebytecomp@gmail.com">luxebytecomp@gmail.com</a></p>
+      <p class="meta">Effective: <time datetime="2026-10-17">17 October 2026</time> · Last updated: <time datetime="2026-10-17">17 October 2026</time></p>
+      <p class="meta">Policy version <span id="policy-version">1.0</span> · App version described: <span id="app-version">1.0</span></p>
+    </header>
+
+    <main id="main">
+    <section id="en" lang="en" aria-label="Privacy Policy (English)">
+
+      <nav class="toc" aria-label="Contents">
+        <strong>Contents</strong>
+        <ol>
+          <li><a href="#en-1">Who is responsible for your data (Data Controller)</a></li>
+          <li><a href="#en-2">Scope of this policy</a></li>
+          <li><a href="#en-3">What data is processed</a></li>
+          <li><a href="#en-4">Why we process data, and the legal basis for each purpose (GDPR)</a></li>
+          <li><a href="#en-5">Who receives data (third parties / recipients)</a></li>
+          <li><a href="#en-6">International data transfers</a></li>
+          <li><a href="#en-7">Consent and how to change or withdraw it</a></li>
+          <li><a href="#en-8">Data retention — how long data is kept</a></li>
+          <li><a href="#en-9">Your privacy rights</a></li>
+          <li><a href="#en-10">Children’s privacy</a></li>
+          <li><a href="#en-11">Security</a></li>
+          <li><a href="#en-12">Changes to this policy and how you are notified</a></li>
+          <li><a href="#en-13">How to contact us about privacy</a></li>
+        </ol>
+      </nav>
+
+      <h2 id="en-1">1. Who is responsible for your data (Data Controller)</h2>
+      <p>The app <strong>“Posture Break”</strong> (Android package <code>com.luxebyte.posture</code>,
+      the <strong>“App”</strong>) is published by <strong>Luxebyte Labs</strong> (the
+      <strong>“Developer”</strong>, <strong>“we”</strong>, <strong>“us”</strong>).</p>
+
+      <p>For the limited processing described in this policy, the data controller is:</p>
+      <ul>
+        <li><strong>Controller:</strong> <strong>Matteo Lamarque</strong>, trading as <strong>Luxebyte Labs</strong></li>
+        <li><strong>Contact for privacy matters:</strong> <a href="mailto:luxebytecomp@gmail.com"><strong>luxebytecomp@gmail.com</strong></a></li>
+      </ul>
+
+      <p>“Luxebyte Labs” is a trading name of <strong>Matteo Lamarque</strong>, an independent
+      developer based in Italy. This is a one-person publisher, and the email address above is the
+      contact point for every privacy matter: it reaches the person who can act on it. If you need a
+      postal address in order to exercise a right, write to
+      <a href="mailto:luxebytecomp@gmail.com"><strong>luxebytecomp@gmail.com</strong></a> and it
+      will be given to you.</p>
+
+      <div class="callout">
+        <p><strong>Important to understand up front:</strong> the Developer operates <strong>no
+        servers</strong> and runs <strong>no backend</strong> of its own. Your schedule, your
+        reminder text and your count of breaks stay on your phone. We do <strong>not</strong>
+        receive, store, or have access to the advertising data described in Section 3(b). That data
+        is collected and processed by <strong>Google</strong> (our advertising provider) and its
+        partners. We are the controller only in the sense that we chose to integrate advertising
+        into the App and we decide where and how an ad may appear. Google determines the means and
+        purposes of its own processing of advertising data and acts as an independent (and, where
+        applicable, joint) controller for it.</p>
+      </div>
+
+      <h2 id="en-2">2. Scope of this policy</h2>
+      <p>This policy applies only to the <strong>“Posture Break”</strong> Android App distributed
+      through the Google Play Store. It does not cover any other product, website, or third-party
+      service except as expressly described here (in particular Google’s advertising, statistics
+      and payment services). This policy describes version 1.0 of the App. The English text is the
+      only version.</p>
+
+      <h3>What the App is</h3>
+      <p>The App reminds you, on a schedule you choose, to take a short break from sitting, and
+      shows a one-minute sequence of simple moves to do in that break. It counts the breaks you
+      finish each day.</p>
+      <p><!-- banned-words-allow policy_not_a_device -->Posture Break is a wellness app. It is not a medical device and does not diagnose, treat, cure, or prevent any medical condition.<!-- /banned-words-allow policy_not_a_device --></p>
+
+      <h3>Updates to this policy</h3>
+      <p>We may update this policy, for example if the App changes or if legal requirements change.
+      When we make a material change we update the “Last updated” date and the policy version above
+      and publish the new version at the same web address where you found this policy, before or at
+      the time the change takes effect. Where the change concerns advertising or statistics consent,
+      you may be asked again through the in-app consent message (see Section 7). Your continued use
+      of the App after an update takes effect means the updated policy applies to you; if you do not
+      agree, you can stop using the App and uninstall it.</p>
+
+      <h2 id="en-3">3. What data is processed</h2>
+      <p>The App processes six separate categories of data. We keep them separate on purpose,
+      because they behave very differently: one is kept on your device (3(a)), one is collected by
+      Google for advertising and never reaches us (3(b)), one is a single request that carries
+      nothing about you (3(c)), one is a small, predefined set of usage statistics (3(d)), one is the
+      one-time Pro purchase, handled by Google Play (3(e)), and the last is a short list of what
+      the App does not do (3(f)).</p>
+
+      <div class="callout" id="en-health">
+        <p><strong>Health and fitness data.</strong> The App collects no health or fitness data. It
+        reads no sensor, takes no photo, measures nothing about your body and asks nothing about it.
+        The count of breaks you finish each day is kept on your device, and in your phone’s own
+        backup where that is switched on (Section 3(a)); it is never sent to us, to the usage
+        statistics or to any advertiser. Which moves you did, and whether you finished a break, are
+        never sent anywhere.</p>
+      </div>
+
+      <h3>3(a). Data kept on your device</h3>
+      <p>To make the App work, the App stores a small amount of information <strong>locally on your
+      device</strong>, using Android’s standard app-private <code>SharedPreferences</code> storage.
+      This is the complete list, grouped by what it is for.</p>
+
+      <p><strong>Your schedule and reminder</strong> (copied by your phone’s backup, below)</p>
+      <ul>
+        <li>the days of the week reminders are on, the time they start and end, and how often they
+        come (every 15 to 120 minutes);</li>
+        <li>the sound and the vibration you chose for the reminder;</li>
+        <li>the <strong>reminder text</strong>, if you wrote your own. It is shown in the reminder
+        notification, which Android can display on your lock screen;</li>
+        <li>the day reminders are paused through, when you pause them for the day.</li>
+      </ul>
+
+      <p><strong>Your breaks</strong> (copied by your phone’s backup, below)</p>
+      <ul>
+        <li>the <strong>number of breaks you finished on each day</strong>, for the last 60 days. A
+        break counts when you press <strong>Done</strong> on a reminder or finish a one-minute
+        reset in the App. Nothing else is recorded about it: not the time, not the moves.</li>
+      </ul>
+
+      <p><strong>How the reminders run</strong> (never copied by the backup)</p>
+      <ul>
+        <li>when the last reminder was posted and when the next one is due, and whether Android lets
+        it arrive on the minute (precise timing) or only approximately;</li>
+        <li>how many reminders in a row went unanswered, and, after several, until when the App
+        spaces them out; and which reminder your last <strong>Done</strong> counted for, so that one
+        reminder never counts twice;</li>
+        <li>a record of the last 60 reminder deliveries: for each, when it was due, how late it
+        arrived, what the App decided to do with it, what started it, whether precise timing was in
+        use, and the battery standby group Android had placed the App in. It is shown on a hidden
+        reliability page in the App, so that a late or missing reminder can be explained;</li>
+        <li>the last internal step that failed, with the time and the type of error, and no other
+        detail;</li>
+        <li>a number that names the App’s notification channel, the day the App last showed
+        Android’s notification question, and the last move a break showed, so that the next break
+        starts with the move after it.</li>
+      </ul>
+
+      <p><strong>Other records</strong> (never copied by the backup)</p>
+      <ul>
+        <li>whether you own <strong>Pro</strong>, and when Google Play last confirmed it (Section
+        3(e));</li>
+        <li>the last copy of the advertising switch file and when it was fetched (Section 3(c));</li>
+        <li>a copy of what Google’s consent component last told the App: whether a consent message
+        applies to you and, if it does, whether it has been answered (not what you answered);</li>
+        <li>when the App last asked you to rate it on Google Play, and the dates it uses to decide
+        when it may ask again (Section 3(f)).</li>
+      </ul>
+
+      <p>Google’s own components described in Sections 3(b), 3(d) and 7 keep their own records on
+      your device, such as your consent answer and the statistics identifier; those Sections
+      describe them.</p>
+
+      <p>This on-device data:</p>
+      <ul>
+        <li>is <strong>never transmitted to the Developer</strong>, who has no servers to receive
+        it;</li>
+        <li>is <strong>never sold or shared</strong> with anyone;</li>
+        <li>contains <strong>nothing that identifies you by name</strong>: there is no account, no
+        login, no name, no email address and no device or advertising identifier in it. The one
+        piece of free text is the reminder text you may write yourself;</li>
+        <li>is <strong>not sent anywhere by the App</strong>, except what Section 3(d) describes,
+        only where usage statistics are permitted: how late a reminder arrived (as a band), whether
+        precise timing was in use, the battery standby group, and your answers to Android’s
+        notification and precise timing questions. Your schedule, your reminder text, your count of
+        breaks and the moves you did are never sent;</li>
+        <li id="en-backup">may be included in <strong>your phone’s own backup (Android Auto
+        Backup)</strong>: if backup is switched on in your phone’s settings, Android copies the
+        App’s schedule and reminder settings and its count of breaks to your Google account, and
+        puts them back when you reinstall the App or move to a new phone. Nothing else the App
+        stores is included. That copy is kept by Google under your account, under Google’s terms,
+        and the Developer cannot see it. You can switch backup off in Android’s settings;</li>
+        <li>is fully under your control: uninstalling the App, or clearing the App’s storage in
+        Android <strong>Settings → Apps → Posture Break → Storage</strong>, deletes it from your
+        phone.</li>
+      </ul>
+
+      <h4>Permissions</h4>
+      <p>The App itself declares <strong>four</strong> permissions:</p>
+      <ul>
+        <li><strong>Notifications</strong> (<code>POST_NOTIFICATIONS</code>), for the break
+        reminder. On Android 13 and later Android asks you first, and the App posts nothing unless
+        you allow it. The App shows Android’s question when you turn reminders on during setup, at
+        most twice and the second time on a later day;</li>
+        <li><strong>Alarms and reminders</strong> (<code>SCHEDULE_EXACT_ALARM</code>), used only if
+        you switch on <strong>Precise timing</strong>, so that a reminder arrives on the minute.
+        Without it Android may deliver reminders some minutes late;</li>
+        <li><strong>Run at startup</strong> (<code>RECEIVE_BOOT_COMPLETED</code>), to restore your
+        reminder schedule after the phone restarts. It sets the next reminder again and reads
+        nothing;</li>
+        <li><strong>Vibration</strong> (<code>VIBRATE</code>), to mark each change of move during a
+        one-minute reset.</li>
+      </ul>
+      <p>The libraries built into the App, all named in this policy, declare these as well, and only
+      those libraries use them:</p>
+      <ul>
+        <li><strong>Internet access</strong> (<code>INTERNET</code>) and <strong>Network
+        state</strong> (<code>ACCESS_NETWORK_STATE</code>), used by the advertising and consent
+        components (3(b)), the single request in 3(c), the usage statistics (3(d)), Google Play’s
+        purchase and rating services (3(e), 3(f)), and by nothing else;</li>
+        <li><strong>Advertising ID</strong> (<code>com.google.android.gms.permission.AD_ID</code>),
+        which allows Google’s advertising component to read the resettable advertising identifier
+        described in 3(b);</li>
+        <li><strong>Ad services</strong> (<code>ACCESS_ADSERVICES_AD_ID</code>,
+        <code>ACCESS_ADSERVICES_ATTRIBUTION</code> and <code>ACCESS_ADSERVICES_TOPICS</code>),
+        Android’s Privacy Sandbox interfaces, declared by Google’s advertising and analytics
+        components, which may use them for the advertising purposes in Section 3(b) under the
+        consent described in Section 7;</li>
+        <li><strong>Keep awake</strong> (<code>WAKE_LOCK</code>), which WorkManager, a scheduling
+        library used by Google’s components, uses to finish short pieces of background work. The
+        App’s own reminders do not use it;</li>
+        <li><strong>Google Play billing</strong> (<code>com.android.vending.BILLING</code>), which
+        lets the App offer the Pro purchase through Google Play (Section 3(e));</li>
+        <li><strong>Install referrer</strong>
+        (<code>com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE</code>), which
+        lets the App ask Google Play, once, which link brought you to the App (Section 3(d));</li>
+        <li>an internal permission named after the App
+        (<code>com.luxebyte.posture.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION</code>), declared by
+        Android’s support library so that only the App itself can send messages to its own
+        components.</li>
+      </ul>
+      <p>The App declares no other permission. It has <strong>no</strong> access to your camera,
+      microphone, location, contacts, files, motion sensors or phone state, and no permission that
+      identifies you personally.</p>
+
+      <p><strong>The reminder.</strong> Reminders are scheduled on your device with Android’s alarm
+      service; there is <strong>no push service and no server</strong>, and nothing is sent to
+      anyone to make them arrive. A reminder <strong>never contains an ad</strong>, and tapping it
+      opens a one-minute reset, which shows none either. You can change or stop reminders at any
+      time in the App’s Settings, or in Android’s notification settings for the App.</p>
+
+      <h3>3(b). Advertising data — collected and shared by Google (AdMob)</h3>
+      <p>The App can show <strong>one small banner advertisement</strong>, anchored at the bottom of
+      the <strong>Home screen</strong>. It is never shown during a one-minute reset, in a
+      reminder, or on the screen a reminder opens, and it never covers a button. It is not shown to
+      users who own Pro (Section 3(e)), and it is not shown where advertising is switched off
+      (Section 3(c)). In the regions where a consent message applies, no ad is requested until you
+      have answered it (Section 7).</p>
+
+      <p>To serve this ad we use the <strong>Google Mobile Ads SDK (Google AdMob)</strong>. When an
+      ad is requested and shown, Google and its advertising partners collect and process the
+      following categories of data for the purposes of <strong>serving ads, measuring ad
+      performance, and detecting and stopping fraud and abuse</strong>:</p>
+      <ul>
+        <li>the <strong>Android Advertising ID (AAID)</strong>, a resettable advertising identifier;</li>
+        <li>the <strong>app-set ID</strong>, an identifier scoped to apps from the same developer;</li>
+        <li>your <strong>IP address</strong>;</li>
+        <li><strong>technical information about the device</strong> (such as device model,
+        operating-system version, language and region, and similar technical data);</li>
+        <li>your <strong>interactions with ads</strong> (such as whether an ad was shown, viewed, or
+        clicked).</li>
+      </ul>
+
+      <p>This advertising data is <strong>collected by and shared with Google</strong> and Google’s
+      <strong>advertising partners</strong>. The Developer does <strong>not</strong> receive it.
+      Because Google’s advertising infrastructure is global, this data <strong>may be processed on
+      servers located outside the European Union / European Economic Area</strong>, including in the
+      <strong>United States</strong> (see Section 6).</p>
+
+      <p><strong>Nothing about your breaks is ever sent with an ad request</strong>: not your
+      schedule, not your reminder text, not your count of breaks, not the moves you did.</p>
+
+      <h3>3(c). One request to a static file, so ads can be switched off without an update</h3>
+      <p>The App fetches a single small text file from a set address:</p>
+      <div class="callout">
+        <p><strong>https://matteomark.github.io/ads-flag.txt</strong></p>
+      </div>
+      <p>The file holds one line per switch, and the App reads only the line saying whether this
+      App’s advertising is on. It exists so that ads can be turned off without publishing a new
+      version of the App.</p>
+      <p>The App <strong>sends nothing</strong> with this request: no identifier, no advertising ID,
+      no setting, nothing about you or your breaks. But as with any request to any web server, the
+      server that answers it sees the <strong>IP address the request came from</strong>, together
+      with ordinary connection information such as the time, the file requested and the type of
+      client. That server is <strong>GitHub Pages</strong>, operated by <strong>GitHub,
+      Inc.</strong>, which hosts the file as a plain static document. We run no server for it, and
+      we never see a log of these requests.</p>
+      <p>The App keeps the last copy of the file on your device and fetches it again from time to
+      time while you use the App. If the App has no copy, or its copy is more than 7 days old, it
+      keeps advertising switched off.</p>
+      <p>Separately from this file, the App asks Google’s consent component when it starts whether
+      a consent message is required for you (Section 7), because the answer governs both the
+      advertising in Section 3(b) and the usage statistics in Section 3(d). Outside the EEA, the UK
+      and Switzerland that check usually shows nothing; in a US state with a privacy law it can show
+      that state’s message.</p>
+
+      <h3>3(d). Usage statistics (Google Analytics for Firebase)</h3>
+      <p><strong>Why this exists, plainly.</strong> Posture Break is made by one person. Android
+      phones delay alarms in different ways, and the only way to learn whether reminders reach
+      people on time, on phones we do not own, is a small, predefined set of facts sent by the App.
+      This Section describes every one of them. They never decide what the App does: the schedule,
+      the moves and the reminders follow rules that read none of this data.</p>
+
+      <p>We describe this data as <strong>pseudonymous</strong>, and deliberately not as
+      “anonymous”. Each installation is identified by a random identifier generated by Google’s
+      SDK, and Google sees the IP address the data arrives from. That is enough for the data to
+      count as personal data, so this policy handles it as personal data throughout.</p>
+
+      <h4>Where this is active</h4>
+      <p><strong>In the EEA, the UK and Switzerland, nothing is sent unless you say yes.</strong> The
+      consent message described in Section 7 includes a purpose for these statistics. If you
+      consent to that purpose, the App collects what this Section describes; if you decline it, or
+      do not answer, nothing is sent at all: not a reduced set, nothing. You can change your answer
+      at any time from <strong>Settings → Privacy choices</strong>; a withdrawal takes effect
+      immediately and <strong>discards the identifier</strong> described above. Whether a consent
+      message is required for you at all is decided by <strong>Google’s consent system</strong>,
+      from the message we publish for those regions. The App does not work out your location
+      itself.</p>
+
+      <p><strong>Everywhere else, the statistics are on.</strong> The legal basis is our legitimate
+      interest in knowing whether reminders arrive on time and whether the App is understood
+      (Section 4). You have the right to object at any time (Section 9); clearing the App’s data or
+      uninstalling the App removes the identifier and ends the collection from that
+      installation.</p>
+
+      <h4>What is collected — every fact, in plain words</h4>
+      <p>Every item below is one of a predefined list of words chosen by the App, or a band.
+      Nothing is free text, nothing is a precise time, and nothing describes your body or the moves
+      you did.</p>
+      <ul>
+        <li><strong>that a reminder was delivered</strong>, with how late it arrived as a band,
+        whether precise timing was in use, and the battery standby group Android had placed the App
+        in (one of Android’s named groups, such as “active” or “rare”);</li>
+        <li><strong>that you answered a reminder</strong>, and how: by tapping it, or by its
+        <strong>Done</strong> button;</li>
+        <li><strong>that a one-minute reset started</strong>, and from where: a reminder, the Home
+        screen or the library. Never which move, and never whether the reset was finished;</li>
+        <li><strong>which step of the first-time setup you reached</strong>;</li>
+        <li><strong>your answer to Android’s notification and precise timing questions</strong>:
+        which permission, and whether it is granted;</li>
+        <li><strong>that the Pro screen was shown</strong>, and from where it was opened. The App itself never
+        sends whether you bought Pro; Google’s SDK records a completed purchase by itself
+        (below);</li>
+        <li><strong>where your installation came from</strong>, kept with your installation rather
+        than sent with each event: Google Play, our app <em>Shake Flashlight &amp; Torch</em>, or
+        “other”. Google Play supplies this to the App once, after installation; the link’s own text
+        is never sent.</li>
+      </ul>
+
+      <p><strong>Collected automatically by Google.</strong> Where the statistics are active,
+      Google’s SDK also records, on its own: the first opening after installation; each opening;
+      the start of a session and roughly how long it lasted; an App update; an operating-system
+      update; that the App was uninstalled, or its data cleared; a screen view when a screen of the App
+      comes to the front; where Google Play tells the SDK that your installation came from a
+      campaign link, that campaign’s name, source and medium; that an advert was shown, where
+      Google’s advertising SDK reports it to the same system; <strong>that an in-app purchase was
+      completed</strong> through Google Play (the Pro purchase in Section 3(e)), with details the
+      SDK reads from Google Play, such as the product’s ID and name, its price, the currency and
+      the quantity; and an approximate country or region
+      derived by Google from the IP address. Google also records the device model, operating-system
+      version, App version and language with each event.</p>
+
+      <p>Devices used for testing are left out: nothing is sent from Google’s automated test
+      devices (Firebase Test Lab, which runs the pre-launch checks for Google Play), and nothing
+      from our own development builds unless we are deliberately checking the statistics on that
+      device.</p>
+
+      <p id="en-not-sent"><strong>What is deliberately not collected.</strong> No move or exercise,
+      no record of whether a break was finished, no count of breaks, no streak and no percentage.
+      No purchase event of the App’s own (the purchase record Google’s SDK makes by itself is
+      described above). No schedule, no reminder text, no free text of any kind. No precise timestamps
+      as data fields. No advertising identifier is used for this purpose: the advertising
+      identifier described in Section 3(b) is used by the advertising SDK alone. No contacts, no
+      location from the device, no account.</p>
+
+      <p><strong>The identifier.</strong> Google’s app-instance identifier is random, scoped to this
+      App on this device, and resettable: withdrawing consent discards it, and clearing the App’s
+      data or uninstalling removes it. It is not the Android advertising ID.</p>
+
+      <p><strong>The provider.</strong> Google Analytics for Firebase (GA4), supplied by Google. The
+      data is encrypted in transit by Google’s own TLS. Retention is described in Section 8, and the
+      countries it may reach in Section 6.</p>
+
+      <h3 id="en-purchases">3(e). Purchases (Posture Break Pro)</h3>
+      <p><strong>Pro</strong> is a one-time purchase, made through <strong>Google Play</strong>. It
+      removes the banner in Section 3(b) and unlocks the extra routines in the App’s library. There
+      is no subscription and no trial.</p>
+      <ul>
+        <li><strong>Google Play processes the payment.</strong> You pay with the payment method in
+        your Google account, under Google Play’s terms. The App and the Developer never see your card
+        or bank details.</li>
+        <li><strong>What the App receives from Google Play:</strong> whether you own Pro, whether a
+        payment is still waiting, and a purchase token, which the App returns to Google Play to
+        confirm the purchase, as Google Play requires. The App keeps on your device only whether you
+        own Pro and when Google Play last confirmed it (Section 3(a)). That record is not copied by
+        your phone’s backup: the App asks Google Play again each time it opens, which also restores
+        Pro when you reinstall the App or use another phone with the same Google account.</li>
+        <li><strong>What the Developer receives:</strong> Google Play makes a record of each order
+        available to us in the Google Play Console (for example the order number, the date, the
+        product and the amount), under Google Play’s terms. We use it only for accounting and tax,
+        refunds, and to answer you if you write to us about a purchase.</li>
+        <li id="en-purchase-statistics"><strong>In the usage statistics</strong> (Section 3(d)):
+        the App sends no purchase event of its own, but where the statistics are active, Google’s
+        statistics SDK records a completed Pro purchase by itself, with the product, its price, the
+        currency and the quantity, as Section 3(d) describes. Nothing about a purchase is sent with
+        an ad request.</li>
+      </ul>
+
+      <h3>3(f). What the App does NOT do</h3>
+      <p>The App contains <strong>no</strong> account or sign-in, <strong>no</strong>
+      crash-reporting SDK, <strong>no</strong> attribution SDK other than Google Play’s own install
+      referrer (Section 3(d)), <strong>no</strong> social features and <strong>no</strong> server of
+      ours. Apart from the Google advertising and consent components (3(b), 7), the single
+      static-file request (3(c)), the statistics component (3(d)), Google Play’s billing service
+      (3(e)), and Google Play’s rating card (below), the App makes no network requests of any
+      kind.</p>
+      <p><strong>Rating the App.</strong> From time to time, after you have used the App for some
+      days, the App may ask Google Play to show its own rating card. Google Play decides whether it
+      appears, and handles your rating and any review under its own terms. The App is not told
+      whether you rated it, or what you wrote.</p>
+
+      <h2 id="en-4">4. Why we process data, and the legal basis for each purpose (GDPR)</h2>
+      <p>Where the EU or UK GDPR applies to you:</p>
+      <div class="tablewrap">
+      <table>
+        <thead>
+          <tr><th>Purpose</th><th>Data</th><th>Legal basis</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Running the App (schedule, reminders, count of breaks, settings)</td>
+            <td>Section 3(a), on-device only</td>
+            <td>Not personal data processing by us: the data never reaches us. To the extent it is
+            processing, it is <strong>necessary to perform the service you asked for</strong>
+            (Art. 6(1)(b)).</td>
+          </tr>
+          <tr>
+            <td>Showing <strong>personalised</strong> ads</td>
+            <td>Section 3(b)</td>
+            <td>Your <strong>consent</strong> (Art. 6(1)(a)), collected through the in-app consent
+            message described in Section 7. Where the IAB Transparency and Consent Framework permits
+            it, some of Google’s advertising partners rely on their own <strong>legitimate
+            interests</strong> (Art. 6(1)(f)) for parts of this processing instead of consent. The
+            consent message names which partners do so, and lets you object to each of them
+            individually.</td>
+          </tr>
+          <tr>
+            <td>Showing <strong>non-personalised</strong> ads where you refuse personalisation</td>
+            <td>Section 3(b), limited</td>
+            <td>Your <strong>consent</strong> where required for storing or accessing information
+            on your device, and Google’s <strong>legitimate interests</strong> in detecting fraud
+            and in basic ad delivery (Art. 6(1)(f)).</td>
+          </tr>
+          <tr>
+            <td>Detecting and stopping fraud and abuse in advertising</td>
+            <td>Section 3(b)</td>
+            <td><strong>Legitimate interests</strong> (Art. 6(1)(f)) of Google and advertisers in
+            stopping invalid traffic.</td>
+          </tr>
+          <tr>
+            <td>Checking whether ads are switched on</td>
+            <td>Section 3(c): the IP address the request comes from, seen by the file host</td>
+            <td><strong>Legitimate interests</strong> (Art. 6(1)(f)) in being able to switch
+            advertising off without publishing a new version. No identifier is sent, and we receive
+            nothing.</td>
+          </tr>
+          <tr>
+            <td>Usage statistics (Section 3(d))</td>
+            <td>The pseudonymous events listed in Section 3(d), the app-instance identifier and the
+            IP address Google sees</td>
+            <td><strong>In the EEA, the UK and Switzerland:</strong> your <strong>consent</strong>
+            (Art. 6(1)(a) GDPR, and Art. 5(3) of the ePrivacy Directive for the identifier stored
+            on your device), taken through the consent message described in Section 7; nothing is
+            collected until it is given, and a withdrawal stops it immediately. <strong>Everywhere
+            else:</strong> our <strong>legitimate interest</strong> (Art. 6(1)(f)) in knowing
+            whether reminders arrive on time and whether the App is understood, with your right to
+            object.</td>
+          </tr>
+          <tr>
+            <td>Selling Pro and keeping it unlocked (Section 3(e))</td>
+            <td>The purchase state and token the App receives from Google Play; the order record
+            Google Play gives us</td>
+            <td><strong>Necessary to perform the contract</strong> you enter by buying Pro
+            (Art. 6(1)(b)); keeping order records for accounting and tax is a <strong>legal
+            obligation</strong> (Art. 6(1)(c)).</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+
+      <p>If you refuse consent, the App works in full: reminders, resets, the count of breaks and
+      Pro are unaffected.</p>
+
+      <h2 id="en-5">5. Who receives data (third parties / recipients)</h2>
+      <ul>
+        <li><strong>Google Ireland Limited / Google LLC</strong>, as the provider of Google AdMob
+        and the Google User Messaging Platform (the consent tool). Google’s own privacy policy:
+        <a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a>. How
+        Google uses data from apps that use its services:
+        <a href="https://policies.google.com/technologies/partner-sites">https://policies.google.com/technologies/partner-sites</a>.</li>
+        <li><strong>Google Ireland Limited / Google LLC</strong> again, in a <strong>separate
+        role</strong>: the same two companies operate <strong>Google Analytics for Firebase</strong>,
+        which receives the usage statistics described in Section 3(d) where they are active. We
+        decide what is collected there and why; Google acts as our analytics provider, and processes
+        the data additionally for its own purposes as described in the policies linked above.</li>
+        <li><strong>Google Play</strong> (Google Ireland Limited / Google LLC), which processes the
+        Pro purchase (Section 3(e)), tells the App where an installation came from (Section 3(d)),
+        and shows its own rating card (Section 3(f)), each under the Google Play Terms of Service
+        and on its own account.</li>
+        <li><strong>Google’s advertising partners</strong>, where you consent to personalised ads.
+        The list of partners is presented to you inside the consent message and can be reviewed
+        there at any time.</li>
+        <li><strong>GitHub, Inc.</strong>, only as the host of the one static text file described
+        in Section 3(c). It receives the IP address that request is made from, and nothing else.
+        GitHub’s privacy statement:
+        <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement</a>.</li>
+      </ul>
+      <p>The Developer discloses your data to <strong>no one else</strong>. We do not sell data (see
+      Section 9).</p>
+
+      <h2 id="en-6">6. International data transfers</h2>
+      <p>The Developer receives and stores none of the data described in Sections 3(b) and 3(d), and
+      so transfers none of it. That is not the same as saying nothing leaves your device: the App is
+      designed to cause requests to the recipients named in Section 5, and those recipients may
+      process what they receive outside Switzerland, the EEA and the UK.</p>
+      <p>The static file described in Section 3(c) is served by GitHub, Inc., a company based in the
+      <strong>United States</strong>, so the IP address that request is made from is received
+      there.</p>
+      <p>The usage statistics described in Section 3(d) are sent to Google Analytics for Firebase,
+      and Google may process and store them outside Switzerland, the EEA and the UK, including in
+      the <strong>United States</strong>, under the safeguards Google states below. In the EEA, the
+      UK and Switzerland this happens only where you have consented under Section 3(d).</p>
+      <p>Google, as an independent controller for advertising and Google Play data, may transfer
+      that data outside Switzerland, the EEA and the UK, including to the <strong>United
+      States</strong>. Google states that it relies on the <strong>European Commission’s Standard
+      Contractual Clauses</strong> and, for transfers to the US, on the <strong>EU-US Data Privacy
+      Framework</strong>, its UK Extension and the <strong>Swiss-US Data Privacy Framework</strong>,
+      where applicable. Details are in Google’s own privacy documentation linked in Section 5.</p>
+      <p><strong>If you are in Switzerland.</strong> Swiss data protection law (the Federal Act on
+      Data Protection, FADP) asks us to name the countries your data is sent to and the safeguard
+      for each. From Switzerland, the data described in this policy may go to:</p>
+      <ul>
+        <li><strong>Ireland</strong>, and other countries of the EU and the EEA, where Google
+        Ireland Limited is the Google company responsible for users in Switzerland. The Swiss
+        Federal Council recognises these countries as providing an adequate level of data
+        protection (Annex 1 of the Swiss Data Protection Ordinance).</li>
+        <li><strong>The United States</strong>, where Google LLC and GitHub, Inc. are based. Both
+        companies are certified under the <strong>Swiss-U.S. Data Privacy Framework</strong>, and the
+        Federal Council recognises the United States as providing an adequate level of protection
+        for certified companies (Annex 1 of the Swiss Data Protection Ordinance).</li>
+        <li><strong>Other countries where Google or its partners operate.</strong> Google lists its
+        data centre locations at
+        <a href="https://datacenters.google/locations/">https://datacenters.google/locations/</a>,
+        and the advertising partners are listed in the consent message described in Section 7.
+        Where no adequacy decision covers a transfer, we and Google rely on standard contractual
+        clauses, which the Swiss Federal Data Protection and Information Commissioner (FDPIC)
+        recognises under Art. 16(2)(d) FADP.</li>
+      </ul>
+
+      <h2 id="en-7">7. Consent and how to change or withdraw it</h2>
+
+      <h3>In the EEA, the UK, and Switzerland</h3>
+      <p>Before the App requests <strong>any</strong> ad, it shows a consent message provided through
+      the <strong>Google User Messaging Platform</strong>. No ad is requested, and no usage
+      statistic is sent, until you have answered it. The message is never shown during a one-minute
+      reset.</p>
+      <p>You can <strong>change or withdraw</strong> your choice at any time:</p>
+      <div class="callout">
+        <p><strong>Settings → Privacy choices</strong></p>
+      </div>
+      <p>That row appears in the App where a standing consent entry point is required, which is
+      the region where you have the right to withdraw. Opening it shows the same consent message so
+      you can change any choice, including withdrawing consent entirely. The same message governs
+      the usage statistics in Section 3(d): it carries a purpose for them, and withdrawing it there
+      stops the collection at once.</p>
+
+      <h3>In US states with a privacy law</h3>
+      <p>Where Google’s consent system shows a US state privacy message, the same <strong>Settings →
+      Privacy choices</strong> row opens it, and you can opt out there (Section 9).</p>
+
+      <h3>Everywhere — controlling your Advertising ID at the Android level</h3>
+      <p>Independently of the App, Android lets you control the advertising identifier:</p>
+      <div class="callout">
+        <p><strong>Settings → Google → Ads</strong> (wording varies by device and Android version)</p>
+      </div>
+      <p>There you can <strong>delete or reset your Advertising ID</strong>, and on Android 12 and
+      later you can remove it entirely, after which apps receive a string of zeroes instead.</p>
+
+      <h3>Children</h3>
+      <p>See Section 10. The App is not directed to children.</p>
+
+      <h2 id="en-8">8. Data retention — how long data is kept</h2>
+      <ul>
+        <li><strong>On-device data (Section 3(a)):</strong> kept on your phone until you delete it,
+        by clearing the App’s storage or uninstalling the App. The count of breaks keeps the last 60
+        days and deletes older days by itself. If backup is switched on in your phone’s settings,
+        Android also keeps a copy of the schedule, reminder settings and count of breaks in your
+        Google account, as Section 3(a) describes; that copy is governed by Google, not by us. We
+        have no copy and therefore no retention period of our own.</li>
+        <li><strong>Advertising data (Section 3(b)):</strong> retained by <strong>Google</strong>
+        according to Google’s own retention schedules, which are described in Google’s privacy
+        documentation. The Developer holds none of it and cannot delete it on your behalf; requests
+        concerning it should be directed to Google, and we will help where we can.</li>
+        <li><strong>The static-file request (Section 3(c)):</strong> whatever server log GitHub
+        keeps is subject to GitHub’s own retention schedule. We receive no such log and hold nothing
+        from it.</li>
+        <li><strong>Usage statistics (Section 3(d)):</strong> event-level data is kept by
+        <strong>Google</strong> for <strong>14 months</strong>, a setting in the Google Analytics
+        console applied to the whole property. If we ever lengthen it, this policy will say so
+        before we do. The random app-instance identifier is discarded when you withdraw consent,
+        when you clear the App’s data, or when you uninstall.</li>
+        <li><strong>Purchases (Section 3(e)):</strong> Google Play keeps its records of your
+        purchase under its own terms. The order records Google Play gives us are kept for as long
+        as Italian accounting and tax law requires, and then deleted.</li>
+      </ul>
+
+      <h2 id="en-9">9. Your privacy rights</h2>
+
+      <h3>If you are in the EEA or the UK (GDPR / UK GDPR)</h3>
+      <p>You have the right to <strong>access</strong>, <strong>rectify</strong>,
+      <strong>erase</strong>, <strong>restrict</strong>, and <strong>object to</strong> processing of
+      your personal data, the right to <strong>data portability</strong>, and the right to
+      <strong>withdraw consent</strong> at any time without affecting the lawfulness of processing
+      before withdrawal.</p>
+      <p>Practically:</p>
+      <ul>
+        <li>For the <strong>on-device data</strong>, you can exercise all of these yourself,
+        instantly, by clearing the App’s data or uninstalling it. We cannot access it, so we cannot
+        act on it for you.</li>
+        <li>For the <strong>advertising data</strong>, the controller in practice is
+        <strong>Google</strong>. Requests should be addressed to Google using the contacts in
+        Google’s privacy policy. Write to
+        <a href="mailto:luxebytecomp@gmail.com"><strong>luxebytecomp@gmail.com</strong></a> as well
+        and we will do what we can to assist and to point you to the right place.</li>
+        <li>For the <strong>usage statistics</strong>, withdraw consent in <strong>Settings → Privacy
+        choices</strong> where that row appears, or clear the App’s data. The statistics identify an
+        installation only by Google’s random identifier, so we cannot find your data without it; if
+        you write to us, we will explain what we can and cannot do (Art. 11 GDPR).</li>
+        <li>For a <strong>Pro purchase</strong>, write to us with your order number and we will
+        tell you what the order record holds.</li>
+      </ul>
+      <p>You also have the right to <strong>lodge a complaint with a supervisory authority</strong>
+      in your country of residence, place of work, or place of the alleged infringement. In Italy
+      that is the Garante per la protezione dei dati personali.</p>
+
+      <h3>If you are in Switzerland (Swiss Federal Act on Data Protection, FADP)</h3>
+      <p>You have the same choices described above, and the FADP gives you these rights:</p>
+      <ul>
+        <li>to ask whether personal data about you is processed, and to receive the information the
+        FADP lists, free of charge and in general within 30 days (Art. 25 FADP);</li>
+        <li>to receive data you gave us, in a common electronic format (Art. 28 FADP);</li>
+        <li>to have inaccurate data rectified, and to object to processing or ask for it to stop or
+        for the data to be deleted (Art. 32 FADP);</li>
+        <li>to withdraw your consent at any time from <strong>Settings → Privacy choices</strong> in
+        the App.</li>
+      </ul>
+      <p>Apart from the order records of Section 3(e), we hold none of this data on any server, so
+      for most requests we will tell you that, and help you take the request to Google, which holds
+      it. Write to <a href="mailto:luxebytecomp@gmail.com"><strong>luxebytecomp@gmail.com</strong></a>.</p>
+      <p>You can also report a concern to the Swiss <strong>Federal Data Protection and Information
+      Commissioner (FDPIC)</strong>, Feldeggweg 1, 3003 Bern, Switzerland,
+      <a href="https://www.edoeb.admin.ch">https://www.edoeb.admin.ch</a>.</p>
+      <p>The App makes no decision about you based solely on automated processing that has a legal
+      consequence for you or a considerable adverse effect on you.</p>
+
+      <h3>If you are in California (CCPA/CPRA) or another US state with a privacy law</h3>
+      <p>We do <strong>not sell</strong> your personal information.</p>
+      <p>We do <strong>not</strong> claim that no “sharing” takes place. Showing a
+      <strong>personalised</strong> ad means advertising data is made available to Google and its
+      partners for cross-context behavioural advertising, and that is capable of being
+      <strong>“sharing”</strong> as the CCPA and CPRA define it, whether or not the Developer ever
+      holds the data. The App gives you the opt-out:</p>
+      <ul>
+        <li><strong>In the App:</strong> <strong>Settings → Privacy choices</strong>, which opens a
+        US state privacy message where you can opt out of that use. The row appears where such a
+        message applies to you.</li>
+        <li><strong>On the device:</strong> the Android Advertising ID controls described in
+        Section 7, which apply wherever you are.</li>
+      </ul>
+      <p>You may also request access to, or deletion of, personal information we hold about you.
+      Apart from the order records of a Pro purchase, we hold none, and we will tell you so.</p>
+
+      <h2 id="en-10">10. Children’s privacy</h2>
+      <p id="en-age">The App is <strong>not directed to children</strong>. On Google Play it is
+      declared for users <strong>aged 16 and over</strong>, and it is not part of the Google Play
+      “Designed for Families” programme. 16 is the highest age of digital consent that any EU
+      Member State sets under Art. 8 GDPR, so every user inside the declared audience can give the
+      consent asked for in Section 7 themselves.</p>
+      <p>The declared audience describes who the App is intended for; it is not a claim that nobody
+      younger ever installs it. We cannot verify anyone’s age and we do not try to. We do not
+      knowingly collect personal data from children: the App asks for no age, name, email address,
+      contacts or account. If you believe a child has used the App in a way that resulted in
+      personal data being processed, contact
+      <a href="mailto:luxebytecomp@gmail.com"><strong>luxebytecomp@gmail.com</strong></a> and we
+      will help you direct the request to Google, who holds the data.</p>
+
+      <h2 id="en-11">11. Security</h2>
+      <p>The App stores its data using Android’s standard app-private storage, which the operating
+      system isolates from other apps. We hold no servers, no accounts and no database. The data
+      sent to Google and GitHub travels over encrypted connections.</p>
+      <p>No method of electronic storage or transmission is completely secure, and we cannot
+      guarantee absolute security of data handled by third parties such as Google.</p>
+
+      <h2 id="en-12">12. Changes to this policy and how you are notified</h2>
+      <p>Material changes are published at the same address as this document, with an updated “Last
+      updated” date and policy version, before or when they take effect. Where a change concerns
+      advertising or statistics consent you may be asked again through the in-app consent
+      message.</p>
+
+      <h2 id="en-13">13. How to contact us about privacy</h2>
+      <p><a href="mailto:luxebytecomp@gmail.com"><strong>luxebytecomp@gmail.com</strong></a></p>
+      <p>Write to us with any question, any request, or to tell us this policy is wrong about
+      something. We would rather put it right than defend it.</p>
+
+    </section>
+    </main>
+
+    <footer class="page">
+      <p>Luxebyte Labs — Posture Break (<code>com.luxebyte.posture</code>). Contact: <a href="mailto:luxebytecomp@gmail.com">luxebytecomp@gmail.com</a></p>
+    </footer>
+  </div>
+</body>
+</html>
