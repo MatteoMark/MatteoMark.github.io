@@ -85,8 +85,8 @@
       <h1>Privacy Policy</h1>
       <p class="meta">Posture Break — Android (<code>com.luxebyte.posture</code>)</p>
       <p class="meta">Publisher: <strong>Matteo Lamarque</strong>, trading as <strong>Luxebyte Labs</strong> · <a href="mailto:luxebytecomp@gmail.com">luxebytecomp@gmail.com</a></p>
-      <p class="meta">Effective: <time datetime="2026-10-17">17 October 2026</time> · Last updated: <time datetime="2026-10-17">17 October 2026</time></p>
-      <p class="meta">Policy version <span id="policy-version">1.0</span> · App version described: <span id="app-version">1.0</span></p>
+      <p class="meta">Effective: <time datetime="2026-10-17">17 October 2026</time> · Last updated: <time datetime="2026-10-20">20 October 2026</time></p>
+      <p class="meta">Policy version <span id="policy-version">1.1</span> · App version described: <span id="app-version">1.0</span></p>
     </header>
 
     <main id="main">
@@ -297,7 +297,7 @@
         lets the App offer the Pro purchase through Google Play (Section 3(e));</li>
         <li><strong>Install referrer</strong>
         (<code>com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE</code>), which
-        lets the App ask Google Play, once, which link brought you to the App (Section 3(d));</li>
+        lets the App ask Google Play, when it opens, which link brought you to the App (Section 3(d));</li>
         <li>an internal permission named after the App
         (<code>com.luxebyte.posture.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION</code>), declared by
         Android’s support library so that only the App itself can send messages to its own
@@ -309,17 +309,21 @@
 
       <p><strong>The reminder.</strong> Reminders are scheduled on your device with Android’s alarm
       service; there is <strong>no push service and no server</strong>, and nothing is sent to
-      anyone to make them arrive. A reminder <strong>never contains an ad</strong>, and tapping it
-      opens a one-minute reset, which shows none either. You can change or stop reminders at any
+      anyone to make them arrive. A reminder <strong>never contains an ad</strong>. Tapping it
+      opens a one-minute reset, the one screen that can show the banner described in Section 3(b).
+      You can change or stop reminders at any
       time in the App’s Settings, or in Android’s notification settings for the App.</p>
 
       <h3>3(b). Advertising data — collected and shared by Google (AdMob)</h3>
       <p>The App can show <strong>one small banner advertisement</strong>, anchored at the bottom of
-      the <strong>Home screen</strong>. It is never shown during a one-minute reset, in a
-      reminder, or on the screen a reminder opens, and it never covers a button. It is not shown to
-      users who own Pro (Section 3(e)), and it is not shown where advertising is switched off
-      (Section 3(c)). In the regions where a consent message applies, no ad is requested until you
-      have answered it (Section 7).</p>
+      the <strong>one-minute reset</strong> while its moves play. The reset is also the screen a
+      reminder opens. The banner is never shown on the Home screen, on the screen that follows a
+      finished break, during setup, in the schedule, the settings or the list of moves, in a
+      five-minute routine, or in a reminder, and it never covers a button, the moving figure or the
+      timer. It is not shown to users who own Pro (Section 3(e)), and it is not shown where
+      advertising is switched off (Section 3(c)). In the regions where a consent message applies,
+      no ad is requested until you have answered it, and that message never appears during a reset
+      (Section 7).</p>
 
       <p>To serve this ad we use the <strong>Google Mobile Ads SDK (Google AdMob)</strong>. When an
       ad is requested and shown, Google and its advertising partners collect and process the
@@ -372,7 +376,8 @@
       <p><strong>Why this exists, plainly.</strong> Posture Break is made by one person. Android
       phones delay alarms in different ways, and the only way to learn whether reminders reach
       people on time, on phones we do not own, is a small, predefined set of facts sent by the App.
-      This Section describes every one of them. They never decide what the App does: the schedule,
+      The same facts show which parts of the App people use, and so whether the App is
+      understood. This Section describes every one of them. They never decide what the App does: the schedule,
       the moves and the reminders follow rules that read none of this data.</p>
 
       <p>We describe this data as <strong>pseudonymous</strong>, and deliberately not as
@@ -407,17 +412,24 @@
         in (one of Android’s named groups, such as “active” or “rare”);</li>
         <li><strong>that you answered a reminder</strong>, and how: by tapping it, or by its
         <strong>Done</strong> button;</li>
+        <li><strong>that a reminder was swiped away</strong> without being opened;</li>
         <li><strong>that a one-minute reset started</strong>, and from where: a reminder, the Home
-        screen or the library. Never which move, and never whether the reset was finished;</li>
+        screen, the library or the end of the first-time setup. Never which move, and never whether the reset was finished;</li>
+        <li><strong>that “Another move” was used during a reset</strong>. Never which move;</li>
         <li><strong>which step of the first-time setup you reached</strong>;</li>
         <li><strong>your answer to Android’s notification and precise timing questions</strong>:
         which permission, and whether it is granted;</li>
+        <li><strong>that a setting was changed</strong>, and which one: the days, the hours, how
+        often, the sound, the vibration, the reminder text or precise timing. Never what it was
+        changed to;</li>
+        <li><strong>that reminders were paused for the day</strong>;</li>
+        <li><strong>that a test reminder was sent</strong> from Settings;</li>
         <li><strong>that the Pro screen was shown</strong>, and from where it was opened. The App itself never
         sends whether you bought Pro; Google’s SDK records a completed purchase by itself
         (below);</li>
-        <li><strong>where your installation came from</strong>, kept with your installation rather
-        than sent with each event: Google Play, our app <em>Shake Flashlight &amp; Torch</em>, or
-        “other”. Google Play supplies this to the App once, after installation; the link’s own text
+        <li><strong>where your installation came from</strong>, recorded as a property of your
+        installation: Google Play, our app <em>Shake Flashlight &amp; Torch</em>, or
+        “other”. The App asks Google Play for it each time it opens; the link’s own text
         is never sent.</li>
       </ul>
 
@@ -442,7 +454,8 @@
       <p id="en-not-sent"><strong>What is deliberately not collected.</strong> No move or exercise,
       no record of whether a break was finished, no count of breaks, no streak and no percentage.
       No purchase event of the App’s own (the purchase record Google’s SDK makes by itself is
-      described above). No schedule, no reminder text, no free text of any kind. No precise timestamps
+      described above). No schedule, no value of any setting, no reminder text, no free text of
+      any kind. No precise timestamps
       as data fields. No advertising identifier is used for this purpose: the advertising
       identifier described in Section 3(b) is used by the advertising SDK alone. No contacts, no
       location from the device, no account.</p>
@@ -482,9 +495,11 @@
 
       <h3>3(f). What the App does NOT do</h3>
       <p>The App contains <strong>no</strong> account or sign-in, <strong>no</strong>
-      crash-reporting SDK, <strong>no</strong> attribution SDK other than Google Play’s own install
-      referrer (Section 3(d)), <strong>no</strong> social features and <strong>no</strong> server of
-      ours. Apart from the Google advertising and consent components (3(b), 7), the single
+      crash-reporting service of its own, <strong>no</strong> attribution SDK other than Google
+      Play’s own install referrer (Section 3(d)), <strong>no</strong> social features and
+      <strong>no</strong> server of ours.
+      <!-- banned-words-allow policy_sdk_diagnostics -->Google’s advertising SDK (3(b)) and statistics SDK (3(d)) may collect crash and diagnostic information about their own operation, which Google processes as those Sections describe.<!-- /banned-words-allow policy_sdk_diagnostics -->
+      Apart from the Google advertising and consent components (3(b), 7), the single
       static-file request (3(c)), the statistics component (3(d)), Google Play’s billing service
       (3(e)), and Google Play’s rating card (below), the App makes no network requests of any
       kind.</p>
