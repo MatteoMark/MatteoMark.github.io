@@ -80,7 +80,7 @@
       <h1>Privacy Policy</h1>
       <p class="meta">Tilt Blocks — Android (<code>com.luxebyte.tiltblocks</code>)</p>
       <p class="meta">Publisher: <strong>Matteo Lamarque</strong>, trading as <strong>Luxebyte Labs</strong> · <a href="mailto:luxebytecomp@gmail.com">luxebytecomp@gmail.com</a></p>
-      <p class="meta">Effective: <time datetime="2026-07-30">30 July 2026</time> · Last updated: <time datetime="2026-10-17">17 October 2026</time> (adds Section 3(g))</p>
+      <p class="meta">Effective: <time datetime="2026-07-30">30 July 2026</time> · Last updated: <time datetime="2026-10-21">21 October 2026</time> (adds Section 3(g))</p>
     </header>
 
     <main id="main">
@@ -346,13 +346,14 @@
         skin, which one, how many you now own, and roughly how many days have passed since your
         first gem, as a band; which kind of daily goal you finished, when you finish one; that you
         opened the daily gift, when you open it; the name of
-        each achievement medal the App awards you, when it awards it; that a daily reminder was
+        each achievement medal the App awards you, when it awards it; that the App asked Google Play
+        for its rating card, and at which of two moments; that a daily reminder was
         posted, which goal it named, and whether you opened the App from it; your answer to
         Android’s notification question; and the new value when you change the sound, the language
         or the daily reminder. Your scores, your unfinished game, your count of finished games, your
         gems (how many you have, or earned in a game, or earned in total), the running totals behind
-        your achievements, Blocky’s records, and the tutorial and rating records are never
-        sent;</li>
+        your achievements, Blocky’s records and the tutorial records are never sent, and the rating
+        records only as the one fact above;</li>
         <li>may be included in <strong>your phone’s own backup</strong>: if backup is switched on in
         your phone’s settings, Android can copy the App’s stored data to your Google account, as it
         does for most apps, and put it back when you reinstall the App or move to a new phone. That
@@ -550,8 +551,8 @@
       <p><strong>Why this exists, plainly.</strong> Tilt Blocks is made by one person, and the only
       thing that person can otherwise see is a star rating. This Section describes the small,
       fixed set of facts the App can send so that we can learn whether people find the tutorial, how
-      far their games get, whether the four optional video offers are understood, and which board
-      colours are used. Nothing here changes the game: the pieces you are dealt, the difficulty ramp
+      far their games get, whether the four optional video offers are understood, which board
+      colours are used, and how often the App asks for a rating. Nothing here changes the game: the pieces you are dealt, the difficulty ramp
       and the offers you see are decided by rules that cannot read any of this data, and that
       separation is enforced by automated tests in the App’s source.</p>
 
@@ -611,6 +612,12 @@
         medal brings the lower medals of the same row with it, each of them is reported. Medals
         awarded all at once, the first time the App counts medals, for play already recorded on your
         device are not reported.</li>
+        <li><strong>that the App asked Google Play to show its rating card</strong>, and at which of
+        two moments: a game that set a new personal best, or one that finished today’s goal (a game
+        that did both counts as a new best). It is counted when the App asks, because Google Play
+        does not tell the App whether the card appeared; whether you rated the App, and how, is never
+        known to the App and never sent. At most four times per installation, at least 30 days
+        apart.</li>
       </ul>
 
       <p><strong>The tutorial and the rules</strong></p>
