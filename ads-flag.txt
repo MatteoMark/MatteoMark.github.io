@@ -4,4 +4,3 @@ ads.tiltblocks=true
 torch.promo=true
 torch.ad_exp=true
 torch.demo=true
-torch.promo.blocky=true
