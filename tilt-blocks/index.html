@@ -552,7 +552,8 @@
       thing that person can otherwise see is a star rating. This Section describes the small,
       fixed set of facts the App can send so that we can learn whether people find the tutorial, how
       far their games get, whether the four optional video offers are understood, which board
-      colours are used, and how often the App asks for a rating. Nothing here changes the game: the pieces you are dealt, the difficulty ramp
+      colours are used, how often the App asks for a rating, and whether the game draws smoothly
+      enough on people’s phones. Nothing here changes the game: the pieces you are dealt, the difficulty ramp
       and the offers you see are decided by rules that cannot read any of this data, and that
       separation is enforced by automated tests in the App’s source.</p>
 
@@ -618,6 +619,19 @@
         does not tell the App whether the card appeared; whether you rated the App, and how, is never
         known to the App and never sent. At most four times per installation, at least 30 days
         apart.</li>
+      </ul>
+
+      <p><strong>How smoothly the game runs</strong></p>
+      <ul>
+        <li><strong>how smoothly the game drew</strong>, at most once each time the App is started
+        (not each time you come back to it), and early: after about 15 seconds of moving pieces in
+        the tutorial or a game, or when you leave the App if it had drawn enough by then. It carries
+        the share of the App’s screen updates that took longer than 34 thousandths of a second, and
+        the share that took longer than 50, each as one of four bands (under 5%, 5–24%, 25–49%, 50%
+        or more), and whether most of them were drawn in the tutorial or in a game. It is worked out
+        by the App from its own drawing: no times and no counts are sent, and nothing about your
+        phone’s hardware is read for it. On Android 6 and earlier it is neither measured nor
+        sent.</li>
       </ul>
 
       <p><strong>The tutorial and the rules</strong></p>
@@ -735,7 +749,8 @@
       timestamps as data fields. No record of individual moves, placements or tilts: the tutorial’s
       two counts above are bands of how many drags and taps there were on one step, not what any of
       them did or where. No score, no saved game, no best score, no gem balance, no achievement
-      totals. No setting other
+      totals. Nothing about your phone’s hardware (memory, processor, screen) is sent by the App;
+      the device model Google records by itself is described above. No setting other
       than the four named above. No contacts, no
       location from the device, no account.</p>
 
