@@ -1,3 +1,8 @@
+> **Where the policies are edited:** the policy pages in this repo are now edited in
+> `~/StudioProjects/Personal/luxebyte-site/policies` and mirrored here until the switch to the new
+> domain (`luxebyte-site/POLICIES.md`). Never edit them only here: the next mirror overwrites them.
+> `ads-flag.txt` stays in this repo for good: every installed app reads it at this address.
+
 ## Shake to Enable Torch — Privacy Policy
 
 **The full, authoritative privacy policy is published here:**
