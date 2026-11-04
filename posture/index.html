@@ -85,13 +85,13 @@
       <h1>Privacy Policy</h1>
       <p class="meta">Posture Break — Android (<code>com.luxebyte.posture</code>)</p>
       <p class="meta">Publisher: <strong>Matteo Lamarque</strong>, trading as <strong>Luxebyte Labs</strong> · <a href="mailto:luxebytecomp@gmail.com">luxebytecomp@gmail.com</a></p>
-      <p class="meta">Effective: <time datetime="2026-10-17">17 October 2026</time> · Last updated: <time datetime="2026-10-21">21 October 2026</time></p>
-      <p class="meta">Policy version <span id="policy-version">1.2</span> · App version described: <span id="app-version">1.0</span></p>
+      <p class="meta">Effective: <time datetime="2026-10-17">17 October 2026</time> · Last updated: <time datetime="2026-11-04">4 November 2026</time></p>
+      <p class="meta">Policy version <span id="policy-version">1.3</span> · App version described: <span id="app-version">1.0</span></p>
       <div class="callout" id="en-changes">
-        <p><strong>What changed in this version (1.2)</strong></p>
+        <p><strong>What changed in this version (1.3)</strong></p>
         <ul>
-          <li>You can pause reminders for one, two or four hours, as well as for the rest of the day. The App keeps the time a pause ends on your phone, with your schedule, and your phone’s backup copies it (3(a)).</li>
-          <li>The usage statistics record how long a pause is, as one of four predefined lengths, never the time it ends (3(a), 3(d)).</li>
+          <li>A tap on a reminder’s <strong>Done</strong> button, which counts a break on your phone, is one of the usage statistics, and the policy says so plainly (Section 3 and 3(d)). Version 1.2 listed that tap but also said, wrongly, that no record of a finished break was sent. The App sends nothing it did not send before.</li>
+          <li>The usage statistics carry the time each one reaches Google, as Google records it (3(d)).</li>
           <li>Earlier changes: “Previous versions”, at the end of this policy.</li>
         </ul>
       </div>
@@ -185,8 +185,10 @@
         reads no sensor, takes no photo, measures nothing about your body and asks nothing about it.
         The count of breaks you finish each day is kept on your device, and in your phone’s own
         backup where that is switched on (Section 3(a)); it is never sent to us, to the usage
-        statistics or to any advertiser. Which moves you did, and whether you finished a break, are
-        never sent anywhere.</p>
+        statistics or to any advertiser. Which moves you did are never sent anywhere, and neither is
+        whether you finished a one-minute reset. Where the usage statistics are active, they record a
+        tap on a reminder’s <strong>Done</strong> button, which is how a break is counted from a
+        reminder, without your count of breaks or the move (Section 3(d)).</p>
       </div>
 
       <h3>3(a). Data kept on your device</h3>
@@ -422,7 +424,9 @@
         whether precise timing was in use, and the battery standby group Android had placed the App
         in (one of Android’s named groups, such as “active” or “rare”);</li>
         <li><strong>that you answered a reminder</strong>, and how: by tapping it, or by its
-        <strong>Done</strong> button;</li>
+        <strong>Done</strong> button. A tap on Done also counts a break on your phone, so this shows
+        that you marked a break done from a reminder; never your count of breaks, and never which
+        move;</li>
         <li><strong>that a reminder was swiped away</strong> without being opened;</li>
         <li><strong>that a one-minute reset started</strong>, and from where: a reminder, the Home
         screen, the library or the end of the first-time setup. Never which move, and never whether the reset was finished;</li>
@@ -455,8 +459,9 @@
       completed</strong> through Google Play (the Pro purchase in Section 3(e)), with details the
       SDK reads from Google Play, such as the product’s ID and name, its price, the currency and
       the quantity; and an approximate country or region
-      derived by Google from the IP address. Google also records the device model, operating-system
-      version, App version and language with each event.</p>
+      derived by Google from the IP address. With each event, Google also records the date and time
+      it reaches Google, the device model, the operating-system version, the App version and the
+      language.</p>
 
       <p>Devices used for testing are left out: nothing is sent from Google’s automated test
       devices (Firebase Test Lab, which runs the pre-launch checks for Google Play), and nothing
@@ -464,7 +469,8 @@
       device.</p>
 
       <p id="en-not-sent"><strong>What is deliberately not collected.</strong> No move or exercise,
-      no record of whether a break was finished, no count of breaks, no streak and no percentage.
+      no record of whether a one-minute reset was finished, no count of breaks, no streak and no
+      percentage. A tap on a reminder’s Done button is sent as listed above, without the count.
       No purchase event of the App’s own (the purchase record Google’s SDK makes by itself is
       described above). No schedule, no value of any setting, no reminder text, no free text of
       any kind. No precise timestamps
@@ -820,7 +826,17 @@
       <p>This appendix is the record of what each version of this policy changed, newest first. The
       policy in force is Sections 1 to 13 above; where an entry below says something different from
       those Sections, the Sections apply.</p>
-      <h3>Version 1.2, dated 21 October 2026 (this version of the policy). This version:</h3>
+      <h3>Version 1.3, dated 4 November 2026 (this version of the policy). This version:</h3>
+      <ul>
+        <li><strong>rewrites Section 3 and Section 3(d)</strong>: version 1.2 listed the tap on a
+        reminder’s Done button among the statistics, and also said that no record of a finished
+        break was sent. A Done tap counts a break on your phone, so the statistics do show that a
+        break was marked done from a reminder, without the count or the move. The health note in
+        Section 3 and the list of what is not collected say so;</li>
+        <li><strong>adds to Section 3(d)</strong> that Google records the date and time each event
+        reaches it.</li>
+      </ul>
+      <h3>Version 1.2, dated 21 October 2026. That version:</h3>
       <ul>
         <li><strong>adds the timed pause to Section 3(a)</strong>: besides pausing reminders for the
         rest of the day, you can pause them for one, two or four hours. The App keeps the time such a
