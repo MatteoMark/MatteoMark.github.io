@@ -57,7 +57,7 @@ To work properly, Shake to Enable Torch requests the following permissions:
 ### Contact
 
 If you have any privacy question or want to exercise your rights, email:
-**luxebytecomp@gmail.com**
+**dev@luxebytelabs.com**
 
 Regards,
 Luxebyte Labs
