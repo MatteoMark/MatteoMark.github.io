@@ -85,14 +85,15 @@
       <h1>Privacy Policy</h1>
       <p class="meta">Posture Break — Android (<code>com.luxebyte.posture</code>)</p>
       <p class="meta">Publisher: <strong>Matteo Lamarque</strong>, trading as <strong>Luxebyte Labs</strong> · <a href="mailto:dev@luxebytelabs.com">dev@luxebytelabs.com</a></p>
-      <p class="meta">Effective: <time datetime="2026-10-17">17 October 2026</time> · Last updated: <time datetime="2026-11-07">7 November 2026</time></p>
-      <p class="meta">Policy version <span id="policy-version">1.4</span> · App version described: <span id="app-version">1.0</span></p>
+      <p class="meta">Effective: <time datetime="2026-10-17">17 October 2026</time> · Last updated: <time datetime="2026-11-08">8 November 2026</time></p>
+      <p class="meta">Policy version <span id="policy-version">1.5</span> · App version described: <span id="app-version">1.0.1</span></p>
       <div class="callout" id="en-changes">
-        <p><strong>What changed in this version (1.4)</strong></p>
+        <p><strong>What changed in this version (1.5)</strong></p>
         <ul>
-          <li>The usage statistics include a reminder that was not shown and why, whether a delivered reminder came at its alarm or later, the reminder notices on the Home screen, and a tap on the Pro screen’s buy button (Section 3(d)); the App keeps on your device when you acknowledged the Terms of use, and the last three reminder lines shown (Section 3(a)).</li>
-          <li>The contact address is dev@luxebytelabs.com.</li>
-          <li>The policy also says that the GDPR covers every user, how location is estimated from the IP address, what clearing the App’s storage does and does not do, how to ask about statistics already sent, how we handle messages you send us, the legal basis for ads outside Europe, and Google’s role and our settings in Google Analytics (Sections 1 to 10).</li>
+          <li>A reminder has a Clear button and a Snooze 10 min button. Neither counts a break, and a tap on either is not sent in the usage statistics (Sections 3, 3(a) and 3(d)).</li>
+          <li>App version 1.0.0 has a Done button in their place. The policy names it, with what a tap counts and sends, for that version (Sections 3, 3(a) and 3(d)).</li>
+          <li>The App keeps on your device when a snoozed reminder is due to come back and when the next alarm is set for; your phone’s backup does not copy them (Section 3(a)).</li>
+          <li>Our Analytics property is linked to our AdMob account, so the statistics are also available in AdMob (Sections 3(d), 4 and 5).</li>
           <li>Earlier changes: “Previous versions”, at the end of this policy.</li>
         </ul>
       </div>
@@ -160,8 +161,8 @@
       <p>This policy applies only to the <strong>“Posture Break”</strong> Android App distributed
       through the Google Play Store. It does not cover any other product, website, or third-party
       service except as expressly described here (in particular Google’s advertising, statistics
-      and payment services). This policy describes version 1.0 of the App. The English text is the
-      only version.</p>
+      and payment services). This policy describes version 1.0.1 of the App. Where App version 1.0.0
+      differs, the policy names that version. The English text is the only version.</p>
 
       <h3>What the App is</h3>
       <p>The App reminds you, on a schedule you choose, to take a short break from sitting, and
@@ -195,18 +196,20 @@
       <div class="callout" id="en-health">
         <p><strong>Health and fitness data.</strong> The App reads no sensor, takes no photo,
         measures nothing about your body and asks nothing about it. The facts about physical
-        activity it sends, and only where the usage statistics are active, are a tap on a reminder’s
-        <strong>Done</strong> button, which counts a break, that a one-minute reset started and from
-        where, and that “Another move” was used during one (Section 3(d)); Google Play’s data safety
-        section lists them as fitness information.
+        activity it sends, and only where the usage statistics are active, are that a one-minute reset
+        started and from where, that “Another move” was used during one, and, in App version 1.0.0,
+        a tap on a reminder’s <strong>Done</strong> button, which counts a break (Section 3(d));
+        Google Play’s data safety section lists them as fitness information. Like all the statistics, these facts are also available in AdMob (Section 3(d)).
         The count of breaks you finish each day is kept on your device, and in your phone’s own
         backup where that is switched on (Section 3(a)); it is never sent to us, to the usage
         statistics or to any advertiser. Which moves you did are never sent anywhere, and neither is
-        whether you finished a one-minute reset. Where the usage statistics are active, they record a
-        tap on a reminder’s <strong>Done</strong> button, which is how a break is counted from a
-        reminder, without your count of breaks or the move (Section 3(d)). These events show that
+        whether you finished a one-minute reset. In App version 1.0.0, where the usage statistics are
+        active, they record a tap on a reminder’s <strong>Done</strong> button, which is how a break is
+        counted from a reminder, without your count of breaks or the move (Section 3(d)). These events show that
         this installation was used for breaks, and, because Google records when each event arrives,
-        a series of them can show when and how often that happened.</p>
+        a series of them can show when and how often that happened. A tap on a reminder’s
+        <strong>Clear</strong> or <strong>Snooze 10 min</strong> button counts no break and is not
+        sent.</p>
       </div>
 
       <h3>3(a). Data kept on your device</h3>
@@ -229,8 +232,9 @@
       <p><strong>Your breaks</strong> (copied by your phone’s backup, below)</p>
       <ul>
         <li>the <strong>number of breaks you finished on each day</strong>, for the last 60 days. A
-        break counts when you press <strong>Done</strong> on a reminder or finish a one-minute
-        reset in the App. Nothing else is recorded about it: not the time, not the moves.</li>
+        break counts when you finish a one-minute reset in the App and, in App version 1.0.0, when
+        you press <strong>Done</strong> on a reminder. <strong>Clear</strong> and
+        <strong>Snooze 10 min</strong> on a reminder count no break. The count holds nothing else about a break: not the time, not the moves.</li>
       </ul>
 
       <p><strong>How the reminders run</strong> (never copied by the backup)</p>
@@ -238,8 +242,11 @@
         <li>when the last reminder was posted and when the next one is due, and whether Android lets
         it arrive on the minute (precise timing) or only approximately;</li>
         <li>how many reminders in a row went unanswered, and, after several, until when the App
-        spaces them out; and which reminder your last <strong>Done</strong> counted for, so that one
-        reminder never counts twice;</li>
+        spaces them out; and which reminder your last finished reset (in App version 1.0.0, also a
+        tap on <strong>Done</strong>) counted for, so that one reminder never counts twice;</li>
+        <li>when a reminder you snoozed with <strong>Snooze 10 min</strong> is due to come back,
+        until it comes back or is dropped; and, in App version 1.0.1 and later, the time the next
+        alarm is set for, from which a reminder’s lateness is measured;</li>
         <li>a record of the last 60 reminder deliveries: for each, when it was due, how late it
         arrived, what the App decided to do with it, what started it, whether precise timing was in
         use, and the battery standby group Android had placed the App in. It is shown on a hidden
@@ -457,10 +464,12 @@
       but collection starts again, under a new identifier, the next time the App runs. Neither
       deletes what was already sent.</p>
 
-      <p><strong>No link to advertising.</strong> Our Google Analytics property is not linked to
-      our Google AdMob account: the statistics are not made available to AdMob through our
-      settings. Google’s role, and the data-sharing settings of our property, are described in
-      Section 5.</p>
+      <p><strong>Our Analytics property is linked to AdMob.</strong> Our Google Analytics property
+      is linked to our Google AdMob account, so the statistics, including the events Google
+      records by itself (below), are also available in AdMob, for reports on the App’s advertising
+      and for the AdMob features Google offers through that link, under Google’s terms. The link
+      adds nothing to what an individual ad request carries (Section 3(b)). Google’s role, and the
+      data-sharing settings of our property, are described in Section 5.</p>
 
       <h4>What is collected — every fact, in plain words</h4>
       <p>Every custom-event value and installation-source category in the following list is one of
@@ -478,10 +487,11 @@
         notifications were blocked, or reminders were resting after several went unanswered; with
         whether it was the alarm or a catch-up, whether precise timing was in use, and the battery
         standby group. Never which reminder, and never its scheduled time as a field;</li>
-        <li><strong>that you answered a reminder</strong>, and how: by tapping it, or by its
-        <strong>Done</strong> button. A tap on Done also counts a break on your phone, so this shows
-        that you marked a break done from a reminder; never your count of breaks, and never which
-        move;</li>
+        <li><strong>that you answered a reminder</strong>, and how: by tapping it, or, in App version
+        1.0.0, by its <strong>Done</strong> button. In that version a tap on Done also counts a break
+        on your phone, so this shows that you marked a break done from a reminder; never your count
+        of breaks, and never which move. A tap on a reminder’s <strong>Clear</strong> or
+        <strong>Snooze 10 min</strong> button is not sent;</li>
         <li><strong>that a reminder was swiped away</strong> without being opened;</li>
         <li><strong>that a one-minute reset started</strong>, and from where: a reminder, the Home
         screen, the library or the end of the first-time setup. Never which move, and never whether the reset was finished;</li>
@@ -530,7 +540,8 @@
 
       <p id="en-not-sent"><strong>What is deliberately not collected.</strong> No move or exercise,
       no record of whether a one-minute reset was finished, no count of breaks, no streak and no
-      percentage. A tap on a reminder’s Done button is sent as listed above, without the count.
+      percentage. In App version 1.0.0, a tap on a reminder’s Done button is sent as listed above,
+      without the count. A tap on a reminder’s Clear or Snooze 10 min button is not sent.
       No purchase event of the App’s own (the purchase record Google’s SDK makes by itself is
       described above). No schedule, no value of any setting, no reminder text, and no user-entered free text in our
       custom events. No custom parameter giving a reminder’s scheduled time or an action’s precise
@@ -681,7 +692,8 @@
             collected until it is given, and a withdrawal stops it immediately. <strong>Everywhere
             else:</strong> our <strong>legitimate interest</strong> (Art. 6(1)(f)) in knowing
             whether reminders arrive on time and whether the App is understood, with your right to
-            object.</td>
+            object. Making the statistics available in AdMob through the link described in Section
+            3(d) rests on the same basis; outside the EEA, the UK and Switzerland our legitimate interest also covers understanding how the App’s advertising performs, with the same right to object.</td>
           </tr>
           <tr>
             <td>Selling Pro and keeping it unlocked (Section 3(e))</td>
@@ -725,7 +737,8 @@
         cannot identify us or you; “Technical support”, under which Google’s support staff can
         access the property to resolve a technical issue; and “Recommendations for your business”,
         under which Google can access the property, including how we use and configure it, to
-        offer us insights and recommendations.</li>
+        offer us insights and recommendations. Our Analytics property is linked to our AdMob
+        account, so the statistics are also available to Google AdMob (Section 3(d)). That goes beyond providing Google Analytics for us; Google handles them there under its terms for that link.</li>
         <li><strong>Google Play</strong> (Google Ireland Limited / Google LLC), which processes the
         Pro purchase (Section 3(e)), tells the App where an installation came from (Section 3(d)),
         and shows its own rating card (Section 3(f)), each under the Google Play Terms of Service
@@ -995,7 +1008,21 @@
       <p>This appendix is the record of what each version of this policy changed, newest first. The
       policy in force is Sections 1 to 13 above; where an entry below says something different from
       those Sections, the Sections apply.</p>
-      <h3>Version 1.4, dated 7 November 2026 (this version of the policy). This version:</h3>
+      <h3>Version 1.5, dated 8 November 2026 (this version of the policy). This version:</h3>
+      <ul>
+        <li><strong>describes the reminder’s Clear and Snooze 10 min buttons</strong> (Sections 3, 3(a)
+        and 3(d)): neither counts a break, and a tap on either is not sent in the usage
+        statistics;</li>
+        <li><strong>names App version 1.0.0 for the reminder’s Done button</strong> (Sections 3, 3(a)
+        and 3(d)): in that version a tap counts a break and is sent as listed, without the count or
+        the move. The header and Section 2 name App version 1.0.1 as the version described;</li>
+        <li><strong>adds to Section 3(a)</strong> when a snoozed reminder is due to come back and the
+        time the next alarm is set for, which your phone’s backup does not copy, and says which
+        reminder a finished reset is counted for;</li>
+        <li><strong>says that our Analytics property is linked to AdMob</strong> (Sections 3(d), 4 and
+        5), so the statistics are also available in AdMob.</li>
+      </ul>
+      <h3>Version 1.4, dated 7 November 2026. That version:</h3>
       <ul>
         <li><strong>adds to the statistics in Section 3(d)</strong> a reminder that was not shown, with
         which of three reasons applied (too late to be useful, notifications blocked, or reminders
